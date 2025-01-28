@@ -1,0 +1,1 @@
+image black = Solid("#0000")
