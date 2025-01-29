@@ -35,13 +35,11 @@ transform moveoffleft:
 
 # The game starts here.
 
-# OPENING
+# DAY 1 --------------------------------------
+
+# OPENING AND TUTORIAL --------------------------------------
 
 label start:
-
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
 
     scene opening
     with fade
@@ -103,8 +101,7 @@ label start:
     show blackscreen
     with fadehold
 
-    
-    # DAY 1
+    # TUTORIAL --------------------------------------
 
     scene deans office #Dean's Office
     with fade
@@ -273,10 +270,11 @@ label start:
 
         "Find Vivienne":
 
-            jump rightaway
+            jump V1
 
+# VIVIENNE 1 --------------------------------------
 
-label rightaway:
+label V1:
 
     show classroom
     with fade
@@ -501,161 +499,27 @@ label secondContinue:
 
     m "{i}She disappears in a swish of braids; one almost brushes my face. It smells like summer and worn books. {/i}"
 
+    $ viv = True
+    $ renpy.notify("The notebook has been updated.")
+
     show mira default
 
     m "{i}I never noticed. {/i}"
-
-    $ viv = True
-    $ renpy.notify("The notebook has been updated.")
 
     hide vivienne default
 
     menu:
 
-        "Find Vivienne later":
-            jump later
+        "Look for Finn (there is a timeskip here that you will ignore for the sake of the playtest)":
+            jump F1
 
-label later:
+# FINN 1 --------------------------------------SS
 
-    scene hallway
-    with fade
+label F1:
 
-    show mira default at left
-    with dissolve
-
-    show vivienne reading lookdown at right
-    with dissolve
-
-    m "Did you get yelled at yet?"
-
-    show vivienne reading upset
-
-    v "Couldn’t escape it—the Dean called me into her office after my second class."
-
-    v "She was in a worse mood than usual too; it looked like someone knocked over her things earlier today."
-
-    m "Must’ve been a nightmare to walk through the office."
-
-    m "You look like you’re in a worse mood than usual too."
-
-    v "I don’t get along with the Dean—it’s nothing half an hour of reading won’t fix."
-
-    hide mira default
-
-    hide vivienne reading upset
-
-    menu:
-
-        "Ask what she's reading":
-            jump reading
-
-        "Pry for more info":
-            jump pry
-
-
-label reading:
-
-    show mira default at left
-
-    show vivienne reading upset at right
-
-    m "Anything interesting in there?"
-
-    show vivienne reading excited at right:
-        moveleft
-
-    v "You wouldn’t believe how much. I just borrowed this from the library last week—{i}A Comprehensive History of Modern Alchemy. {/i}"
-
-    m "...Alchemy?"
-
-    v "Don’t look at me like that. I know alchemy is traditionally considered a dead field of study, but it’s the foundation of all modern magick."
-
-    show mira default
-
-    m "Which a lot of people also consider a dead field."
-
-    m "{i} ( Then again, I was just resurrected less than a day ago. ) {/i}"
-
-    v "It’s only dead if you don’t know where to look. The thing about alchemy is—all magick is essentially a form of transmutation."
-
-    v "If we understood the details of alchemy better, we could unlock so many shortcuts that would solve the limitations and constraints we currently have in the field of magick."
-
-    show mira surprised
-
-    m "{i}( I’ve heard people talk about this problem before, but I’ve never seen someone suggestion the solution lies in a subject that’s infamous for having no practical uses. ) {/i}"
-
-    show mira default
-
-    m "It’s an interesting idea—at least you’re in the right place for it."
-
-    v "Right? Seacliff is one of the only schools in the country that offer classes on alchemy."
-    
-    m "..."
-
-    show vivienne reading lookdown
-    
-    v "..."
-
-    m "{i} Vivienne’s attention has already wandered back to her book, my presence forgotten. {/i}"
-
-    m "{i} I can't even be insulted. {/i}"
-
-    m "{i} ...What does it feel like to believe in something so strongly? {/i}"
-
-    $ vivupdate += 1
-    $ renpy.notify("The notebook has been updated.")
-
-    jump thirdContinue
-    
-
-label pry:
-
-    show mira default at left
-
-    show vivienne reading upset at right
-
-    m "You say that like anyone gets along with her."
-
-    v "If they do, I haven’t met them yet."
-
-    m "Does she dislike you for a particular reason or something then?"
-
-    v "No."
-    
-    m "..."
-
-    v "I’m one in a sea of students she’s dissatisfied with."
-
-    show vivienne reading lookdown
-
-    v "..."
-
-    m "{i}( She's intentionally ignoring me. ) {/i}"
-
-    m "..."
-
-    jump thirdContinue
-
-
-label thirdContinue:
-    
-    m "{i}She smells like worn pages and summer again. {/i}"
-
-    m "{i}Quietly, I lift my wrist to my nose. I expect saltwater or maybe the scent of decay, but there's neither. {/i}"
-    
-    m "{i} The dead smell like nothing. {/i}"
-
-
-    scene to be continued
-    with fade
+# hi halei, this is where you start
 
     $ renpy.pause()
-
-    jump fourthContinue
-
-label fourthContinue:
-
-    # WIp
 
 
     # This ends the game.
