@@ -10,14 +10,27 @@ define v = Character("Vivienne")
 define p = Character("Professor")
 define f = Character("Finn")
 
-#invisible counters
+# Invisible counters
+
 default flirtmeter = 0
+default remainingtime = 72
+
+# Information 
+
+# learn that vivienne is the daughter of the dean
+default vividaughter = False 
+
+# Transitions
 
 define fade = Fade(0.5, 0.0, 0.5)
 define fadehold = Fade(0.5, 1.0, 0.5)
 
+#Locations
+
 image deans office box = "deans_office.png"
 image ochem box = "ochem_lecture.png"
+
+# Positioning
 
 transform left:
     xalign 0.25 yalign 0.0
@@ -78,17 +91,17 @@ label start:
 
     res "According to the laws of necromancy, I have full control over you as your resurrector."
 
-    res "But I won't do anything right now. There's a five-day stalemate, you see."
+    res "But I won't do anything right now. There's a three-day stalemate, you see."
 
     m "I don't see. I just woke up—do you think I understand any of this?"
 
-    res "Listen. For the next 120 hours, we’ll walk the world as two separate people. One living and the other undead."
+    res "Listen. For the next 72 hours, we’ll walk the world as two separate people. One living and the other undead."
 
     res "But after time runs out, you're under my will forever."
 
     m "........Oh."
 
-    res "See you in five days, Mira."
+    res "See you in three days, Mira."
 
     play sound "audio/sfx/sand-walk.mp3" volume 2.75
 
@@ -209,9 +222,10 @@ label start:
     play audio "audio/sfx/soundscrate-dropped-glass-1.mp3" volume 0.25
     play sound "audio/sfx/SoundsCrate-Wall_Break_1.mp3"
 
-    d "..."
+    show mira at center:
+        moveright
 
-    m "...!"
+    m "...!" 
 
     m "Oh sorry, I’ll pick that up—"
 
@@ -236,15 +250,15 @@ label start:
     show mira default at left
     with dissolve
 
-    m "I guess I really shouldn’t be surprised. I’m a spirit — the laws of the human world don’t affect me."
+    m "I guess I really shouldn’t be surprised. I’m a spirit — the laws of the human world don’t apply to me."
 
-    m "That said, I can still feel time unspooling in the spirit world. Even when I traveled back in time, the countdown didn't stop moving towards the fifth day." 
+    m "That said, I can still feel time unspooling in the spirit world. Even when I traveled back in time, the countdown didn't stop moving towards the third day." 
 
     $ hourglass = True
+    $ day = 3
+    $ remainingtime = 62
 
-    "{i}Check the {color=#56768f}hourglass{/color} in the bottom left to view your remaining days. {/i}"
-
-    #Remaining time should be 5 days 
+    "{i}Check the {color=#56768f}hourglass{/color} in the bottom left to view your remaining hours. {/i}"
 
     m "It's simultaneously so little time and so many hours I'm forced to be alive."
 
@@ -277,7 +291,7 @@ label start:
     menu: 
 
         "Find Vivienne":
-
+            $ remainingtime -=2
             jump V1
 
 # VIVIENNE 1 --------------------------------------
@@ -298,7 +312,7 @@ label V1:
     show mira sighing at left
     with dissolve
 
-    m "( I’m starting to remember why I always skip morning lectures. )"
+    m "{i}( I’m starting to remember why I always skip morning lectures. ){/i}"
 
     p "That’s all for today, class dismissed."
 
@@ -411,6 +425,9 @@ label continue1:
         "Mood, I was literally resurrected":
             jump resurrected2
 
+        "No sympathy for her own daughter?" if vividaughter == True:
+            jump vividaughter
+
 
 label fine:
 
@@ -487,6 +504,13 @@ label resurrected2:
     jump continue2
 
 
+label vividaughter:
+
+    m "(extra segment we haven't written yet)"
+
+    jump continue2
+
+
 label continue2:
 
     show vivienne surprised at right
@@ -505,6 +529,7 @@ label continue2:
     m "{i}She disappears in a swish of braids; one almost brushes my face. It smells like summer and worn books. {/i}"
 
     $ viv = True
+    $ vivupdate = 1
     $ renpy.notify("The notebook has been updated")
 
     show mira default
@@ -524,6 +549,7 @@ label continue3:
     menu:
 
         "Look for Finn (there is a timeskip here that you will ignore for the sake of the playtest)":
+            $ remainingtime -=5
             jump F1
 
         "Time travel":
@@ -535,6 +561,7 @@ label timetravel1:
     menu:
 
         "Find Vivienne":
+            $ remainingtime -=2
             jump V1
 
         "Never mind":
@@ -543,7 +570,6 @@ label timetravel1:
 # FINN 1 --------------------------------------SS
 
 label F1:
-
 
     scene hallway
     with fade
@@ -565,37 +591,35 @@ label F1:
 
     m "{i}( There he is—surrounded by a tide pool of chattering students. ){/i}"
 
-    show mira default at left
+    show mira default
 
     m "Finn. I need to talk to you. Finn? Finn."
 
     m "Please don’t make me push my way through that crowd. Maybe I resign myself to being an undead servant forever—"
 
-    show mira surprised at left
+    show mira surprised
 
     f "Watch out!"
 
     #SFX: thud
 
-    # show mira bonk at left
+    show mira bonk
 
     m "—!!" with hpunch
 
-    # make this effect last longer
+    show finn concerned at right
 
-    show finn at right
-
-    # show finn concerned at right
+    show mira default
 
     f "Hey, you okay?"
 
-    m "{i}( He picks up the ball that slammed into the side of my head and tosses it back to a student who winces in apology. ){/i}"
+    show finn default
 
-    show mira default at left
+    m "{i}( He picks up the ball that slammed into the side of my head and tosses it back to a student who winces in apology. ){/i}"
 
     m "Yeah, I can’t feel pain."
 
-    # show finn flirting at right
+    show finn flirt
 
     f "That’s a relief—wouldn’t wanna damage that pretty face."
 
@@ -614,27 +638,22 @@ label F1:
 
 label flirt:
         
-        # show mira smiling at center:
-
-        show mira default at center:
+        show mira smile at center:
             moveright
 
-
-        show finn at right
-
-        # show finn flirting at right
+        show finn flirt at right
 
         m "What, the one in your mirror?"
 
-        # show finn default at right
+        show finn default
 
         f "Hahaa. Finn, by the way."
 
-        show mira default at center
+        show mira default
 
         m "I know who you are, Mr. Top Student at Seacliff."
 
-        # show finn pensive at right
+        show finn pensive
 
         f "Ugh, surely I have more redeeming qualities?"
 
@@ -643,15 +662,14 @@ label flirt:
 
 label telloff:
 
-        show mira sighing at center
+        show mira sighing at center:
+            moveright
 
-        show finn at right
-
-        # show finn flirting at right
+        show finn flirt at right
 
         m "Should’ve taken one for the team then, Mr. Top Student."
 
-        # show finn pensive at right
+        show finn pensive
 
         f "Ugh, surely I have more redeeming qualities than my grades?"
 
@@ -663,36 +681,26 @@ label continue4:
     hide mira
     hide finn
 
-    if flirtmeter > 0:
+    menu: 
 
-        menu: 
+        "According to everyone else" if flirtmeter > 0:
 
-            "Plenty more, according to everyone else":
+            jump more
 
-                jump more
+        "That's your most attractive trait":
 
-            "That's your most attractive trait":
-
-                jump most
-
-    else:
-
-        menu:
-
-            "That's your most attractive trait":
-
-                jump most
+            jump most
 
 
 label more:
 
-    show mira default at center
+    show mira smile at center
 
-    show finn at right
-
-    # show finn pensive at right
+    show finn pensive at right
 
     m "Everyone else seems to think so. Do you know how many students were devastated when they couldn’t find you at the masquerade?"
+
+    show mira default
 
     f "Ah—I was sick."
 
@@ -700,31 +708,31 @@ label more:
 
     f "..."
 
-    # show finn concerned at right
+    show finn concerned
 
     f "...What?"
 
-    show mira sighing at center
+    show finn pensive
+
+    show mira sighing
 
     m "Was there an outbreak of the Black Plague last week? You couldn’t think of a better excuse than Vivienne?"
 
-    # show finn default at right
-
     f "Oh, Vivi might be telling the truth. Have you seen how little that girl sleeps?"
 
-    f "It’s like she thinks she’s got something to prove because she’s the daughter of the Dean."
+    f "It’s like she thinks she’s got something to prove because she’s the daughter of our Dean."
 
-    show mira default at center
+    $ vividaughter = True
 
-    m "{i}( ...What? ){/i}"
+    show mira default
 
     m "So what’s the real reason you were gone?"
 
-   # show finn flirting at right
+    show finn flirt
 
     f "You’re getting ahead of yourself—I don’t tell my secrets to people who think I have no redeeming qualities."
 
-    show mira sighing at center
+    show mira sighing
 
     m "Your redeeming quality is your ability to help me catch up on last week’s chemistry lectures. Please? I’m so close to failing the class."
 
@@ -735,17 +743,17 @@ label most:
 
     show mira default at center
 
-    show finn at right
-
-    # show finn pensive at right
+    show finn pensive at right
 
     m "No, that’s definitely your most attractive trait. Don’t drown in the admissions letters that flood your dorm room next year."
 
-    # show finn frowning at right
+    show finn frown
 
     f "Don’t concern yourself with my grades."
 
     m "...Okay."
+
+    show mira sighing
 
     m "Your redeeming quality is actually your ability to help me catch up on last week’s chemistry lectures. Please? I’m so close to failing the class."
 
@@ -756,21 +764,21 @@ label continue5:
 
     show mira default at center
 
-    show finn at right
-
-    # show finn pensive at right
+    show finn pensive at right
 
     f "..."
 
     m "{i}( There’s a moment of silence as I watch the synapses go off in his head, trying to decide how much he wants to uphold his reputation as the boy who does anything and everything. ){/i}"
 
-    # show finn default at right
+    show finn default
 
-    f "Day after tomorrow, physical sciences lecture hall at lunch break. It’s the only time I’m free."
+    f "Tomorrow, physical sciences lecture hall at lunch break. It’s the only time I’m free."
+
+    show mira smile
 
     m "See you there. Thanks, Finn."
 
-    # show finn flirting at right
+    show finn flirt
 
     f "Only because you’re pretty."
 
@@ -778,7 +786,16 @@ label continue5:
     with dissolve
 
     $ finn = True
-    $ renpy.notify("The notebook has been updated (not actually yet)")
+    
+    if vividaughter == True: 
+        $ vivupdate = 3
+
+    else:
+        $ vivupdate = 2
+
+    $ renpy.notify("The notebook has been updated")
+
+    show mira default
 
     m "{i}( Oh. I never told him my name. ){/i}"
 
@@ -795,6 +812,7 @@ label continue6:
     menu:
 
         "Go back to the dorms and sleep.":
+            $ remainingtime -=1
             jump sleep
 
         "Time travel":
@@ -803,7 +821,7 @@ label continue6:
 
 label sleep:
     
-    show mira default at center
+    show mira default
 
     m "{i}( Oh right, I don’t need sleep anymore. ){/i}"
 
@@ -818,14 +836,16 @@ label timetravel2:
     
     menu:
 
-        "Find Vivienne (this will have consequences that I haven't implemented yet)":
+        "Find Vivienne":
+            $ remainingtime -=8
             jump V1
 
         "Look for Finn":
+            $ remainingtime -=1
             jump F1
 
         "Never mind":
-            jump sixthcontinue
+            jump continue6
 
 
 label continue7:

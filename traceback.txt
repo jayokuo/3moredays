@@ -1,47 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 165, in script
-    menu:
-Exception: Image 'hallway' does not accept attributes 'test'.
+  File "game/script.rpy", line 788, in script
+    $ finn == True
+  File "game/script.rpy", line 788, in <module>
+    $ finn == True
+NameError: name 'finn' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 165, in script
-    menu:
-  File "/Volumes/renpy-8.3.3-sdk/renpy-8.3.3-sdk/renpy/ast.py", line 1619, in execute
-    choice = renpy.exports.menu(choices, self.set, args, kwargs, item_arguments)
-  File "/Volumes/renpy-8.3.3-sdk/renpy-8.3.3-sdk/renpy/exports/menuexports.py", line 134, in menu
-    rv = renpy.store.menu(new_items)
-  File "/Volumes/renpy-8.3.3-sdk/renpy-8.3.3-sdk/renpy/exports/menuexports.py", line 424, in display_menu
-    rv = renpy.ui.interact(mouse='menu', type=type, roll_forward=roll_forward)
-  File "/Volumes/renpy-8.3.3-sdk/renpy-8.3.3-sdk/renpy/ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "/Volumes/renpy-8.3.3-sdk/renpy-8.3.3-sdk/renpy/display/core.py", line 2215, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "/Volumes/renpy-8.3.3-sdk/renpy-8.3.3-sdk/renpy/display/core.py", line 2745, in interact_core
-    root_widget.visit_all(lambda d : d.per_interact())
-  File "/Volumes/renpy-8.3.3-sdk/renpy-8.3.3-sdk/renpy/display/displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "/Volumes/renpy-8.3.3-sdk/renpy-8.3.3-sdk/renpy/display/displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  File "/Volumes/renpy-8.3.3-sdk/renpy-8.3.3-sdk/renpy/display/displayable.py", line 434, in visit_all
-    d.visit_all(callback, seen)
-  [Previous line repeated 1 more time]
-  File "/Volumes/renpy-8.3.3-sdk/renpy-8.3.3-sdk/renpy/display/displayable.py", line 424, in visit_all
-    for d in self.visit():
-  File "/Volumes/renpy-8.3.3-sdk/renpy-8.3.3-sdk/renpy/display/image.py", line 540, in visit
-    self.find_target()
-  File "/Volumes/renpy-8.3.3-sdk/renpy-8.3.3-sdk/renpy/display/image.py", line 421, in find_target
-    self.target = target._duplicate(a)
-  File "/Volumes/renpy-8.3.3-sdk/renpy-8.3.3-sdk/renpy/display/displayable.py", line 249, in _duplicate
-    args.extraneous()
-  File "/Volumes/renpy-8.3.3-sdk/renpy-8.3.3-sdk/renpy/display/displayable.py", line 109, in extraneous
-    raise Exception("Image '{}' does not accept attributes '{}'.".format(
-Exception: Image 'hallway' does not accept attributes 'test'.
+  File "game/script.rpy", line 788, in script
+    $ finn == True
+  File "/Volumes/renpy-8.3.3-sdk 1/renpy-8.3.3-sdk/renpy/ast.py", line 821, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "/Volumes/renpy-8.3.3-sdk 1/renpy-8.3.3-sdk/renpy/python.py", line 1178, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/script.rpy", line 788, in <module>
+    $ finn == True
+NameError: name 'finn' is not defined
 
 macOS-14.5-arm64-arm-64bit arm64
 Ren'Py 8.3.3.24111502
 5 More Days 1.0
-Fri Dec  6 11:06:21 2024
+Wed Feb 12 01:02:38 2025

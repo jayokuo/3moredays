@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 22: menu statement expects a non-empty block.
-    menu more = "Plenty more, according to everyone else" 
+File "game/script.rpy", line 790: expected python_expression
+    if:
+      ^
+
+File "game/script.rpy", line 793: expected statement.
+    else:
         ^
 
 Ren'Py Version: Ren'Py 8.3.3.24111502
-Fri Jan 31 21:58:31 2025
+Wed Feb 12 01:09:15 2025

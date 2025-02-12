@@ -269,6 +269,11 @@ screen quick_menu():
         add "countdowntimer"+ str(day) +".png":
             xalign 0.0
             yalign 0.97
+        text "[remainingtime]":
+            color "fffcf4"
+            size 26
+            xalign 0.045
+            yalign 0.861
  
 screen book():
     tag menu
@@ -277,19 +282,19 @@ screen book():
             alpha 0.55
         if (pagenumber == 0):
                 if (viv == False):
-                    add "notebook_1-2.png":
+                    add "notebook 1-2.png":
                         xalign 0.5
                         yalign 1.0
                 if (viv == True):
-                    add "notebook_vivienne_update_" + str(vivupdate) + ".png":
+                    add "notebook vivupdate" + str(vivupdate) + ".png":
                         xalign 0.5
                         yalign 1.0
         if (pagenumber == 1):
-                add "notebook_3-4.png":
+                add "notebook 3-4.png":
                     xalign 0.5
                     yalign 1.0
         if (pagenumber == 2):
-                add "notebook_5-6.png":
+                add "notebook 5-6.png":
                     xalign 0.5
                     yalign 1.0
         fixed:
