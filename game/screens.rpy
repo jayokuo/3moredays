@@ -275,20 +275,37 @@ screen quick_menu():
             xalign 0.045
             yalign 0.861
  
+## Notebook
+
 screen book():
     tag menu
+
     if notebook:
         add "blackscreen.png":
             alpha 0.55
+
         if (pagenumber == 0):
-                if (viv == False):
-                    add "notebook 1-2.png":
-                        xalign 0.5
-                        yalign 1.0
-                if (viv == True):
-                    add "notebook vivupdate" + str(vivupdate) + ".png":
-                        xalign 0.5
-                        yalign 1.0
+                
+            if (viv == True):
+                add "notebook vivupdate" + str(vupdate) + ".png":
+                    xalign 0.5
+                    yalign 1.0
+
+            else:
+                add "notebook 1-2.png":
+                    xalign 0.5
+                    yalign 1.0
+
+            if (fin == True):
+                add "notebook finnupdate" + str(fupdate) + ".png":
+                    xalign 0.5
+                    yalign 1.0
+
+            else:
+                add "notebook 1-2.png":
+                    xalign 0.5
+                    yalign 1.0
+
         if (pagenumber == 1):
                 add "notebook 3-4.png":
                     xalign 0.5

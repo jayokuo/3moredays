@@ -2,13 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 790: expected python_expression
-    if:
-      ^
+File "game/script.rpy", line 12: expected statement.
+    fin = False
+        ^
 
-File "game/script.rpy", line 793: expected statement.
-    else:
+File "game/script.rpy", line 808: expected statement.
+    fin = True
         ^
 
 Ren'Py Version: Ren'Py 8.3.3.24111502
-Wed Feb 12 01:09:15 2025
+Fri Feb 14 00:47:59 2025

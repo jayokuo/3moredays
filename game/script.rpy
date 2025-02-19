@@ -10,55 +10,17 @@ define v = Character("Vivienne")
 define p = Character("Professor")
 define f = Character("Finn")
 
-# Invisible counters
-
-default flirtmeter = 0
-default remainingtime = 72
-
-# Information 
-
-# learn that vivienne is the daughter of the dean
-default vividaughter = False 
-
-# Transitions
-
-define fade = Fade(0.5, 0.0, 0.5)
-define fadehold = Fade(0.5, 1.0, 0.5)
-
 #Locations
 
 image deans office box = "deans_office.png"
 image ochem box = "ochem_lecture.png"
 
-# Positioning
-
-transform left:
-    xalign 0.25 yalign 0.0
-
-transform right:
-    xalign 0.75 yalign 0.0
-
-transform moveleft:
-    xalign 0.75
-    ease 0.4 xalign 0.5
-
-transform moveright:
-    xalign 0.25
-    ease 0.4 xalign 0.5
-
-transform moveoffleft:
-    xalign 0.75
-    ease 0.5 xalign -0.5
-
-transform moveoffright:
-    xalign 0.75
-    ease 0.5 xalign 1.5
 
 # The game starts here.
 
 # DAY 1 --------------------------------------
 
-# OPENING AND TUTORIAL --------------------------------------
+# OPENING --------------------------------------
 
 label start:
 
@@ -79,7 +41,7 @@ label start:
 
     res "It's been a week, if you were wondering. And so far, it seems like no one else has noticed you're gone."
 
-    m "I don't know what else I expected."
+    m "...I don't know what else I expected."
 
     play sound "audio/sfx/SoundsCrate-Debris_Shuffle_1.mp3"
 
@@ -95,7 +57,7 @@ label start:
 
     m "I don't see. I just woke up—do you think I understand any of this?"
 
-    res "Listen. For the next 72 hours, we’ll walk the world as two separate people. One living and the other undead."
+    res "Listen. For the next 72 hours, we will walk the world as two separate people. One living and the other undead."
 
     res "But after time runs out, you're under my will forever."
 
@@ -122,9 +84,13 @@ label start:
     show blackscreen
     with fadehold
 
-    # TUTORIAL --------------------------------------
+    jump deansoffice
 
-    scene deans office #Dean's Office
+# DEAN'S OFFICE --------------------------------------
+
+label deansoffice:
+
+    scene deans office
     with fade
 
     show deans_office
@@ -137,20 +103,23 @@ label start:
 
     play music "audio/BackgroundMusicDraft.mp3" volume 0.1
 
-    show mira sighing at left
+    show mira default at left
     with dissolve
 
     d "—and can I remind you, this school has one of the most competitive acceptance rates in the region." 
     
-    d "Your professors may turn an occasional blind eye to you skipping the occasional lecture, but missing important events like the annual masquerade ball will {i}not be tolerated {/i}."
+    d "Your professors may turn a blind eye to you skipping the occasional lecture, but missing important events like the annual masquerade ball will {i}not be tolerated {/i}."
+
+    show mira sighing
 
     m "{i}( I just freed my wrists a few hours ago, cut me some slack. ){/i}"
+
+    show mira default
 
     d "I expect to see you at every event in the future, understand?"
     
     d "If it troubles you so much to attend this academy, there are hundreds of other students lining up to take your place." 
 
-    show mira default at left
 
     m "{i}( Is that a list of names for other students who missed the ball? Damn, she's going to be out of breath by the end of the day. ){/i}"
 
@@ -160,7 +129,10 @@ label start:
 
     play sound "audio/sfx/soundscrate-walking-indoors.mp3"
 
-    m "{i}My footsteps echo as I dodge the piles of paperwork and dirty mugs blocking the way to the exit. {/i}"
+    show mira default:
+        moveoffright
+
+    m "{i}My footsteps echo as I dodge the piles of paperwork and dirty mugs blocking the way to the exit.{/i}"
 
     scene blackscreen
 
@@ -172,11 +144,11 @@ label start:
 
     m "Where was the Dean when one of her own students died? She's worried about the wrong balls…"
 
-    show mira surprised at left
+    show mira surprised
 
     m "Wait, that list."
 
-    m "My resurrector has to be one of the other students who missed the ball."
+    m "My resurrector must be one of the other students who missed the ball."
 
     hide mira default
 
@@ -204,13 +176,13 @@ label start:
 
     d "—and can I remind you,  this school has one of the most competitive acceptance rates in the region."
 
-    d "Your professors may turn an occasional blind eye to you skipping the occasional lecture, but missing important events like the annual masquerade ball will {i}not be tolerated {/i}."
+    d "Your professors may turn a blind eye to you skipping the occasional lecture, but missing important events like the annual masquerade ball will {i}not be tolerated {/i}."
 
-    show mira sighing at left
+    show mira sighing
 
     m "{i}( This spiel again?? ){/i}"
 
-    show mira default at left
+    show mira default
 
     m "{i}( What just happened…? It felt so easy, like taking a step backwards in a shifting landscape. ){/i}"
 
@@ -229,17 +201,26 @@ label start:
 
     m "Oh sorry, I’ll pick that up—"
 
-    show mira surprised at left
+    show mira surprised
 
     d "Don’t touch my belongings and get {i}out of my office!{/i}" with vpunch
 
-    show mira default at left
+    show mira default
 
     m "Yes, Dean."
+
+    show mira default:
+        moveoffright
 
     m "{i}My footsteps echo as I sidestep what has become an avalanche of paperwork, shattered mugs, and scattered pens almost blocking the exit completely. {/i}" 
    
     m "{i}The list lies crumpled against my skirt. {/i}"
+
+    jump tutorial
+
+# TUTORIAL --------------------------------------
+
+label tutorial:
 
     scene blackscreen
     with fade
@@ -250,9 +231,11 @@ label start:
     show mira default at left
     with dissolve
 
-    m "I guess I really shouldn’t be surprised. I’m a spirit — the laws of the human world don’t apply to me."
+    m "I guess I shouldn’t be surprised. I’m a spirit — the temporal laws of the human world don’t apply to me anymore."
 
-    m "That said, I can still feel time unspooling in the spirit world. Even when I traveled back in time, the countdown didn't stop moving towards the third day." 
+    m "But I can still feel time unspooling in the spirit world."
+
+    m "Even when I travel back in time, the countdown keeps moving forward towards the third day." 
 
     $ hourglass = True
     $ day = 3
@@ -260,17 +243,15 @@ label start:
 
     "{i}Check the {color=#56768f}hourglass{/color} in the bottom left to view your remaining hours. {/i}"
 
-    m "It's simultaneously so little time and so many hours I'm forced to be alive."
+    m "My mind was so clouded from the revival, I can barely remember the sound of my resurrector’s voice."
 
-    m "My mind was so foggy from the revival, I can barely remember the sound of my resurrector’s voice."
-
-    m "I found a notebook earlier and wrote a profile for every student who was on the list."
+    m "I found a notebook lying on the gound earlier and created a profile for every student on the list."
 
     $ notebook = True
 
     "Click the {color=#56768f}notebook{/color} in the bottom right to access the character profiles."
 
-    m "The sooner I find the resurrector, the sooner this will all be over."
+    m "The sooner I find the resurrector, the sooner I can go back to being dead."
 
     show mira default at left
 
@@ -304,6 +285,8 @@ label V1:
     show ochem box
     with dissolve
 
+    # change to astrophysics 
+
     pause 2.0
 
     hide ochem box
@@ -328,13 +311,13 @@ label V1:
 
     show vivienne surprised at right
 
-    v "Woah—I almost forgot you were in this class."
+    v "Wow, I almost forgot you were in this class."
 
     m "Me too."
 
     show vivienne default
 
-    v "And no you didn’t, everyone’s still excited from last night. What’d you wear to the masquerade?"
+    v "And no, everyone’s still too excited from last night. What’d you wear to the masquerade?"
 
     hide mira 
     hide vivienne 
@@ -347,6 +330,9 @@ label V1:
         "I got resurrected":
             jump resurrected
 
+        "Just a shirt and slacks":
+            jump shirtandslacks
+
 
 label skipped:
 
@@ -354,26 +340,23 @@ label skipped:
 
     show vivienne default at right
 
-    m "I skipped it and got yelled at by the Dean earlier."
+    m "Oh, I skipped. Got yelled at by the Dean earlier."
 
     show vivienne frowning
 
-    v "Unpleasant experience, right?"
+    v "Definitely an experience, huh?"
 
-    m "I don’t get why we’re required to go to these events."
+    m "2/10. I don’t get why we’re required to go to these events."
 
-    show vivienne default
-
-    v  "It’s only for publicity; I’d rather hole up in my dorm and read."
-
-    m "Is that what you did?"
-
-    v "I mean yes, but not by choice."
+    v  "It’s all for the school’s publicity. I’d rather hole up in my dorm and read."
+    
+    m "Did you?"
+    
+    v "Against my will, actually. I got sick with an awful cold."
 
     show vivienne frowning
 
-    v "I was sick with an awful cold, but I’m sure the Dean is going to yell at me too."
-
+    v "Can’t wait for my turn to be yelled at by the Dean."
 
     jump continue1
 
@@ -384,29 +367,52 @@ label resurrected:
 
     show vivienne default at right
 
-    m "Nothing, I was busy being resurrected. Do I look good for a dead girl?"
+    m "Nothing, I was busy being resurrected. How do I look for a dead girl?"
 
-    show vivienne frowning
+    show vivienne surprised
 
     v "..."
 
     m "..."
 
-    v "Has anyone ever told you that you have a good sense of humor?"
+    show vivienne frowning
+
+    v "Has anyone ever told you that they like your sense of humor?"
 
     m "Never."
 
-    v "That's because you don't."
+    v "Right, that’s because they don't."
 
-    m "So what did you wear?"
+    m "...So what did you wear?"
 
-    show vivienne default
-
-    v "Oh, I wasn’t there either."
+    v "Oh, I couldn’t make it either. I got sick with an awful cold."
 
     show vivienne frowning
 
-    v " I was sick with an awful cold, but I’m sure the Dean is going to yell at me later."
+    v "Can’t wait to be yelled at by the Dean."
+
+    jump continue1
+
+
+label shirtandslacks:
+
+    show mira default at center
+
+    show vivienne default at right
+
+    m "I threw on an old shirt and unearthed a pair of slacks. I don’t get why we’re required to go to these events."
+
+    show vivienne frowning
+
+    v  "It’s all for the school’s publicity. I’d rather hole up in my dorm and read."
+
+    m "Did you?"
+
+    v "Against my will, actually. I got sick with an awful cold."
+
+    show vivienne frowning
+
+    v "Can’t wait to be yelled at by the Dean."
 
     jump continue1
 
@@ -419,60 +425,55 @@ label continue1:
 
     menu:
 
-        "You look fine":
+        "You don't look sick":
             jump fine
 
-        "Mood, I was literally resurrected":
+        "I was literally resurrected":
             jump resurrected2
 
-        "No sympathy for her own daughter?" if vividaughter == True:
-            jump vividaughter
+        "No sympathy for her daughter?" if vividaughter == True:
+            jump daughter
 
 
 label fine:
 
     show mira default at center
 
-    show vivienne frowning at right
+    show vivienne surprised at right
 
-    m "You look like you’ve already recovered."
+    m "You don’t look sick. Recover quickly?"
 
     show vivienne default
 
-    v "I slept the whole night through, so I’m feeling better."
+    v "...7 consecutive hours of sleep."
+
+    m "Is that supposed to be a lot."
+
+    show vivienne surprised
+
+    v "What—how else do you think I recovered this fast?"
 
     show vivienne frowning
 
-    v "But now the Dean’s going to say I look fine too, isn’t she?"
+    v "But now the Dean will think I’m making up excuses, won’t she."
 
-    m "You seem pretty caught up in this class too."
+    m "You seem pretty caught up in astro, too."
 
-    show vivienne frowning
+    v "Not quite—I haven’t finished updating my notes, I’m still confused how parallax works, I lost one of my pens, and—"
 
-    v "Oh I’m not—I read over the textbook this morning, but I haven’t finished updating all my notes—"
-    v "—there’s a concept from last week’s lecture I’m confused on, I lost the pen I usually write with, and—"
-   
-    m "Is that an issue?"
+    m "Just use another one?"
 
     show vivienne surprised
 
     v "What?"
 
+    m "To write with."
+
     show vivienne frowning
 
-    m "Don’t you have more than one pen."
-
-    v "I mean yeah, but now the color of the ink won’t match."
+    v "I can’t—all my notes are color-coded by historical relevance."
 
     m "..."
-
-    show vivienne default
-
-    v "All that aside, you’re doing pretty well yourself for someone I never see in lecture."
-
-    m "Maybe the trick is using multiple pens."
-
-    m "{i}( So many hours of studying wasted just to end up dead. ) {/i}"
 
     jump continue2
 
@@ -481,15 +482,15 @@ label resurrected2:
 
     show mira sighing at center
 
-    show vivienne frowning at right
+    show vivienne surprised at right
 
     m "Yeah, I got resurrected from the dead and couldn’t use that as an excuse either."
 
     show mira default
 
-    show vivienne frowning
-
     v "..."
+
+    show vivienne frowning
 
     m "..."
 
@@ -499,19 +500,151 @@ label resurrected2:
 
     m "Being yelled at, I mean. Not being dead."
 
-    v "You’re really leaning into this bit, huh?"
+    v "Whatever bit you're doing isn't as funny as you think."
 
     jump continue2
 
 
-label vividaughter:
+label daughter:
 
-    m "(extra segment we haven't written yet)"
+    show mira default at center
+
+    show vivienne frowning at right
+
+    m "Does she have no sympathy for her own daughter being sick?"
+
+    show vivienne surprised
+
+    v "..."
+
+    show vivienne frowning
+
+    v "I wish our relationship wasn’t such widespread news. How do you of all people know about it?"
+
+    hide mira
+    hide vivienne
+
+    menu:
+
+        "Finn mentioned it":
+            $ finnsnitch = True
+            jump finnsaid
+
+        "Just campus rumors":
+            jump rumors
+
+        "Me of all people?":
+            jump me
+
+
+label finnsaid:
+
+    show mira default at center
+
+    show vivienne frowning at right
+
+    m "Finn mentioned it to me offhandedly once."
+
+    show vivienne default
+
+    v "Did he also mention your pretty face?"
+
+    show mira sighing
+
+    m "Multiple times."
+
+    v "He doesn’t mean it, you know. He says it to every girl who breathes."
+
+    show mira default
+
+    m "What a relief."
+
+    jump continuetwo
+
+
+label rumors:
+    
+    show mira default at center
+
+    show vivienne frowning at right
+
+    m "It’s a remote campus. Rumors spread."
+
+    show vivienne frowning
+
+    v "I suppose, though I could count on one hand how often I see you around campus."
+
+    m "I’m standing in front of you right now."
+
+    v "Yes, and I’m still not convinced it's not a sleep deprivation-induced hallucinatory effect."
+
+    jump continueone
+
+
+label me:
+
+    show mira default at center
+
+    show vivienne frowning at right
+
+    m "What do you mean, me of all people?"
+
+    show vivienne frowning
+
+    v "I could count on one hand how often I see you around campus."
+
+    m "I’m standing in front of you right now."
+
+    v "Yes, and I’m still not convinced it's not a sleep deprivation-induced hallucinatory effect."
+
+    jump continueone
+
+
+label continueone:
+
+    hide mira
+    hide vivienne
+
+    menu: 
+
+        "I thought you slept well last night?":
+            jump lastnight
+
+        "Say nothing":
+            jump continuetwo
+
+
+label lastnight:
+
+    show mira default at center
+
+    show vivienne frowning at right
+
+    m "I thought you got your 7 hours last night?"
+
+    show vivienne surprised
+ 
+    v "It stacks up."
+
+    jump continue2
+
+
+label continuetwo:
+
+    show mira default at center
+
+    show vivienne frowning at right
+
+    v "Anyways, no, the Dean only cares about appearances."
+
+    v "...And the library’s 19th-century Impressionist paintings collection. So I'm still getting yelled at."
 
     jump continue2
 
 
 label continue2:
+
+    show mira default at center
 
     show vivienne surprised at right
 
@@ -526,25 +659,38 @@ label continue2:
 
     show mira surprised
 
-    m "{i}She disappears in a swish of braids; one almost brushes my face. It smells like summer and worn books. {/i}"
+    if vividaughter == True:
 
-    $ viv = True
-    $ vivupdate = 1
-    $ renpy.notify("The notebook has been updated")
+        m "{i}Summer and worn books again, like I expected. {/i}"
 
-    show mira default
+        show mira default
 
-    m "{i}I never noticed. {/i}"
+        m "{i}Quietly, I raise a wrist to my nose. I expect the smell of decay or saltwater, but there's neither. {/i}"
 
-    hide vivienne default
+        m "{i}The dead leave no scent. {/i}"
 
-    jump continue3
+        hide vivienne default
+
+        jump continue3
+
+    else: 
+
+        m "{i}She disappears in a swish of braids; one almost brushes my face. It smells like summer and worn books. {/i}"
+
+        $ viv = True
+        $ vupdate = 1
+        $ renpy.notify("The notebook has been updated")
+
+        m "{i}I never noticed. {/i}"
+
+        hide vivienne default
+
+        jump continue3
 
 
 label continue3:
 
     hide mira
-    hide vivienne
 
     menu:
 
@@ -560,7 +706,7 @@ label timetravel1:
 
     menu:
 
-        "Find Vivienne":
+        "Find Vivienne (-2 hrs)":
             $ remainingtime -=2
             jump V1
 
@@ -581,7 +727,8 @@ label F1:
 
     m "{i}( How does half the school seem to know where he is? I asked a passing student and they immediately pointed me this way. ){/i}"
 
-    m "{i}( Elbows and backpacks ram into my side as I make my way through the school. It’s the end of the day; the hallway is a sea of blue uniforms capped with white collars. ){/i}"
+    m "{i} Elbows and backpacks ram into my side as I make my way through the school."
+    m "{i} It’s the end of the day; the hallway is a sea of blue uniforms capped with white collars. {/i}"
 
     scene courtyard 
     with fade
@@ -594,6 +741,8 @@ label F1:
     show mira default
 
     m "Finn. I need to talk to you. Finn? Finn."
+
+    show mira sighing
 
     m "Please don’t make me push my way through that crowd. Maybe I resign myself to being an undead servant forever—"
 
@@ -755,7 +904,7 @@ label most:
 
     show mira sighing
 
-    m "Your redeeming quality is actually your ability to help me catch up on last week’s chemistry lectures. Please? I’m so close to failing the class."
+    m "Your most attractive trait is actually your ability to help me catch up on last week’s chemistry lectures. Please? I’m so close to failing the class."
 
     jump continue5
 
@@ -785,13 +934,13 @@ label continue5:
     hide finn 
     with dissolve
 
-    $ finn = True
+    $ fin = True
     
     if vividaughter == True: 
-        $ vivupdate = 3
+        $ fupdate = 2
 
     else:
-        $ vivupdate = 2
+        $ fupdate = 1
 
     $ renpy.notify("The notebook has been updated")
 
@@ -836,11 +985,11 @@ label timetravel2:
     
     menu:
 
-        "Find Vivienne":
+        "Find Vivienne (-8 hrs)":
             $ remainingtime -=8
             jump V1
 
-        "Look for Finn":
+        "Look for Finn (-1 hr)":
             $ remainingtime -=1
             jump F1
 
