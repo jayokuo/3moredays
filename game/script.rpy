@@ -9,6 +9,7 @@ define d = Character("Dean")
 define v = Character("Vivienne")
 define p = Character("Professor")
 define f = Character("Finn")
+define e = Character ("Elliot")
 
 #Locations
 
@@ -694,9 +695,9 @@ label continue3:
 
     menu:
 
-        "Look for Finn (there is a timeskip here that you will ignore for the sake of the playtest)":
-            $ remainingtime -=5
-            jump F1
+        "Look for Elliot (WIP)":
+            $ remainingtime -=1
+            jump E1
 
         "Time travel":
             jump timetravel1
@@ -713,7 +714,61 @@ label timetravel1:
         "Never mind":
             jump continue3
 
-# FINN 1 --------------------------------------SS
+# ELLIOT 1 --------------------------------------
+
+label E1:
+
+    show mira default at left 
+
+    show elliot at right
+
+    m "(Oh, finally I found him)"
+
+    m "(It looks like he’s holding something… is that some kind of bug? It looks dead.)"
+
+    m "(...)"
+
+    m "Yeah that’s definitely a bug, and it’s definitely dead."
+
+    e "You shouldn’t sneak up on someone you know. It’s pretty creepy"
+
+    m "What?! How does he know I’m here?"
+
+    m "I wasn’t- I just didn’t want to interrupt what you were doing"
+
+    e "Nah, I’ve been getting better at this. Even with your intrusion I was able to stay focused"
+
+    e "Ta da!"
+
+    m "(Oh the insect in his palm! It’s starting to fly around!)"
+
+    m "Wait, how did you—"
+
+    e "Before we get to your question, how about you answer one of mine first?"
+
+    m "Sure...?"
+
+    show elliot at center:
+        moveleft
+
+    e "So how long have you been dead for?"
+
+    m "?!"
+
+    menu:
+        "Lie":
+            jump lie
+        "Just admit you're dead":
+            jump lie
+label lie: 
+    "(Insert more dialogue)"
+
+    menu:
+
+        "Find Finn":
+            jump F1
+
+# FINN 1 --------------------------------------
 
 label F1:
 
