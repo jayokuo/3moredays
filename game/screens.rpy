@@ -296,13 +296,9 @@ screen book():
                     xalign 0.5
                     yalign 1.0
 
+
             if (fin == True):
                 add "notebook finnupdate" + str(fupdate) + ".png":
-                    xalign 0.5
-                    yalign 1.0
-
-            else:
-                add "notebook 1-2.png":
                     xalign 0.5
                     yalign 1.0
 
