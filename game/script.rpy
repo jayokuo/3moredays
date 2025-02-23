@@ -3,7 +3,8 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define res = Character("???")
+define x = Character("???")
+define r = Character("Resurrector")
 define m = Character("Mira")
 define d = Character("Dean")
 define v = Character("Vivienne")
@@ -34,37 +35,37 @@ label start:
 
     pause 3.0
 
-    res "Are you surprised to be alive again?"
+    x "Are you surprised to be alive again?"
 
     m "{i}( ...? ) {/i}"
     
     m "{i}( Waves...broken rocks against my skin...is this how I died? ) {/i}"
 
-    res "It's been a week, if you were wondering. And so far, it seems like no one else has noticed you're gone."
+    x "It's been a week, if you were wondering. And so far, it seems like no one else has noticed you're gone."
 
     m "...I don't know what else I expected."
 
     play sound "audio/sfx/SoundsCrate-Debris_Shuffle_1.mp3"
 
-    res "Don't move. Your hands are tied."
+    x "Don't move. Your hands are tied."
 
     m "Was that reallyyy necessary?"
 
-    res "I don't have much time, so let's get this over with."
+    x "I don't have much time, so let's get this over with."
 
-    res "According to the laws of necromancy, I have full control over you as your resurrector."
+    x "According to the laws of necromancy, I have full control over you as your resurrector."
 
-    res "But I won't do anything right now. There's a three-day stalemate, you see."
+    x "But I won't do anything right now. There's a three-day stalemate, you see."
 
     m "I don't see. I just woke up—do you think I understand any of this?"
 
-    res "Listen. For the next 72 hours, we will walk the world as two separate people. One living and the other undead."
+    x "Listen. For the next 72 hours, we will walk the world as two separate people. One living and the other undead."
 
-    res "But after time runs out, you're under my will forever."
+    x "But after time runs out, you're under my will forever."
 
     m "........Oh."
 
-    res "See you in three days, Mira."
+    x "See you in three days, Mira."
 
     play sound "audio/sfx/sand-walk.mp3" volume 2.75
 
@@ -649,7 +650,7 @@ label continue2:
 
     show vivienne surprised at right
 
-    v "Oh—I’m running late for my next lecture. See you next class?"
+    v "Oh—I’m running late for a meeting. See you next class?"
 
     show vivienne default
 
@@ -695,7 +696,10 @@ label continue3:
 
     menu:
 
-        "Look for Elliot (WIP)":
+        "Look for Finn":
+             $ remainingtime -=1
+             jump E1
+        "Look for Elliot":
             $ remainingtime -=1
             jump E1
 
@@ -714,59 +718,50 @@ label timetravel1:
         "Never mind":
             jump continue3
 
+
 # ELLIOT 1 --------------------------------------
 
 label E1:
 
-    show mira default at left 
+    scene hallway
 
-    show elliot at right
+    show mira default at left
 
-    m "(Oh, finally I found him)"
+    m "( I’ve been searching for the entirety of lunch break, but he’s nowhere to be found. )"
 
-    m "(It looks like he’s holding something… is that some kind of bug? It looks dead.)"
+    m "( Even the few students who did know Elliot couldn’t tell me where he was. )"
 
-    m "(...)"
+    m "( Does this person have no friends…? )"
 
-    m "Yeah that’s definitely a bug, and it’s definitely dead."
 
-    e "You shouldn’t sneak up on someone you know. It’s pretty creepy"
-
-    m "What?! How does he know I’m here?"
-
-    m "I wasn’t- I just didn’t want to interrupt what you were doing"
-
-    e "Nah, I’ve been getting better at this. Even with your intrusion I was able to stay focused"
-
-    e "Ta da!"
-
-    m "(Oh the insect in his palm! It’s starting to fly around!)"
-
-    m "Wait, how did you—"
-
-    e "Before we get to your question, how about you answer one of mine first?"
-
-    m "Sure...?"
-
-    show elliot at center:
-        moveleft
-
-    e "So how long have you been dead for?"
-
-    m "?!"
 
     menu:
-        "Lie":
-            jump lie
-        "Just admit you're dead":
-            jump lie
-label lie: 
+        "Feign confusion":
+            jump confusion
+
+        "Confess the truth":
+            jump truth
+
+        "Secret third option":
+            jump third
+
+label confusion:
+
     "(Insert more dialogue)"
 
-    menu:
+label truth:
 
-        "Find Finn":
-            jump F1
+    "(Insert more dialogue)"
+
+label third:
+
+    "(Insert more dialogue)"
+
+menu:
+
+    "Look for Finn":
+        $ remainingtime -=4
+        jump F1
 
 # FINN 1 --------------------------------------
 
@@ -1033,7 +1028,7 @@ label sleep:
 
     m "{i}( I’ll go wander the hallways wailing like the ghost I’m supposed to be until someone finds a way to put me to rest permanently. ){/i}"
 
-    jump continue7
+    jump continue7R
 
 
 label timetravel2:
