@@ -344,7 +344,7 @@ label skipped:
 
     m "Oh, I skipped. Got yelled at by the Dean earlier."
 
-    show vivienne frowning
+    show vivienne frown
 
     v "Definitely an experience, huh?"
 
@@ -356,7 +356,7 @@ label skipped:
     
     v "Against my will, actually. I got sick with an awful cold."
 
-    show vivienne frowning
+    show vivienne frown
 
     v "Can’t wait for my turn to be yelled at by the Dean."
 
@@ -377,7 +377,7 @@ label resurrected:
 
     m "..."
 
-    show vivienne frowning
+    show vivienne frown
 
     v "Has anyone ever told you that they like your sense of humor?"
 
@@ -389,7 +389,7 @@ label resurrected:
 
     v "Oh, I couldn’t make it either. I got sick with an awful cold."
 
-    show vivienne frowning
+    show vivienne frown
 
     v "Can’t wait to be yelled at by the Dean."
 
@@ -404,7 +404,7 @@ label shirtandslacks:
 
     m "I threw on an old shirt and unearthed a pair of slacks. I don’t get why we’re required to go to these events."
 
-    show vivienne frowning
+    show vivienne frown
 
     v  "It’s all for the school’s publicity. I’d rather hole up in my dorm and read."
 
@@ -412,7 +412,7 @@ label shirtandslacks:
 
     v "Against my will, actually. I got sick with an awful cold."
 
-    show vivienne frowning
+    show vivienne frown
 
     v "Can’t wait to be yelled at by the Dean."
 
@@ -455,7 +455,7 @@ label fine:
 
     v "What—how else do you think I recovered this fast?"
 
-    show vivienne frowning
+    show vivienne frown
 
     v "But now the Dean will think I’m making up excuses, won’t she."
 
@@ -471,7 +471,7 @@ label fine:
 
     m "To write with."
 
-    show vivienne frowning
+    show vivienne frown
 
     v "I can’t—all my notes are color-coded by historical relevance."
 
@@ -492,7 +492,7 @@ label resurrected2:
 
     v "..."
 
-    show vivienne frowning
+    show vivienne frown
 
     m "..."
 
@@ -511,7 +511,7 @@ label daughter:
 
     show mira default at center
 
-    show vivienne frowning at right
+    show vivienne frown at right
 
     m "Does she have no sympathy for her own daughter being sick?"
 
@@ -519,7 +519,7 @@ label daughter:
 
     v "..."
 
-    show vivienne frowning
+    show vivienne frown
 
     v "I wish our relationship wasn’t such widespread news. How do you of all people know about it?"
 
@@ -543,7 +543,7 @@ label finnsaid:
 
     show mira default at center
 
-    show vivienne frowning at right
+    show vivienne frown at right
 
     m "Finn mentioned it to me offhandedly once."
 
@@ -568,11 +568,11 @@ label rumors:
     
     show mira default at center
 
-    show vivienne frowning at right
+    show vivienne frown at right
 
     m "It’s a remote campus. Rumors spread."
 
-    show vivienne frowning
+    show vivienne frown
 
     v "I suppose, though I could count on one hand how often I see you around campus."
 
@@ -587,11 +587,11 @@ label me:
 
     show mira default at center
 
-    show vivienne frowning at right
+    show vivienne frown at right
 
     m "What do you mean, me of all people?"
 
-    show vivienne frowning
+    show vivienne frown
 
     v "I could count on one hand how often I see you around campus."
 
@@ -620,7 +620,7 @@ label lastnight:
 
     show mira default at center
 
-    show vivienne frowning at right
+    show vivienne frown at right
 
     m "I thought you got your 7 hours last night?"
 
@@ -635,7 +635,7 @@ label continuetwo:
 
     show mira default at center
 
-    show vivienne frowning at right
+    show vivienne frown at right
 
     v "Anyways, no, the Dean only cares about appearances."
 
