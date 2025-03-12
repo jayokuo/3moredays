@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 292: Line is indented, but the preceding text statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    xalign 0.5
-    ^
+File "game/script.rpy", line 1283: show statement expects a non-empty block.
+    show mira smile at center:
+                              ^
 
 Ren'Py Version: Ren'Py 8.3.3.24111502
-Thu Feb 20 16:49:49 2025
+Wed Mar 12 04:24:56 2025

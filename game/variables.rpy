@@ -6,21 +6,32 @@ transform left:
 transform right:
     xalign 0.75 yalign 0.0
 
+transform closeleft:
+    xalign 0.4 yalign 0.0
+
 transform moveleft:
-    xalign 0.75
-    ease 0.4 xalign 0.5
+    ease 0.5 xalign 0.25
 
 transform moveright:
-    xalign 0.25
-    ease 0.4 xalign 0.5
+    ease 0.5 xalign 0.75
+
+transform movecenter:
+    ease 0.5 xalign 0.5
+
+transform movecloseleft:
+    ease 0.4 xalign 0.4
 
 transform moveoffleft:
-    xalign 0.75
-    ease 0.5 xalign -0.5
+    ease 0.6 xalign -0.5
 
 transform moveoffright:
-    xalign 0.25
     ease 2 xalign 1.5
+
+transform flip:
+    xzoom -1.0
+
+transform reflip:
+    xzoom 1.0
 
 # TRANSITIONS --------------------------------------
 
@@ -52,3 +63,6 @@ default vividaughter = False
 
 # tell vivienne that finn gave you this information
 default finnsnitch = False
+
+# look for finn instead of elliot
+default findfinn = False

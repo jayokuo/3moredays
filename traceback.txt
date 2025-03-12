@@ -1,32 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "renpy/common/00start.rpy", line 193, in script
-    python:
-  File "renpy/common/00start.rpy", line 194, in <module>
-    renpy.execute_default_statement(True)
-  File "game/variables.rpy", line 43, in execute_default
-    default flirtmeter = 0
-Exception: store.flirtmeter is being given a default a second time.
+  File "game/script.rpy", line 967, in script
+    show elliot default right
+Exception: Image 'elliot default' does not accept attributes 'right'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/00start.rpy", line 193, in script
-    python:
-  File "/Volumes/renpy-8.3.3-sdk 1/renpy-8.3.3-sdk/renpy/ast.py", line 821, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "/Volumes/renpy-8.3.3-sdk 1/renpy-8.3.3-sdk/renpy/python.py", line 1178, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "renpy/common/00start.rpy", line 194, in <module>
-    renpy.execute_default_statement(True)
-  File "/Volumes/renpy-8.3.3-sdk 1/renpy-8.3.3-sdk/renpy/exports/statementexports.py", line 372, in execute_default_statement
-    i.execute_default(start)
-  File "game/variables.rpy", line 43, in execute_default
-    default flirtmeter = 0
-Exception: store.flirtmeter is being given a default a second time.
+  File "game/script.rpy", line 967, in script
+    show elliot default right
+  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/ast.py", line 1111, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/ast.py", line 1074, in show_imspec
+    renpy.config.show(name,
+  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/exports/displayexports.py", line 477, in show
+    if not base.find_target() and renpy.config.missing_show:
+  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/display/image.py", line 421, in find_target
+    self.target = target._duplicate(a)
+  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/display/displayable.py", line 249, in _duplicate
+    args.extraneous()
+  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/display/displayable.py", line 109, in extraneous
+    raise Exception("Image '{}' does not accept attributes '{}'.".format(
+Exception: Image 'elliot default' does not accept attributes 'right'.
 
 macOS-14.5-arm64-arm-64bit arm64
 Ren'Py 8.3.3.24111502
-5 More Days 1.0
-Fri Feb 14 01:22:59 2025
+3 More Days 1.0
+Wed Mar 12 03:29:39 2025

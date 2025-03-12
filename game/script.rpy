@@ -122,7 +122,6 @@ label deansoffice:
     
     d "If it troubles you so much to attend this academy, there are hundreds of other students lining up to take your place." 
 
-
     m "{i}( Is that a list of names for other students who missed the ball? Damn, she's going to be out of breath by the end of the day. ){/i}"
 
     d "Now, get out of my office."
@@ -152,7 +151,8 @@ label deansoffice:
 
     m "My resurrector must be one of the other students who missed the ball."
 
-    hide mira default
+    hide mira
+    with dissolve
 
     menu:
         "I wish there was a way to go back":
@@ -197,7 +197,7 @@ label deansoffice:
     play sound "audio/sfx/SoundsCrate-Wall_Break_1.mp3"
 
     show mira at center:
-        moveright
+        movecloseleft
 
     m "...!" 
 
@@ -251,7 +251,7 @@ label tutorial:
 
     $ notebook = True
 
-    "Click the {color=#56768f}notebook{/color} in the bottom right to access the character profiles."
+    "{i}Click the {color=#56768f}notebook{/color} in the bottom right to access the character profiles. {/i}"
 
     m "The sooner I find the resurrector, the sooner I can go back to being dead."
 
@@ -269,7 +269,8 @@ label tutorial:
 
     m "This is going to be the first lecture I've gone to in weeks."
 
-    hide mira sighing
+    hide mira
+    with dissolve
 
     menu: 
 
@@ -281,7 +282,7 @@ label tutorial:
 
 label V1:
 
-    show classroom
+    scene classroom
     with fade
 
     show ochem box
@@ -306,8 +307,8 @@ label V1:
     show vivienne default at right
     with dissolve
 
-    show mira default at left:
-        moveright
+    show mira default at center:
+        movecenter 
 
     m "Did I miss anything important?"
 
@@ -323,6 +324,7 @@ label V1:
 
     hide mira 
     hide vivienne 
+    with dissolve
 
     menu: 
 
@@ -422,8 +424,8 @@ label shirtandslacks:
 label continue1:
     
     hide mira 
-
     hide vivienne 
+    with dissolve
 
     menu:
 
@@ -525,6 +527,7 @@ label daughter:
 
     hide mira
     hide vivienne
+    with dissolve
 
     menu:
 
@@ -555,7 +558,7 @@ label finnsaid:
 
     m "Multiple times."
 
-    v "He doesn’t mean it, you know. He says it to every girl who breathes."
+    v "He doesn’t mean it, you know. He says that to every girl who breathes."
 
     show mira default
 
@@ -605,7 +608,7 @@ label me:
 label continueone:
 
     hide mira
-    hide vivienne
+    with dissolve
 
     menu: 
 
@@ -671,7 +674,7 @@ label continue2:
 
         m "{i}The dead leave no scent. {/i}"
 
-        hide vivienne default
+        hide vivienne
 
         jump continue3
 
@@ -685,7 +688,7 @@ label continue2:
 
         m "{i}I never noticed. {/i}"
 
-        hide vivienne default
+        hide vivienne
 
         jump continue3
 
@@ -693,12 +696,15 @@ label continue2:
 label continue3:
 
     hide mira
+    with dissolve
 
     menu:
 
         "Look for Finn":
              $ remainingtime -=1
+             $ findfinn = True
              jump E1
+
         "Look for Elliot":
             $ remainingtime -=1
             jump E1
@@ -724,48 +730,477 @@ label timetravel1:
 label E1:
 
     scene hallway
+    with fade
 
     show mira default at left
+    with dissolve
 
-    m "( I’ve been searching for the entirety of lunch break, but he’s nowhere to be found. )"
+    m "{i}( I’ve been searching for the entirety of lunch break, but he’s nowhere to be found. ){/i}"
 
-    m "( Even the few students who did know Elliot couldn’t tell me where he was. )"
+    if findfinn == True:
 
-    m "( Does this person have no friends…? )"
+        m "{i}( At least five different students gave me conflicting information. ){/i}"
 
+        m "{i}( Guess that's what happens when you're as popular and sought after as Finn. ){/i}"
 
+        show mira sighing
+
+        m "{i}( Sounds like a nightmare. ){/i}"
+
+    else:
+
+        m "{i}( Even the few students who did know Elliot couldn’t tell me where he was. ){/i}"
+
+        show mira sighing
+
+        m "{i}( Does this person have no friends…? ){/i}"
+
+        r "{i}( It's been a week, if you were wondering. And so far, no one else has noticed you're gone. ){/i}"
+
+        show mira sighing
+
+        m "{i}( Shut up. ){/i}"
+
+    show mira default
+
+    m "...?"
+
+    m "{i}( Is that a dead beetle on the desk? ){/i}"
+
+    m "{i}( Wish that were me. ){/i}"
+
+    show elliot smile at right, flip
+    with dissolve
+
+    # figure out how to fade in without disappearing dialogue box
+
+    x "~~"
+
+    m "{i}With agonizing slowness, the beetle rolls over and raises itself on its spindly legs. It flaps its wings, once. {/i}"
+
+    show mira surprised
+
+    m "{i}( !! ) {/i}"
+
+    m "{i}( Necromancy. ) {/i}"
+
+    show elliot default
+
+    x "You shouldn’t spy on people, you know. It’s rude."
+
+    m "—!!"
+
+    show mira default
+
+    m "...I didn’t want to interrupt what you were doing."
+
+    show elliot smile
+
+    x "Come on, little one."
+
+    m "{i}He scoops the beetle into his hands. It flaps its wings again in irritation and sets off flying around the classroom. {/i}"
+
+    # elliot turns around
+
+    show elliot default at right, reflip
+
+    e "Elliot. Nice to meet you."
+
+    show mira surprised
+
+    m "I—You—Why are you resurrecting dead beetles for fun??"
+
+    e "Hang on; before we get to that, how about you answer a question of my own?"
+
+    show mira default 
+
+    show elliot smile at closeleft behind mira:
+        movecloseleft
+
+    m "...?"
+
+    show elliot default
+
+    e "How long have you been dead?"
+
+    show mira surprised
+
+    m "—!!"
+
+    m "{i}( Fuck. ) {/i}"
+
+    hide mira
+    hide elliot
+    with dissolve
 
     menu:
         "Feign confusion":
             jump confusion
 
+        "Deliberately misinterpret the question":
+            jump misinterpret
+
         "Confess the truth":
             jump truth
 
-        "Secret third option":
-            jump third
 
 label confusion:
+    
+    show mira default at left
 
-    "(Insert more dialogue)"
+    show elliot default at closeleft
+
+    m "What are you talking about??"
+
+    m "Most girls don’t take being told they resemble a rotting corpse as a compliment, you know."
+
+    jump stabbystab
+
+
+label misinterpret:
+
+    show mira default at left
+
+    show elliot default at closeleft
+
+    m "Inside? About 15 years or so, now."
+
+    m "The anniversary of my depression was just last week, actually."
+
+    jump stabbystab
+
+
+label stabbystab:
+
+    e "..."
+
+    show elliot stab
+
+    m "!!"
+
+    m "{i}( I look down. He’s stabbed a pen into the side of my forearm. ){/}"
+
+    m "...Ow?"
+
+    show elliot grin
+
+    e "Can’t feel pain, huh?"
+
+    show mira sighing
+
+    e "I knew it. You {i}are{/i} dead."
+
+    jump continue4
+
 
 label truth:
 
-    "(Insert more dialogue)"
+    show mira sighing at left
 
-label third:
+    show elliot default at closeleft
 
-    "(Insert more dialogue)"
+    m "Less than a day."
 
-menu:
+    show elliot curious
 
-    "Look for Finn":
-        $ remainingtime -=4
-        jump F1
+    e "{i}Fascinating{/i}."
+
+    jump continue4
+
+
+label continue4:
+
+    show mira default
+
+    show elliot 
+
+    m "{i}My hand is tight around his wrist before I realize what has happened. {/i}"
+
+    m "Don’t tell {i}anyone. {/i}"
+
+    show elliot default
+
+    e "Relax, relax. Why would I do that? They’d be all over you in an instant."
+
+    show mira sighing
+
+    m "You’re all over me right now."
+
+    show elliot smile at right:
+        moveright
+
+    e "Whoops."
+
+    show mira default
+
+    m "How did you know?"
+
+    show elliot default
+
+    e "Classic signs of a resurrected being. Colder air around you, inability to feel pain."
+
+    m "{i}( So that’s how he knew I was watching him—I’m like a walking air conditioner. ) {/i}"
+
+    m "{i}( I wonder if Vivienne or anyone else noticed.) {/i}"
+
+    e "But what gave it away was your eyes. I couldn’t get a good look at them the last time I saw you, but now it’s obvious."
+
+    e "They don’t reflect light at any angle."
+
+    show mira surprised
+
+    m "{i}( What? I can’t remember having ever talked to Elliot before this. ) {/i}"
+
+    show mira default
+
+    m "When...exactly did you see me?"
+
+    e "The night of the masquerade."
+
+    e "I was alone in the dorms because the spell I used to unwrinkle my shirt accidentally burnt a hole in my bedsheets, so I went out into the hallway to get some water."
+
+    e "I saw you enter the building and make your way up the stairs."
+
+    m "{i}( I did go back to the dorms after I managed to untie myself…it’s a plausible alibi. ) {/i}"
+
+    m "{i}( But it’s also possible that he resurrected me and then went straight back, not expecting to see me come in a few hours later. ) {/i}"
+
+    hide mira
+    hide elliot
+    with dissolve
+
+    menu:
+
+        "Ask if he saw anything else that night":
+            jump whatelse
+
+        "Question his absence at the masquerade further":
+            jump absence
+
+        "Tell him to use an iron like everyone else":
+            jump iron
+
+
+label whatelse:
+    
+    show mira default at left
+
+    show elliot default at right
+
+    m "Did you happen to see anything else that night?"
+
+    e "There were these two girls making out in the West Hall."
+
+    show mira sighing
+
+    m "...Anything unusual."
+
+    e "One of them started choking the other one halfway through."
+
+    m "..."
+
+    m "I’m going to take that as a no."
+
+    show mira default
+
+    e "If you mean anything magickal, no. I was in the dorms all night cleaning up the side effects of my spells."
+
+    show elliot curious at center:
+        movecenter
+
+    e "Wait, why?"
+
+    show elliot at closeleft:
+        movecloseleft
+
+    e "Did something happen?"
+
+    show mira surprised
+
+    m "Woah."
+
+    show mira default
+
+    show elliot default at right:
+        moveright
+
+    e "Sorry, sorry. I’ve been told I’m not great with personal boundaries."
+
+    show mira sighing
+
+    m "Why would anyone tell you that?"
+
+    show mira default
+
+    show elliot curious
+
+    e "Did it have something to do with how you became undead?"
+
+    e "Speaking of, what else can you do as a dead person? Do you need to eat or sleep? Can you die again, or are you effectively invincible now?"
+
+    jump continue5
+
+
+label absence:
+
+    show mira default at left
+
+    show elliot default at right
+
+    m "You missed the masquerade because you got a small hole in your sheets?"
+
+    e "Well no, I accidentally created an oil spill across the floor earlier and set a bird loose down the hallway."
+
+    m "...How."
+
+    e "Transmutation spells are hard, okay! I needed some hair grease and a few feathers for my mask last minute."
+
+    e "On paper the equations worked perfectly fine, but in practice..."
+
+    show mira sighing
+
+    m "{i}( There’s no way someone can be this bad at something, even if it’s an under-studied subject. ) {/i}"
+
+    e "Anyway, what else can you do as a dead person? Do you need to eat or sleep? Can you die again, or are you effectively invincible now?"
+
+    jump continue5
+
+
+label iron:
+
+    show mira default at left
+
+    show elliot default at right
+
+    m "Have you tried just using an iron like everyone else?"
+
+    e "If you saw a building with a stairway and a slide, would you take the stairway?"
+
+    show mira sighing
+
+    m "If the slide had a wildfire at the end of it, yes."
+
+    e "You’re too boring. Plus, I don’t own an iron."
+
+    show mira default
+
+    m "Why do you not—"
+
+    show mira surprised
+
+    m "Actually, I’ve never touched an iron in my life."
+
+    show mira default
+
+    e "Anyway, what else can you do as a dead person? Do you need to eat or sleep? Can you die again, or are you effectively invincible now?"
+
+    jump continue5
+
+
+label continue5:
+
+    show mira sighing
+
+    m "I’m not your personal lab rat."
+
+    e "When am I going to get another chance to study the effects of necromancy so directly? Can I do a few tests with you sometime?"
+
+    e "Nothing dangerous, I promise."
+
+    m "The hole in your bedsheets begs to differ."
+
+    m "{i}The rest of my protest dies on my tongue, however. I need to find out if Elliot was the one who resurrected me as some sort of experiment. {/i}"
+
+    show mira default
+
+    m "Fine—only a few. And the second I see any fire, I’m walking away."
+
+    show elliot grin
+
+    e "I thought you just said you wouldn’t be my personal lab rat—"
+
+    m "I change my mind, actually."
+
+    show elliot default
+
+    e "Waiit, I was kidding. Meet me tomorrow at 9—what’s your name?"
+
+    m "Mira. Fine, sure."
+
+    e "Okay, I’ll get going. I should at least attend the last half hour of my literature class."
+
+    show elliot at right, flip:
+        moveoffright
+
+    m "{i}( He's aware I’m dead. But somehow, the knowledge of that doesn’t feel like a threat. ){/i}"
+
+    show mira surprised
+
+    m "{i}( It’s almost...a relief? ){/i}"
+
+    show mira default
+
+    m "{i}Somewhere during our conversation, the beetle has landed back on the desk. I watch for any further signs of movement, but its body is still.{/i}"
+
+    $ renpy.notify("Pretend the notebook has been updated")
+
+    # change once notebook updates lol
+
+    m "{i}It’s dead once more.{/i}"
+
+    # haha what if the bug foreshadowed her fate that'd be crazy
+
+    jump continue6
+
+
+label continue6:
+
+    hide mira
+    with dissolve
+
+    if findfinn == True:
+
+        menu:
+
+            "Look for Finn again":
+                $ remainingtime -=4
+                jump F1
+
+            "Time travel":
+                jump timetravel2
+    else:
+
+        menu:
+
+            "Look for Finn":
+                $ remainingtime -=4
+                jump F1
+
+            "Time travel":
+                jump timetravel2
+
+
+label timetravel2:
+
+    menu:
+
+        "Find Vivienne (-5 hrs)":
+            $ remainingtime -=5
+            jump V1
+
+        "Look for Finn / Elliot":
+            $ remainingtime -=2
+            jump E1
+
+        "Never mind":
+            jump continue6
+
 
 # FINN 1 --------------------------------------
 
 label F1:
+
+    $ flirtmeter = 0
 
     scene hallway
     with fade
@@ -775,10 +1210,14 @@ label F1:
 
     # SFX: crowd
 
-    m "{i}( How does half the school seem to know where he is? I asked a passing student and they immediately pointed me this way. ){/i}"
+    m "{i}The moment school ended, everyone immediately seemed to know where he was. {/i}"
 
-    m "{i} Elbows and backpacks ram into my side as I make my way through the school."
+    m "{i} Elbows and backpacks ram into my side as I make my way through the academy."
+
     m "{i} It’s the end of the day; the hallway is a sea of blue uniforms capped with white collars. {/i}"
+
+    # girl who spends all her time staring at the ocean: 
+    # getting a lot of ocean vibes from this
 
     scene courtyard 
     with fade
@@ -787,6 +1226,9 @@ label F1:
     with dissolve 
 
     m "{i}( There he is—surrounded by a tide pool of chattering students. ){/i}"
+
+    # girl who spends all her time staring at the ocean, again: 
+    # getting a lot of ocean vibes from this
 
     show mira default
 
@@ -814,7 +1256,7 @@ label F1:
 
     show finn default
 
-    m "{i}( He picks up the ball that slammed into the side of my head and tosses it back to a student who winces in apology. ){/i}"
+    m "{i}He picks up the ball that slammed into the side of my head and tosses it back to a student who winces in apology. {/i}"
 
     m "Yeah, I can’t feel pain."
 
@@ -824,6 +1266,7 @@ label F1:
 
     hide mira
     hide finn
+    with dissolve
 
     menu:
 
@@ -837,8 +1280,10 @@ label F1:
 
 label flirt:
         
-        show mira smile at center:
-            moveright
+        show mira smile at left
+
+        show mira at center:
+            movecenter
 
         show finn flirt at right
 
@@ -856,7 +1301,7 @@ label flirt:
 
         f "Ugh, surely I have more redeeming qualities?"
 
-        jump continue4
+        jump continue7
 
 
 label telloff:
@@ -872,13 +1317,16 @@ label telloff:
 
         f "Ugh, surely I have more redeeming qualities than my grades?"
 
-        jump continue4
+        jump continue7
 
 
-label continue4:
+label continue7:
 
     hide mira
+    with dissolve
+
     hide finn
+    with dissolve
 
     menu: 
 
@@ -935,7 +1383,7 @@ label more:
 
     m "Your redeeming quality is your ability to help me catch up on last week’s chemistry lectures. Please? I’m so close to failing the class."
 
-    jump continue5
+    jump continue8
     
 
 label most:
@@ -956,10 +1404,10 @@ label most:
 
     m "Your most attractive trait is actually your ability to help me catch up on last week’s chemistry lectures. Please? I’m so close to failing the class."
 
-    jump continue5
+    jump continue8
 
 
-label continue5:
+label continue8:
 
     show mira default at center
 
@@ -967,7 +1415,7 @@ label continue5:
 
     f "..."
 
-    m "{i}( There’s a moment of silence as I watch the synapses go off in his head, trying to decide how much he wants to uphold his reputation as the boy who does anything and everything. ){/i}"
+    m "{i}There’s a moment of silence as I watch the synapses go off in his head, trying to decide how much he wants to uphold his reputation as the boy who does anything and everything. {/i}"
 
     show finn default
 
@@ -1000,22 +1448,23 @@ label continue5:
 
     # here we need to change what info the notebook fills in depending on which dialogue options you chose
 
-    jump continue6
+    jump continue9
 
 
-label continue6:
+label continue9:
 
     hide mira
     hide finn
+    with dissolve
 
     menu:
 
-        "Go back to the dorms and sleep.":
+        "Go back to the dorms and sleep":
             $ remainingtime -=1
             jump sleep
 
         "Time travel":
-            jump timetravel2
+            jump timetravel3
 
 
 label sleep:
@@ -1028,10 +1477,10 @@ label sleep:
 
     m "{i}( I’ll go wander the hallways wailing like the ghost I’m supposed to be until someone finds a way to put me to rest permanently. ){/i}"
 
-    jump continue7R
+    jump continue10
 
 
-label timetravel2:
+label timetravel3:
     
     menu:
 
@@ -1039,15 +1488,19 @@ label timetravel2:
             $ remainingtime -=8
             jump V1
 
-        "Look for Finn (-1 hr)":
+        "Look for Finn or Elliot (-5 hrs)":
+            $ remainingtime -=2
+            jump E1
+
+        "Look for Finn again (-1 hr)":
             $ remainingtime -=1
             jump F1
 
         "Never mind":
-            jump continue6
+            jump continue9
 
 
-label continue7:
+label continue10:
 
     scene end of day 1
 
