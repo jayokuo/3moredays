@@ -83,10 +83,13 @@ define gui.notify_text_size = 22
 ## The size of the game's title.
 define gui.title_text_size = 75
 
-## Defining the notebook text style
+## Defining different text styles
 style notebook_text:
     size 34
     color "#4c7791"
+
+style plain_text:
+    color "fffcf4"
 
 ## Main and Game Menus #########################################################
 
@@ -155,7 +158,7 @@ define gui.button_width = None
 define gui.button_height = None
 
 ## The borders on each side of the button, in left, top, right, bottom order.
-define gui.button_borders = Borders(6, 6, 6, 6)
+define gui.button_borders = Borders(0, 6, 0, 6)
 
 ## If True, the background image will be tiled. If False, the background image
 ## will be linearly scaled.
@@ -449,7 +452,7 @@ init python:
         ## Change the size and spacing of various things.
         gui.slider_size = 54
 
-        gui.choice_button_width = 1860
+        gui.choice_button_width = 4000
         gui.choice_button_text_size = 45
 
         gui.navigation_spacing = 30

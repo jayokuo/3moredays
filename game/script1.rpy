@@ -271,6 +271,11 @@ label tutorial:
 
 label V1:
 
+    if e1_done > 0:
+        $ sera_day1 = True
+
+    $ v1_done += 1
+
     scene classroom
     with fade
 
@@ -654,7 +659,7 @@ label continue2:
 
     show mira surprised
 
-    if vividaughter == True:
+    if v1_done > 0:
 
         m "{i}Summer and worn books again, like I expected. {/i}"
 
@@ -665,13 +670,11 @@ label continue2:
         m "{i}The dead leave no scent. {/i}"
 
         hide vivienne
-
-        if v1_done ==True:
-
+            
+        if sera_day1 == True:
             jump S1
 
         else:
-            
             jump continue3
 
     else: 
@@ -688,13 +691,7 @@ label continue2:
         # is it gay to notice the way your classmate smells 
         # when you're in the middle of a death or life situation
 
-        if v1_done ==True:
-
-            jump S1
-
-        else:
-
-            jump continue3
+        jump continue3
 
 
 label continue3:
@@ -733,7 +730,7 @@ label timetravel1:
 
 label E1:
 
-    $ v1_done = True
+    $e1_done += 1
 
     scene hallway
     with fade
@@ -851,6 +848,7 @@ label E1:
     with dissolve
 
     menu:
+
         "Feign confusion":
             jump confusion
 
@@ -1608,13 +1606,16 @@ label continue9:
 
 label sleep:
     
-    show mira default
+    scene blackscreen
+    with fade
 
-    m "{i}( Oh right, I don’t need sleep anymore. ){/i}"
+    $ hide_menu1()
 
-    show mira sighing
+    centered "{color=#fffcf4}Oh right, I don’t need sleep anymore.{/color}"
 
-    m "{i}( I’ll go wander the hallways wailing like the ghost I’m supposed to be until someone finds a way to put me to rest permanently. ){/i}"
+    centered "{color=#fffcf4}I’ll go wander the hallways wailing like the ghost I’m supposed to be until someone finds a way to put me to rest permanently.{/color}"
+
+    centered "{font=Marker Felt.ttf} {size=40} {color=#fffcf4} End of Day 1 {/size} \n {size=35} {color=#fffcf4} 24 hours remaining {/color} {/size} {/font}"
 
     jump S1
 

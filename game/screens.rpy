@@ -383,7 +383,6 @@ screen book():
                     focus_mask True
 
 
-
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
 ## the player has not explicitly hidden the interface.
 ##init python:

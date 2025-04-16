@@ -12,6 +12,11 @@ python early:
         store.hourglass = True
         renpy.hide("locationbox")
 
+    def hide_menu1():
+        store.notebook = False
+        store.quick_menu = False
+        store.hourglass = False
+
     def show_menu1():
         store.quick_menu = True
         renpy.hide("locationbox")

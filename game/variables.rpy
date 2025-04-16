@@ -9,6 +9,9 @@ transform right:
 transform closeleft:
     xalign 0.35 yalign 0.0
 
+transform farleft:
+    xalign 0.1 yalign 0.0
+
 transform moveleft:
     ease 0.5 xalign 0.25
 
@@ -21,8 +24,11 @@ transform movecenter:
 transform movecloseleft:
     ease 0.4 xalign 0.35
 
+transform movefarleft:
+    ease 0.4 xalign 0.1
+
 transform moveoffleft:
-    ease 0.6 xalign -0.5
+    ease 1.0 xalign -0.5
 
 transform moveoffright:
     ease 2 xalign 1.5
@@ -32,6 +38,10 @@ transform flip:
 
 transform reflip:
     xzoom 1.0
+
+transform kabedon:
+    xalign 0.5
+    ease 0.3 xalign 0.35
 
 # TRANSITIONS --------------------------------------
 
@@ -59,10 +69,11 @@ default remainingtime = 72
 default day = 1
 default flirtmeter = 0
 
+default v1_done = 0
+default e1_done = 0
+
 # VARIABLES --------------------------------------
 
-# complete vivienne's intro scene for the first time
-default v1_done = False
 
 # look for finn instead of elliot
 default findfinn = False
@@ -75,3 +86,9 @@ default vividaughter = False
 
 # tell vivienne that finn gave you this information
 default finnsnitch = False
+
+# meet sera on day 1
+default sera_day1 = False
+
+# suggest another way to get back at Aster
+default aster_revenge = False
