@@ -260,13 +260,13 @@ screen quick_menu():
             textbutton _("Prefs") action ShowMenu('preferences')
 
     if notebook:
-        imagebutton auto "notebookicon_%s" action ShowMenu('book'): 
+        imagebutton auto "icon_%s" action ShowMenu('book'): 
             xalign .97
             yalign .97
             focus_mask True
 
     if hourglass:
-        add "countdowntimer"+ str(day) +".png":
+        add "ui/hourglass/hourglass"+ str(day) +".png":
             xalign 0.0
             yalign 0.97
         text "[remainingtime]":
@@ -274,6 +274,7 @@ screen quick_menu():
             size 26
             xalign 0.045
             yalign 0.861
+
  
 ## Notebook
 
@@ -281,42 +282,104 @@ screen book():
     tag menu
 
     if notebook:
-        add "blackscreen.png":
+        add "ui/general/blackscreen.png":
             alpha 0.55
 
         if (pagenumber == 0):
                 
-            if (viv == True):
-                add "notebook vivupdate" + str(vupdate) + ".png":
+            add "ui/notebook/1-2.png":
+                xalign 0.5
+                yalign 1.0
+
+            if (vphoto == True):
+
+                add "ui/notebook/updates/vphoto.png":
                     xalign 0.5
                     yalign 1.0
 
-            else:
-                add "notebook 1-2.png":
+            if (fphoto == True):
+
+                add "ui/notebook/updates/fphoto.png":
                     xalign 0.5
                     yalign 1.0
 
+                
+            if (vupdate >= 1):
 
-            if (fin == True):
-                add "notebook finnupdate" + str(fupdate) + ".png":
-                    xalign 0.5
-                    yalign 1.0
+                text "11" style "notebook_text":
+                    xalign 0.355
+                    yalign 0.28
+
+                text "sick" style "notebook_text":
+                    xalign 0.36
+                    yalign 0.424
+
+            if (vupdate >= 2):
+
+                text "daughter of the Dean" style "notebook_text":
+                    xalign 0.31
+                    yalign 0.77
+
+            if (fupdate >= 1):
+
+                text "10" style "notebook_text":
+                    xalign 0.79
+                    yalign 0.28
+
+                text "everything" style "notebook_text":
+                    xalign 0.88
+                    yalign 0.35
+
+                text "sick???" style "notebook_text":
+                    xalign 0.83
+                    yalign 0.424
+
 
         if (pagenumber == 1):
-                add "notebook 3-4.png":
-                    xalign 0.5
+
+            add "ui/notebook/3-4.png":
+                xalign 0.5
+                yalign 1.0
+            
+            if (ephoto == True):
+
+                add "ui/notebook/updates/ephoto.png":
+                    xalign 0.5 
                     yalign 1.0
+
+            if (eupdate >= 1):
+
+                text "9" style "notebook_text":
+                    xalign 0.355
+                    yalign 0.28
+
+                text "magick spell" style "notebook_text":
+                    xalign 0.395
+                    yalign 0.424
+
+                text "gone wrong" style "notebook_text":
+                    xalign 0.331
+                    yalign 0.493
+
+                text "use me" style "notebook_text":
+                    xalign 0.396
+                    yalign 0.56
+
+                text "as an experiment" style "notebook_text":
+                    xalign 0.356
+                    yalign 0.63
+
         if (pagenumber == 2):
-                add "notebook 5-6.png":
+                add "ui/notebook/5-6.png":
                     xalign 0.5
                     yalign 1.0
         fixed:
-            imagebutton auto "notebook_x_%s" focus_mask True action Return()
+            imagebutton auto "x_%s" focus_mask True action Return()
             if (pagenumber != 2):
-                imagebutton auto "notebook_arrow_right_%s" action (SetVariable("pagenumber", pagenumber + 1)):
+                imagebutton auto "arrow right_%s" action (SetVariable("pagenumber", pagenumber + 1)):
                     focus_mask True
             if (pagenumber != 0):
-                imagebutton auto "notebook_arrow_left_%s" action (SetVariable("pagenumber", pagenumber -1)):
+                imagebutton auto "arrow left_%s" action (SetVariable("pagenumber", pagenumber -1)):
                     focus_mask True
 
 
@@ -617,7 +680,7 @@ screen about():
             if gui.about:
                 text "[gui.about!t]\n"
 
-            text _("This game was made for ARTG170 Jam 2 in fall 2024!\n\n\nWriters - Jayo, Katya\nProgrammers - Joey, Scott\nCharacter Art - Jayo, Katya\nBackgrounds - Ela, Katya\nUI - Jayo, Katya\nMusic - Adrian\n\nSound Effects from productioncrate.com & pixabay.com")
+            text _("This game was made as a capstone project for the Arts, Games, and Playable Media degree at UC Santa Cruz.\n\n\nDirector - Jayo\nWriting - Jayo, Katya, Eric\nProgramming - Joey, Jayo, Scott, Halei\nCharacter Art - Jayo, Maddy\nConcept Art - Katya, Halei\nBackground Art - Ela, Katya, Jayo\nUI - Jayo, Katya\nMusic - Adrian\n\nSound Effects from productioncrate.com & pixabay.com")
             text _("")
             text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
 
@@ -1321,7 +1384,9 @@ transform notify_appear:
 
 
 style notify_frame is empty
-style notify_text is gui_text
+style notify_text:
+    color "#2b3f4f"
+    size 50
 
 style notify_frame:
     ypos gui.notify_ypos
