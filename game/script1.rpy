@@ -659,7 +659,7 @@ label continue2:
 
     show mira surprised
 
-    if v1_done > 0:
+    if v1_done > 1:
 
         m "{i}Summer and worn books again, like I expected. {/i}"
 
