@@ -265,6 +265,7 @@ label tutorial:
     with dissolve
 
     $ remainingtime -=2
+
     jump V1
 
 # VIVIENNE 1 --------------------------------------
@@ -672,6 +673,7 @@ label continue2:
         hide vivienne
             
         if sera_day1 == True:
+            $ remainingtime -= 1
             jump S1
 
         else:
@@ -696,18 +698,18 @@ label continue2:
 
 label continue3:
 
+    $ remainingtime -= 1
+
     hide mira
     with dissolve
 
     menu:
 
         "Look for Finn":
-             $ remainingtime -=1
              $ findfinn = True
              jump E1
 
         "Look for Elliot":
-            $ remainingtime -=1
             jump E1
 
         "Time travel":
@@ -719,7 +721,6 @@ label timetravel1:
     menu:
 
         "Find Vivienne (-1 hr)":
-            $ remainingtime -=1
             jump V1
 
         "Never mind":
@@ -1173,6 +1174,8 @@ label continue5:
 
 label continue6:
 
+    $ remainingtime -= 4
+
     hide mira
     with dissolve
 
@@ -1180,8 +1183,7 @@ label continue6:
 
         menu:
 
-            "Look for Finn again":
-                $ remainingtime -=4
+            "Look for Finn agian":
                 jump F1
 
             "Time travel":
@@ -1191,7 +1193,6 @@ label continue6:
         menu:
 
             "Look for Finn":
-                $ remainingtime -=4
                 jump F1
 
             "Time travel":
@@ -1203,11 +1204,9 @@ label timetravel2:
     menu:
 
         "Find Vivienne (-3 hrs)":
-            $ remainingtime -=3
             jump V1
 
-        "Meet Elliot (-2 hrs)":
-            $ remainingtime -=2
+        "Meet Elliot (-1 hr)":
             jump E1
 
         "Never mind":
@@ -1251,6 +1250,8 @@ label F1:
     centered "{font=Marker Felt.ttf} {size=35} 5:05 pm {/size} \n {size=40} Seacliff Academy - Courtyard {/size} {/font}"
 
     $ show_menu()
+
+    ## delete location intro?
 
     show mira surprised at left
     with dissolve 
@@ -1590,6 +1591,8 @@ label continue8:
 
 label continue9:
 
+    $ remainingtime -=1
+
     hide mira
     hide finn
     with dissolve
@@ -1597,7 +1600,6 @@ label continue9:
     menu:
 
         "Go back to the dorms and sleep":
-            $ remainingtime -=1
             jump sleep
 
         "Time travel":
@@ -1625,15 +1627,12 @@ label timetravel3:
     menu:
 
         "Find Vivienne (-6 hrs)":
-            $ remainingtime -=6
             jump V1
 
         "Meet Elliot (-5 hrs)":
-            $ remainingtime -=2
             jump E1
 
-        "Look for Finn (-1 hr)":
-            $ remainingtime -=1
+        "Meet Finn (-1 hr)":
             jump F1
 
         "Never mind":

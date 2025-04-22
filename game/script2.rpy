@@ -32,6 +32,8 @@ label S1:
 
     else:
 
+        $ remainingtime = 39
+
         $ hide_menu()
 
         centered "{font=Marker Felt.ttf} {size=35} 9:30 am {/size} \n {size=40} Before School {/size} {/font}"
@@ -77,16 +79,15 @@ label S1:
 
     menu: 
 
-        "Flirt back":
-            jump flirtback
+        "Do as she says":
+            jump obey
+            $ obey = True
 
-        "{s}Stare at her{/s}":
-            jump stare
-
-        "{s}Push her off{/s}":
+        "Push her off":
             jump push
+            $ push = True
 
-label flirtback:
+label obey:
 
     show mira smile at farleft
 
@@ -115,13 +116,6 @@ label flirtback:
     
     m "Oh, can we finally stop pretending now?"
 
-    jump continue10
-
-
-label continue10:
-
-    show mira default at farleft
-
     show serafina behind mira:
         xalign 0.35
         movecenter
@@ -130,9 +124,54 @@ label continue10:
     
     s "I’m Serafina, hi. Sorry for ambushing you out of nowhere."
     
-    m ".............So, what was that?"
+    m "Mira. So.............what was that?"
     
     s "Ugh, I saw my ex in the hallway."
+
+    jump continue10
+
+
+label push:
+
+    show mira surprised at farleft
+
+    show serafina behind mira:
+        xalign 0.35, movecenter
+    
+    m "Do I know you??" with vpunch
+    
+    s "What? No, I said to pretend—"
+    
+    s "Never mind. Sorry if I made you uncomfortable."
+
+    show mira default
+    
+    m "I’m more offended you didn’t buy me dinner first."
+    
+    s "I wasn’t asking you out, I said to pretend!"
+    
+    m "{i}I look away briefly to the other students nearby. Most of them are busy, but a few cast curious glances our way.{/i}"
+
+    m "{i}I catch the eyes of someone with mussed blonde hair that they’d evidently dyed themselves and turn my gaze back.{/i}"
+    
+    m "Can I get a name, then?"
+    
+    m "{i}The girl straightens her shirt, tugging out the wrinkles I’d left when I pushed her away.{/i}"
+    
+    s "I’m Serafina, hi. Sorry again for ambushing you."
+    
+    m "What was that about?"
+    
+    s "............Ugh, I saw my ex in the hallway."
+
+    jump continue10
+
+
+label continue10:
+
+    show mira default at farleft
+
+    show serafina at center
     
     m "..."
     
@@ -162,7 +201,7 @@ label continue10:
 
     menu:
 
-        "{s}Ask her more about Aster{/s}":
+        "Ask her more about Aster":
             jump asterinfo
 
         "Offer to help her make Aster jealous":
@@ -173,7 +212,47 @@ label continue10:
 
 label asterinfo:
 
-    "more text"
+    m "Aster’s your ex?"
+    
+    s "....Do you know them?"
+    
+    m "I was looking for them at the masquerade, but they didn’t turn up the entire night."
+    
+    s "Of course they would choose the one event I skipped on purpose to not even show up…!"
+    
+    s "I should’ve attended after all."
+    
+    m "Maybe they were also hoping to avoid you."
+    
+    s "No, Aster doesn’t give a shit."
+    
+    s "They wave to me whenever we run into each other and then walk off like they didn’t just ruin my entire day."
+    
+    s "......Are you interested in them? You should reconsider. Dating Aster is a nightmare."
+    
+    m "Sounds like it. I just need to ask them something. Do you know where they are?"
+    
+    s "Nope."
+    
+    m "..."
+    
+    m "Do you know which classes they have, or...."
+    
+    s "Look, I’m running late to my lecture. I’ve got better things to do than stand here and answer questions about my ex."
+    
+    s "See you around, Mira. I won’t pin you against the wall next time."
+    
+    m "{i}She’s gone before I can say anything else.{/i}"
+    
+    m "{i}( Fuck. I didn't learn anything about her or Aster. ){/i]}"
+
+    "{color=#56768f}{i}( Pretend the notebook has been updated. ){/i}{/color}"
+
+    $ sphoto = True
+    $ supdate = 1
+
+    jump continue12
+
 
 label fakedate:
 
@@ -183,7 +262,7 @@ label fakedate:
 
     m "So you want to make your ex jealous?"
     
-    s "I don’t want to make them jealous! I just…want Aster to see I don’t need them anymore."
+    s "I don’t want to make them jealous! I just...want Aster to see I don’t need them anymore."
     
     m "Mhm."
     
@@ -192,8 +271,14 @@ label fakedate:
     s "...What??"
     
     m "What it says on the label. I’ll pretend to date you, and you can pretend you’re in love with me now."
+
+    if obey == True:
     
-    m "Still no kissing though. Don’t take it personally."
+        m "Still no kissing though. Don’t take it personally."
+
+    else:
+
+        m "I don't do kissing though. Don’t take it personally."
     
     s "..."
     
@@ -242,7 +327,13 @@ label continue11:
 
     m "Maybe I think you’re cute."
 
-    s "That was my line; it won't work on me."
+    if obey == True:
+
+        s "That was my line; it won't work on me."
+
+    else: 
+
+        s "That was supposed to be my line; it won't work on me."
     
     m "Fine, I’m bored and I like messing with people."
 
@@ -260,7 +351,10 @@ label continue11:
 
         "{color=#56768f}{i}( Pretend the notebook has been updated. ){/i}{/color}"
 
-        jump A1
+        $ sphoto = True
+        $ supdate = 1
+
+        jump continue11
 
     else:
 
@@ -272,7 +366,7 @@ label continue11:
 
             s "Are you free  tonight?"
     
-        m "Sure. What are we doing?"
+        m "Sure. What are we up to?"
 
         show mira:
             moveoffleft
@@ -284,7 +378,65 @@ label continue11:
 
         "{color=#56768f}{i}( Pretend the notebook has been updated. ){/i}{/color}"
 
-        jump A1
+        $ sphoto = True
+        $ supdate = 1
+
+        jump continue12
+
+
+label continue12:
+
+    $ remainingtime -= 4
+
+    menu:
+
+        "Look for Aster":
+            jump A1
+
+        "Time travel":
+
+            jump timetravel4
+
+
+label timetravel4:
+
+    if sera_day1 == True:    
+
+        menu:
+
+            "Find Vivienne (-2 hrs)":
+                jump V1
+
+            "Meet Elliot (-1 hr)":
+                jump E1
+
+            "Meet Finn (-1 hr)":
+                jump F1
+
+            "Meet Serafina (-1 hr)":
+                jump S1
+
+            "Never mind":
+                jump continue12
+
+    else: 
+
+        menu:
+
+            "Find Vivienne (-22 hrs)":
+                jump V1
+
+            "Meet Elliot (-21 hr)":
+                jump E1
+
+            "Meet Finn (-17 hr)":
+                jump F1
+
+            "Meet Serafina (-1 hr)":
+                jump S1
+
+            "Never mind":
+                jump continue12
 
 label A1:
 

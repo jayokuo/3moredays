@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script1.rpy", line 1613: end of line expected.
-    centered "{color="fffcf4"}I’ll go wander the hallways wailing like the ghost I’m supposed to be until someone finds a way to put me to rest permanently.{/color}"
-                      ^
-
-File "game/script1.rpy", line 1615: end of line expected.
-    centered "{font=Marker Felt.ttf} {size=40} {color="fffcf4"} End of Day 1 {/size} \n {size=35} 24 hours remaining {color="fffcf4"}{/size} {/font}"
-                                                       ^
+File "game/script2.rpy", line 399: if statement expects a non-empty block.
+    if sera_day1 == True:    
+                             ^
 
 Ren'Py Version: Ren'Py 8.3.3.24111502
-Wed Apr 16 00:35:29 2025
+Tue Apr 22 01:23:23 2025

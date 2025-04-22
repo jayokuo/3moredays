@@ -90,5 +90,11 @@ default finnsnitch = False
 # meet sera on day 1
 default sera_day1 = False
 
+# do as sera says
+default obey = False
+
+# push sera off
+default push = False
+
 # suggest another way to get back at Aster
 default aster_revenge = False
