@@ -6,6 +6,8 @@ $ day = 2
 
 label S1:
 
+    $ s1_done += 1
+
     scene hallway
     with fade
 
@@ -40,18 +42,21 @@ label S1:
 
         $ show_menu()
 
-        # placeholder dialogue 
+
         
         show mira default at left
         with dissolve
 
-        m "{i}( Should I hunt down Vivienne or Elliot again? ){/i}"
+        m "{i}As it turns out, I can sleep if I really want to.{/i}"
 
-        m "{i}( I'm supposed to see Finn after school... ){/i}"
+        m "{i}But my dreams are filled with scenes of my final days, over and over again. The cliffside that crumbled underneath my shoes is burned into my memory.{/i}"
 
-        m "{i}( And there's still two more suspects I haven't met yet. ){/i}"
+        m "{i}I didn’t fall on purpose, you know. I just realized afterwards that I didn’t want to be alive again.{/i}"
+
+        m "{i}I haven’t really narrowed down my list of suspects…and there’s still two others I haven't met.{/i}"
 
         m "..."
+
 
     show mira surprised at farleft:
         movefarleft
@@ -210,6 +215,7 @@ label continue10:
         "Suggest a way to get back at Aster":
             jump revenge
 
+
 label asterinfo:
 
     m "Aster’s your ex?"
@@ -285,6 +291,7 @@ label fakedate:
     s "Why are you offering to help me? What’s in it for you?"
 
     jump continue11
+
 
 label revenge:
 

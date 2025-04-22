@@ -62,21 +62,26 @@ default fphoto = False
 default fupdate = 0
 default ephoto = False
 default eupdate = 0
+default sphoto = False
+default supdate = 0
 
 # COUNTERS --------------------------------------
 
 default remainingtime = 72
 default day = 1
-default flirtmeter = 0
 
 default v1_done = 0
 default e1_done = 0
+default f1_done = 0
+default s1_done = 0
 
 # VARIABLES --------------------------------------
 
-
 # look for finn instead of elliot
 default findfinn = False
+
+# flirt with finn
+default flirtmeter = 0
 
 # tell finn that intelligence is hot
 default intelligence = False

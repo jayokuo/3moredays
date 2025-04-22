@@ -731,7 +731,7 @@ label timetravel1:
 
 label E1:
 
-    $e1_done += 1
+    $ e1_done += 1
 
     scene hallway
     with fade
@@ -1217,6 +1217,8 @@ label timetravel2:
 
 label F1:
 
+    $ f1_done += 1
+
     $ flirtmeter = 0
 
     scene hallway
@@ -1639,11 +1641,8 @@ label timetravel3:
             jump continue9
 
 
-# label continue10:
 
-#     scene end of day 1
-
-#     $ renpy.pause()
+# $ renpy.pause()
 
 # This ends the game.
 
