@@ -42,7 +42,6 @@ label S1:
 
         $ show_menu()
 
-
         
         show mira default at left
         with dissolve
@@ -91,6 +90,7 @@ label S1:
         "Push her off":
             jump push
             $ push = True
+
 
 label obey:
 
@@ -218,6 +218,10 @@ label continue10:
 
 label asterinfo:
 
+    show mira default at farleft
+
+    show serafina at center
+
     m "Aster’s your ex?"
     
     s "....Do you know them?"
@@ -247,8 +251,15 @@ label asterinfo:
     s "Look, I’m running late to my lecture. I’ve got better things to do than stand here and answer questions about my ex."
     
     s "See you around, Mira. I won’t pin you against the wall next time."
+
+    show mira surprised
+
+    hide serafina
+    with dissolve
     
     m "{i}She’s gone before I can say anything else.{/i}"
+
+    show mira sighing
     
     m "{i}( Fuck. I didn't learn anything about her or Aster. ){/i]}"
 
@@ -394,6 +405,9 @@ label continue11:
 label continue12:
 
     $ remainingtime -= 4
+
+    hide mira
+    with dissolve
 
     menu:
 

@@ -688,6 +688,7 @@ label continue2:
         $ vphoto = True
         $ vupdate = 1
 
+
         "{color=#56768f}{i}( The notebook has been updated. ){/i}{/color}"
 
         # is it gay to notice the way your classmate smells 
