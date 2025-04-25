@@ -71,7 +71,7 @@ label S1:
 
     m "What??"
 
-    x "{i}Play along.{/i}"
+    x "Just for a few minutes."
 
     m "{i}She twirls a strand of my hair around her finger in a lazy movement.{/i}"
 
@@ -207,6 +207,7 @@ label continue10:
     menu:
 
         "Ask her more about Aster":
+            $ annoysera = True
             jump asterinfo
 
         "Offer to help her make Aster jealous":
@@ -264,6 +265,9 @@ label asterinfo:
     m "{i}( Fuck. I didn't learn anything about her or Aster. ){/i]}"
 
     "{color=#56768f}{i}( Pretend the notebook has been updated. ){/i}{/color}"
+
+    hide mira
+    with dissolve
 
     $ sphoto = True
     $ supdate = 1
@@ -406,9 +410,6 @@ label continue12:
 
     $ remainingtime -= 4
 
-    hide mira
-    with dissolve
-
     menu:
 
         "Look for Aster":
@@ -479,6 +480,158 @@ label A1:
         centered "{font=Marker Felt.ttf} {size=35} 1:00 pm {/size} \n {size=40} Chemistry Lab {/size} {/font}"
 
         $ show_menu()
+
+
+    show mira sighing at left
+    with dissolve
+
+    m "{i}( …………………Ugh. )"
+
+    m "{i}( I can’t believe I was ambushed in the hallway by the professor and dragged into lab. ){/i}"
+
+    m "{i}( In my defense, I forgot I had class in this area or I would’ve avoided it. ){/i}"
+
+    show aster at right
+    with dissolve
+
+    x "Can I sit here? My lab partner’s gone today."
+
+    show mira default
+
+    m "{i}I look up. It’s the student who caught my eye in the hallway earlier.{/i}"
+
+    m "I have no idea what experiment we’re even doing."
+
+    x "Don’t worry, I got you."
+
+    m "{i}They take the seat across from me and look down at the worksheet.Their hands move across the table confidently, measuring out fluids and powders.{/i}"
+
+    x "So, are you Sera’s new girlfriend?"
+
+    m "I’m trying to focus on the experiment."
+
+    x "No you’re not, I’m doing all the work."
+
+    show mira sighing
+
+    m "{i}I sigh. They’re not exactly wrong on that.{/i}"
+
+    show mira default
+
+    a "I’m Aster, by the way. Nice to meet you."
+
+    m "Mira."
+
+    a "So Mira, what’s your relationship with Sera?"
+
+    hide mira
+    hide aster 
+    with dissolve
+
+    menu:
+
+        "Why do you care?":
+            jump care
+
+        "We're friends":
+            jump friends
+
+        "We've been dating for a few days":
+            jump dating
+
+        "She's the love of my life":
+            jump loml
+
+
+label care:
+
+    show mira default at left
+
+    show aster at right
+    
+    m "Why do you care?"
+
+    jump continue13
+
+
+label friends:
+
+    show mira default at left
+
+    show aster at right
+
+    m "We’re just friends. She’s not my type."
+
+    a "Is that so? I see."
+
+    if annoysera == True:
+
+        m "I’m not sure she even likes me, to be honest."
+
+        a "Why, what’d you do?"
+
+        m "Just said the wrong thing at first and made her annoyed."
+
+        a "Yeah, it’s easy to do that."
+
+        a "You’ll learn how to do it less frequently over time."
+
+        m "Anyways, why do you care who she dates now?"
+
+    else: 
+
+        m "Why are you asking in the first place? It’s none of your business who she dates now."
+
+    jump continue13
+
+
+label dating:
+
+    show mira default at left
+
+    show aster at right
+
+    m "We’ve been dating for a few days now."
+
+    a "Is that so? I see."
+
+    m "Why do you care? It’s none of your business who she dates now."
+
+    jump continue13
+
+
+label loml:
+
+    show mira default at left
+
+    show aster at right
+
+    m "She’s the love of my life."
+
+    a "......You don’t sound very convinced about that."
+
+    m "This is how I always sound."
+
+    a "Right."
+
+    m "Why are you asking in the first place? It’s none of your business who she dates now."
+
+    jump continue13
+
+
+label continue13:
+
+    a "Just looking out for a friend."
+
+    m "She didn’t make it sound like you two were friends."
+
+    a "...No, but I’d like to be. "
+
+    a "Did she tell you how we broke up?"
+
+    m "No."
+
+    a "( Insert backstory here )"
 
     "that's all we have for now, thanks for playing!!"
 

@@ -28,7 +28,7 @@ transform movefarleft:
     ease 0.4 xalign 0.1
 
 transform moveoffleft:
-    ease 1.0 xalign -0.5
+    ease 1.0 xalign -0.55
 
 transform moveoffright:
     ease 2 xalign 1.5
@@ -100,6 +100,9 @@ default obey = False
 
 # push sera off
 default push = False
+
+# ask sera more about aster
+default annoysera = False
 
 # suggest another way to get back at Aster
 default aster_revenge = False

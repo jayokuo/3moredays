@@ -12,6 +12,7 @@ define p = Character("Professor")
 define f = Character("Finn")
 define e = Character ("Elliot")
 define s = Character ("Serafina")
+define a = Character ("Aster")
 
 
 # The game starts here.
