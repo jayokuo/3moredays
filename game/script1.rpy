@@ -708,8 +708,8 @@ label continue3:
     menu:
 
         "Look for Finn":
-             $ findfinn = True
-             jump E1
+            $ findfinn = True
+            jump E1
 
         "Look for Elliot":
             jump E1
