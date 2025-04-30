@@ -271,6 +271,7 @@ label asterinfo:
 
     $ sphoto = True
     $ supdate = 1
+    $ newinfoupdate = True
 
     jump continue12
 
@@ -375,6 +376,8 @@ label continue11:
 
         $ sphoto = True
         $ supdate = 1
+        $ newinfoupdate = True
+
 
         jump continue11
 
@@ -402,6 +405,7 @@ label continue11:
 
         $ sphoto = True
         $ supdate = 1
+        $ newinfoupdate = True
 
         jump continue12
 
