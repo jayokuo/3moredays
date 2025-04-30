@@ -271,6 +271,7 @@ label asterinfo:
 
     $ sphoto = True
     $ supdate = 1
+    $ newinfoupdate = True
 
     jump continue12
 
@@ -375,6 +376,8 @@ label continue11:
 
         $ sphoto = True
         $ supdate = 1
+        $ newinfoupdate = True
+
 
         jump continue11
 
@@ -402,6 +405,7 @@ label continue11:
 
         $ sphoto = True
         $ supdate = 1
+        $ newinfoupdate = True
 
         jump continue12
 
@@ -427,16 +431,16 @@ label timetravel4:
         menu:
 
             "Find Vivienne (-2 hrs)":
-                jump V1
+                $ time_travel_jump("V1")
 
             "Meet Elliot (-1 hr)":
-                jump E1
+                $ time_travel_jump("E1")
 
             "Meet Finn (-1 hr)":
-                jump F1
+                $ time_travel_jump("F1")
 
             "Meet Serafina (-1 hr)":
-                jump S1
+                $ time_travel_jump("S1")
 
             "Never mind":
                 jump continue12
@@ -446,16 +450,16 @@ label timetravel4:
         menu:
 
             "Find Vivienne (-22 hrs)":
-                jump V1
+                $ time_travel_jump("V1")
 
             "Meet Elliot (-21 hr)":
-                jump E1
+                $ time_travel_jump("E1")
 
             "Meet Finn (-17 hr)":
-                jump F1
+                $ time_travel_jump("F1")
 
             "Meet Serafina (-1 hr)":
-                jump S1
+                $ time_travel_jump("S1")
 
             "Never mind":
                 jump continue12

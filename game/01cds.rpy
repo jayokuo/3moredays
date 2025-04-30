@@ -20,3 +20,22 @@ python early:
     def show_menu1():
         store.quick_menu = True
         renpy.hide("locationbox")
+
+    # instead of:
+    # jump label
+    # use:
+    # time_travel_jump("label")
+    def time_travel_jump(location):
+        renpy.sound.play("audio/time travel/hourglass.mp3", channel="audio")
+        renpy.sound.play("audio/time travel/whoosh.mp3", channel="sound")
+        
+        # black screen
+        renpy.scene()
+        renpy.show("blackscreen")
+        renpy.with_statement(fade)
+
+        # new scene
+        renpy.scene()
+        renpy.jump(location)
+        renpy.with_statement(fade)
+        

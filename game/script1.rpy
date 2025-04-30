@@ -688,6 +688,7 @@ label continue2:
 
         $ vphoto = True
         $ vupdate = 1
+        $ newinfoupdate = True
 
 
         "{color=#56768f}{i}( The notebook has been updated. ){/i}{/color}"
@@ -708,8 +709,8 @@ label continue3:
     menu:
 
         "Look for Finn":
-             $ findfinn = True
-             jump E1
+            $ findfinn = True
+            jump E1
 
         "Look for Elliot":
             jump E1
@@ -723,7 +724,7 @@ label timetravel1:
     menu:
 
         "Find Vivienne (-1 hr)":
-            jump V1
+            $ time_travel_jump("V1")
 
         "Never mind":
             jump continue3
@@ -1166,6 +1167,8 @@ label continue5:
 
     $ ephoto = True
     $ eupdate = 1
+    $ newinfoupdate = True
+
 
     "{color=#56768f}{i}( The notebook has been updated. ){/i}{/color}"
 
@@ -1185,7 +1188,7 @@ label continue6:
 
         menu:
 
-            "Look for Finn agian":
+            "Look for Finn again":
                 jump F1
 
             "Time travel":
@@ -1206,10 +1209,10 @@ label timetravel2:
     menu:
 
         "Find Vivienne (-3 hrs)":
-            jump V1
+            $ time_travel_jump("V1")
 
         "Meet Elliot (-1 hr)":
-            jump E1
+            $ time_travel_jump("E1")
 
         "Never mind":
             jump continue6
@@ -1531,6 +1534,7 @@ label devastated:
     $ vividaughter = True
 
     $ vupdate = 2
+    $ newinfoupdate = True
 
     show mira default
 
@@ -1585,7 +1589,7 @@ label continue8:
     show mira default
 
     m "{i}( Oh. I never told him my name. ){/i}"
-
+    $ newinfoupdate = True
     "{color=#56768f}{i}( The notebook has been updated. ){/i}{/color}"
 
     # here we need to change what info the notebook fills in depending on which dialogue options you chose
@@ -1631,13 +1635,13 @@ label timetravel3:
     menu:
 
         "Find Vivienne (-6 hrs)":
-            jump V1
+            $ time_travel_jump("V1")
 
         "Meet Elliot (-5 hrs)":
-            jump E1
+            $ time_travel_jump("E1")
 
         "Meet Finn (-1 hr)":
-            jump F1
+            $ time_travel_jump("F1")
 
         "Never mind":
             jump continue9

@@ -65,6 +65,8 @@ default eupdate = 0
 default sphoto = False
 default supdate = 0
 
+default newinfoupdate = False
+
 # COUNTERS --------------------------------------
 
 default remainingtime = 72

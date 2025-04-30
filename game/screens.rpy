@@ -259,11 +259,18 @@ screen quick_menu():
             ## textbutton _("Q.Load") action QuickLoad()
             textbutton _("Prefs") action ShowMenu('preferences')
 
+
+
     if notebook:
-        imagebutton auto "icon_%s" action ShowMenu('book'): 
+        imagebutton auto "icon_%s" action [ShowMenu('book'), SetVariable("newinfoupdate", False)]:
             xalign .97
             yalign .97
             focus_mask True
+
+        if newinfoupdate:
+            image "ui/notebook/icon_update.png":
+                xalign 0.97
+                yalign 0.97
 
     if hourglass:
         add "ui/hourglass/hourglass"+ str(day) +".png":
