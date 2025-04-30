@@ -724,7 +724,7 @@ label timetravel1:
     menu:
 
         "Find Vivienne (-1 hr)":
-            jump V1
+            $ time_travel_jump("V1")
 
         "Never mind":
             jump continue3
@@ -1209,10 +1209,10 @@ label timetravel2:
     menu:
 
         "Find Vivienne (-3 hrs)":
-            jump V1
+            $ time_travel_jump("V1")
 
         "Meet Elliot (-1 hr)":
-            jump E1
+            $ time_travel_jump("E1")
 
         "Never mind":
             jump continue6
@@ -1635,13 +1635,13 @@ label timetravel3:
     menu:
 
         "Find Vivienne (-6 hrs)":
-            jump V1
+            $ time_travel_jump("V1")
 
         "Meet Elliot (-5 hrs)":
-            jump E1
+            $ time_travel_jump("E1")
 
         "Meet Finn (-1 hr)":
-            jump F1
+            $ time_travel_jump("F1")
 
         "Never mind":
             jump continue9
