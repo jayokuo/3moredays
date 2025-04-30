@@ -690,8 +690,7 @@ label continue2:
         $ vupdate = 1
         $ newinfoupdate = True
 
-
-        "{color=#56768f}{i}( The notebook has been updated. ){/i}{/color}"
+        m "{i}I never noticed. {/i}"
 
         # is it gay to notice the way your classmate smells 
         # when you're in the middle of a death or life situation
@@ -1163,14 +1162,11 @@ label continue5:
 
     m "{i}Somewhere during our conversation, the beetle has landed back on the desk. I watch for any further signs of movement, but its body is still.{/i}"
 
-    m "{i}It’s dead once more.{/i}"
-
     $ ephoto = True
     $ eupdate = 1
     $ newinfoupdate = True
 
-
-    "{color=#56768f}{i}( The notebook has been updated. ){/i}{/color}"
+    m "{i}It’s dead once more.{/i}"
 
     # haha what if the bug foreshadowed her fate that'd be crazy
 
@@ -1251,14 +1247,6 @@ label F1:
 
     scene courtyard 
     with fade
-
-    $ hide_menu()
-
-    centered "{font=Marker Felt.ttf} {size=35} 5:05 pm {/size} \n {size=40} Seacliff Academy - Courtyard {/size} {/font}"
-
-    $ show_menu()
-
-    ## delete location intro?
 
     show mira surprised at left
     with dissolve 
@@ -1529,12 +1517,12 @@ label devastated:
 
     f "Oh, Vivi might be telling the truth. Have you seen how little that girl sleeps?"
 
+    $ newinfoupdate = True
+
     f "It’s like she thinks she’s got something to prove because she’s the {color=#56768f}daughter of our Dean.{/color}"
 
     $ vividaughter = True
-
     $ vupdate = 2
-    $ newinfoupdate = True
 
     show mira default
 
@@ -1588,11 +1576,9 @@ label continue8:
 
     show mira default
 
-    m "{i}( Oh. I never told him my name. ){/i}"
     $ newinfoupdate = True
-    "{color=#56768f}{i}( The notebook has been updated. ){/i}{/color}"
 
-    # here we need to change what info the notebook fills in depending on which dialogue options you chose
+    m "{i}( Oh. I never told him my name. ){/i}"
 
     jump continue9
 

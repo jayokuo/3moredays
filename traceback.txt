@@ -1,74 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While processing text tag {i/} in '{i}( As it turns out, I can sleep if I really want to. ){i/}'.:
-  File "game/script2.rpy", line 48, in script
-    m "{i}( As it turns out, I can sleep if I really want to. ){i/}"
-Exception: Unknown text tag 'i/'
+While running game code:
+  File "game/script1.rpy", line 1211, in script
+    $ time_travel_jump("E1")
+  File "game/script1.rpy", line 1211, in <module>
+    $ time_travel_jump("E1")
+  File "game/01cds.rpy", line 30, in time_travel_jump
+    renpy.sound.play("audio/time travel/whoosh.mp3", renpy.volume("0.25"), channel="sound")
+AttributeError: module 'renpy.exports' has no attribute 'volume'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script2.rpy", line 48, in script
-    m "{i}( As it turns out, I can sleep if I really want to. ){i/}"
-  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/ast.py", line 2573, in execute
-    Say.execute(self)
-  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/ast.py", line 615, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/exports/sayexports.py", line 132, in say
-    who(what, *args, **kwargs)
-  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/character.py", line 1455, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/character.py", line 1106, in do_display
-    display_say(who,
-  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/character.py", line 803, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
-  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/display/core.py", line 2215, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/display/core.py", line 2879, in interact_core
-    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
-  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/display/core.py", line 1381, in draw_screen
-    surftree = renpy.display.render.render_screen(
-  File "render.pyx", line 486, in renpy.display.render.render_screen
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/display/layout.py", line 900, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/display/layout.py", line 900, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/display/layout.py", line 900, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/display/screen.py", line 754, in render
-    child = renpy.display.render.render(self.child, w, h, st, at)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/display/layout.py", line 900, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/display/layout.py", line 1457, in render
-    surf = render(child,
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/display/layout.py", line 900, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/text/text.py", line 2604, in render
-    virtual_layout = Layout(self, width, height, renders, drawable_res=False, size_only=True)
-  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/text/text.py", line 733, in __init__
-    self.paragraphs = self.segment(text.tokens, style, renders, text)
-  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/text/text.py", line 1530, in segment
-    raise Exception("Unknown text tag %r" % text)
-Exception: Unknown text tag 'i/'
+  File "game/script1.rpy", line 1211, in script
+    $ time_travel_jump("E1")
+  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/ast.py", line 821, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/python.py", line 1178, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/script1.rpy", line 1211, in <module>
+    $ time_travel_jump("E1")
+  File "game/01cds.rpy", line 30, in time_travel_jump
+    renpy.sound.play("audio/time travel/whoosh.mp3", renpy.volume("0.25"), channel="sound")
+AttributeError: module 'renpy.exports' has no attribute 'volume'
 
 macOS-14.5-arm64-arm-64bit arm64
 Ren'Py 8.3.3.24111502
 3 More Days 1.1
-Tue Apr 22 02:04:22 2025
+Wed Apr 30 00:46:03 2025

@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script2.rpy", line 399: if statement expects a non-empty block.
-    if sera_day1 == True:    
-                             ^
+File "game/01cds.rpy", line 30: invalid syntax
+        renpy.sound.play("audio/time travel/whoosh.mp3", renpy.volume 0.25, channel="sound")
+                                                                       ^
 
 Ren'Py Version: Ren'Py 8.3.3.24111502
-Tue Apr 22 01:23:23 2025
+Wed Apr 30 00:45:21 2025

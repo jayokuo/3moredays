@@ -261,17 +261,15 @@ label asterinfo:
     m "{i}She’s gone before I can say anything else.{/i}"
 
     show mira sighing
-    
-    m "{i}( Fuck. I didn't learn anything about her or Aster. ){/i]}"
-
-    "{color=#56768f}{i}( Pretend the notebook has been updated. ){/i}{/color}"
-
-    hide mira
-    with dissolve
 
     $ sphoto = True
     $ supdate = 1
     $ newinfoupdate = True
+    
+    m "{i}( Fuck. I didn't learn anything about her or Aster. ){/i]}"
+
+    hide mira
+    with dissolve
 
     jump continue12
 
@@ -370,9 +368,11 @@ label continue11:
         show serafina behind mira:
             moveoffleft
 
-        s "Tell me more about your idea."
+        $ sphoto = True
+        $ supdate = 1
+        $ newinfoupdate = True
 
-        "{color=#56768f}{i}( Pretend the notebook has been updated. ){/i}{/color}"
+        s "Tell me more about your idea."
 
         $ sphoto = True
         $ supdate = 1
@@ -398,14 +398,12 @@ label continue11:
             
         show serafina behind mira:
             moveoffleft
-    
-        s "Revenge."
-
-        "{color=#56768f}{i}( Pretend the notebook has been updated. ){/i}{/color}"
 
         $ sphoto = True
         $ supdate = 1
         $ newinfoupdate = True
+    
+        s "Revenge."
 
         jump continue12
 
