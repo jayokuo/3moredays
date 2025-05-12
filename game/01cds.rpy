@@ -27,7 +27,7 @@ python early:
     # time_travel_jump("label")
     def time_travel_jump(location):
         renpy.sound.play("audio/time travel/hourglass.mp3", channel="audio")
-        renpy.sound.play("audio/time travel/whoosh.mp3", channel="sound")
+        renpy.sound.play("audio/time travel/whoosh.mp3", channel="sound", relative_volume=0.25)
         
         # black screen
         renpy.scene()

@@ -269,8 +269,10 @@ screen quick_menu():
 
         if newinfoupdate:
             image "ui/notebook/icon_update.png":
-                xalign 0.97
+                xalign 0.99
                 yalign 0.97
+
+    ## adjust the alignment !!! 
 
     if hourglass:
         add "ui/hourglass/hourglass"+ str(day) +".png":

@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/01cds.rpy", line 30: invalid syntax
-        renpy.sound.play("audio/time travel/whoosh.mp3", renpy.volume 0.25, channel="sound")
-                                                                       ^
+File "game/script2.rpy", line 1073: expected statement.
+    lable why:
+             ^
 
 Ren'Py Version: Ren'Py 8.3.3.24111502
-Wed Apr 30 00:45:21 2025
+Fri May  9 20:07:06 2025

@@ -101,7 +101,7 @@ label deansoffice:
 
     $ hide_menu()
 
-    centered "{font=Marker Felt.ttf} {size=35} 10:00 am {/size} \n {size=40} Seacliff Academy - Dean's Office {/size} {/font}"
+    centered "{font=Marker Felt.ttf} {size=35} 8:00 am {/size} \n {size=40} Seacliff Academy - Dean's Office {/size} {/font}"
 
     $show_menu1()
 
@@ -234,7 +234,7 @@ label tutorial:
     m "Even when I travel back in time, the countdown keeps moving forward towards the third day." 
 
     $ hourglass = True
-    $ remainingtime = 62
+    $ remainingtime = 64
 
     "{i}Check the {color=#56768f}hourglass{/color} in the bottom left to view your remaining hours. {/i}"
 
@@ -265,7 +265,7 @@ label tutorial:
     hide mira
     with dissolve
 
-    $ remainingtime -=2
+    $ remainingtime -=1
 
     jump V1
 
@@ -273,7 +273,7 @@ label tutorial:
 
 label V1:
 
-    if e1_done > 0:
+    if f1_done > 0:
         $ sera_day1 = True
 
     $ v1_done += 1
@@ -283,7 +283,7 @@ label V1:
 
     $ hide_menu()
 
-    centered "{font=Marker Felt.ttf} {size=35} 11:55 am {/size} \n {size=40} Astrophysics Lecture {/size} {/font}"
+    centered "{font=Marker Felt.ttf} {size=35} 8:55 am {/size} \n {size=40} Astrophysics Lecture {/size} {/font}"
 
     $ show_menu()
 
@@ -672,23 +672,16 @@ label continue2:
         m "{i}The dead leave no scent. {/i}"
 
         hide vivienne
-            
-        if sera_day1 == True:
-            $ remainingtime -= 1
-            jump S1
 
-        else:
-            jump continue3
+        jump continue3
 
     else: 
-
-        m "{i}She disappears in a swish of braids; one almost brushes my face. It smells like summer and worn books. {/i}"
-
-        m "{i}I never noticed. {/i}"
 
         $ vphoto = True
         $ vupdate = 1
         $ newinfoupdate = True
+
+        m "{i}She disappears in a swish of braids; one almost brushes my face. It smells like summer and worn books. {/i}"
 
         m "{i}I never noticed. {/i}"
 
@@ -700,7 +693,7 @@ label continue2:
 
 label continue3:
 
-    $ remainingtime -= 1
+    $ remainingtime -=1
 
     hide mira
     with dissolve
@@ -708,11 +701,28 @@ label continue3:
     menu:
 
         "Look for Finn":
+
             $ findfinn = True
-            jump E1
+            $ remainingtime -= 1
+
+            if sera_day1 == True:
+
+                jump sceneskip
+
+            else:
+                jump F1
 
         "Look for Elliot":
-            jump E1
+
+            $ remainingtime -= 1
+
+            if sera_day1 == True:
+
+                jump sceneskip1
+
+            else:
+
+                jump F1
 
         "Time travel":
             jump timetravel1
@@ -729,6 +739,442 @@ label timetravel1:
             jump continue3
 
 
+label sceneskip1:
+    
+    menu:
+
+        "NOTE: this scene remains unchanged. Would you like to skip the scene? (I'LL REPLACE THIS W A POPUP DW)"
+
+        "Yes":
+            jump S1
+
+        "No":
+            jump F1
+
+
+# FINN 1 --------------------------------------
+
+label F1:
+
+    $ f1_done += 1
+
+    $ flirtmeter = 0
+
+    scene hallway
+    with fade
+
+    $ hide_menu()
+
+    centered "{font=Marker Felt.ttf} {size=35} 12:00 pm {/size} \n {size=40} Lunch Break {/size} {/font}"
+
+    $ show_menu()
+
+    show mira default at left
+    with dissolve
+
+    # SFX: crowd
+
+    if findfinn == True:
+
+        m "{i}Everyone seems to keep track of Finn's whereabouts except for me. {/i}"
+
+    else:
+
+        m "{i}I couldn't find anyone who knew Elliot. But on the other hand, there's not a single person who hasn't heard of Finn.{/i}"
+        
+    m "{i}I asked a passing student where he was and she immediately pointed me to the northern courtyard. {/i}"
+
+    m "{i}Elbows and backpacks ram into my side as I make my way through the academy."
+
+    m "{i}Lunch is always a hectic time, and the hallway is a sea of blue uniforms capped with white collars. {/i}"
+
+    # girl who spends all her time staring at the ocean: 
+    # getting a lot of ocean vibes from this
+
+    scene courtyard 
+    with fade
+
+    show mira surprised at left
+    with dissolve 
+
+    m "{i}There he is—varsity jacket and all. Surrounded by a tide pool of chattering students. {/i}"
+
+    # girl who spends all her time staring at the ocean, again: 
+    # getting a lot of ocean vibes from this
+
+    show mira default
+
+    m "Finn. I need to talk to you. Finn? Finn."
+
+    show mira sighing
+
+    m "Please don’t make me push my way through that crowd. Maybe I resign myself to being an undead servant forever—"
+
+    show mira surprised
+
+    f "Watch out!"
+
+    play sound "audio/sfx/thud.mp3" volume 3
+
+    show mira bonk
+
+    m "—!!" with hpunch
+
+    play sound "audio/sfx/walk-outdoors-short.mp3" volume 1.5
+
+    show finn concerned at right
+    with dissolve
+
+    show mira default
+
+    f "Hey, you okay?"
+
+    show finn default
+
+    play audio [ "<silence 1.5>", "audio/sfx/thud.mp3" ] volume 1.5
+
+    m "{i}He picks up the ball that slammed into the side of my head and tosses it back to a student who winces in apology. {/i}"
+
+    m "Yeah, I can’t feel pain."
+
+    show finn flirt
+
+    f "That’s a relief—wouldn’t wanna damage that pretty face."
+
+    hide mira
+    hide finn
+    with dissolve
+
+    menu:
+
+        "Pretend to flirt back":
+            $ flirtmeter += 1
+            jump flirt
+
+        "Stare at him unimpressed":
+            $ flirtmeter += 1
+            jump unimpressed
+
+        "Reject him outright":
+            jump reject
+
+
+label flirt:
+        
+        show mira smile at left
+
+        show mira at center:
+            movecenter
+
+        show finn flirt at right
+
+        m "What, the one in your mirror?"
+
+        show finn default
+
+        f "Hahaa. Finn, by the way."
+
+        m "Mira. And I know who you are; I see your face all over the school’s newsletters."
+
+        f "Surely I have more redeeming qualities than my test scores?"
+
+        jump continue7
+
+
+label unimpressed:
+
+    show mira default at left
+
+    show finn flirt at right
+
+    m "..."
+
+    f  "..."
+
+    m "Did you think that was going to work, or..."
+
+    show finn default
+
+    f "Just telling it like it is. Finn, by the way."
+
+    m "Mira. And I know who you are; I see your face all over the school’s newsletters."
+
+    f "Surely I have more redeeming qualities than my test scores?"
+
+    jump continue7
+
+
+label reject:
+
+    show mira sighing at left
+
+    show finn flirt at right
+
+    m "Should’ve taken one for the team then."
+
+    m "Actually, the school would be heartbroken if they lost you. Who else would they put on the front page of their newsletters?"
+
+    show finn pensive
+
+    f "Surely I have more redeeming qualities than my test scores?"
+
+    jump continue7
+
+
+label continue7:
+
+    hide mira
+    hide finn
+    with dissolve
+
+    menu: 
+
+        "I think so" if flirtmeter >= 1:
+            $ flirtmeter += 1
+            jump think
+
+        "Everyone else thinks so":
+            $ flirtmeter += 1
+            jump everyone
+
+        "That's your most attractive trait":
+            jump attractive
+
+
+label think:
+
+    show mira smile at left
+
+    show finn default at right
+
+    m "Of course. I don’t collect those newsletters to read them, you know."
+
+    show finn default
+
+    f "Do you cut out the pictures of me?"
+
+    m "Yeah. I have a shrine and everything."
+
+    show finn concerned
+
+    f "Oh, wow. I was going to keep flirting back, but that suddenly made it weird."
+
+    show mira default
+
+    show finn default
+
+    m "I wouldn’t be surprised if someone actually had a shrine."
+
+    m "Do you know how many students were devastated when they couldn’t find you at the masquerade?"
+
+    jump flirtcheck
+
+
+label everyone:
+
+    show mira default at left
+
+    show finn default at right
+
+    m "Everyone else definitely seems to think so."
+
+    m "How do you stand being surrounded by so many people all the time?"
+
+    f "I could ask the opposite of you."
+
+    m "Do you know how many students were devastated when they couldn’t find you at the masquerade?"
+
+    jump flirtcheck
+
+
+label attractive:
+
+    $ intelligence = True
+
+    show mira default at left
+
+    show finn default at right
+
+    m "Nope, that’s your most attractive trait."
+
+    if flirtmeter == 1: 
+
+        m "Don’t underestimate the appeal of intelligence."
+
+    show finn pensive
+
+    f "What are you, a university recruiter?"
+
+    if flirtmeter == 1:
+
+        jump flirtcheck
+
+    m "I’d be two years early."
+
+    m "Though if anyone was going to graduate high school in half the amount of time, it would definitely be you."
+
+    f "If that’s all—"
+
+    show mira surprised
+
+    m "No, wait—your redeeming quality is actually your ability to help me catch up on last week’s chemistry lectures. Please? I’m so close to failing the class."
+
+    jump continue8
+
+
+label flirtcheck:
+
+    if intelligence == True:
+
+        show mira default at left
+
+        show finn pensive at right
+
+        m "I can't be the only one who thinks so."
+
+        m "Do you know how many students were devastated when they couldn’t find you at the masquerade?"
+
+    if flirtmeter >= 1:
+
+        jump devastated
+
+
+label devastated:
+
+    show mira default at left
+
+    show finn pensive at right
+
+    f "Ah—I was sick."
+
+    m "..."
+
+    f "..."
+
+    show finn concerned
+
+    f "...What?"
+
+    show mira sighing
+
+    m "Was there an outbreak of the Black Plague last week? You couldn’t think of a better excuse than Vivienne?"
+
+    show finn default
+
+    f "Oh, Vivi might be telling the truth. Have you seen how little that girl sleeps?"
+
+    $ newinfoupdate = True
+
+    f "It’s like she thinks she’s got something to prove because she’s the {color=#56768f}daughter of our Dean.{/color}"
+
+    $ vividaughter = True
+    $ vupdate = 2
+
+    show mira default
+
+    m "So what’s the real reason you were gone?"
+
+    show finn flirt
+
+    f "You’re getting ahead of yourself—I don’t tell my secrets to people who think I have no redeeming qualities."
+
+    show mira sighing
+
+    m "Your redeeming quality is your ability to help me catch up on last week’s chemistry lectures. Please? I’m so close to failing the class."
+
+    jump continue8
+    
+
+label continue8:
+
+    show mira default at left
+
+    show finn pensive at right
+
+    f "..."
+
+    m "{i}There’s a moment of silence as I watch the synapses go off in his head, trying to decide how much he wants to uphold his reputation as the boy who does anything and everything. {/i}"
+
+    show finn default
+
+    f "Tomorrow, physical sciences lecture hall at lunch break. It’s the only time I’m free."
+
+    $ fphoto = True
+    
+    if vividaughter == True: 
+        $ fupdate = 2
+
+    else:
+        $ fupdate = 1
+
+    $ newinfoupdate = True
+
+    show mira smile
+
+    m "See you there. Thanks, Finn."
+
+    show finn flirt
+
+    f "Only because you’re pretty."
+
+    play sound "audio/sfx/walk-outdoors.mp3"
+
+    hide finn 
+    with dissolve
+
+    m "{i}I watch as he's swallowed up by the crowd again.{/i}"
+
+    jump continue9
+
+
+label continue9:
+
+    $ remainingtime -=1
+
+    hide mira
+    with dissolve
+
+    if sera_day1 == True:
+        jump S1
+
+    else:
+
+        if findfinn == True:
+
+            menu:
+
+                "Look for Elliot":
+
+                    $ remainingtime -= 4
+
+                "Time travel":
+                    jump timetravel2
+        else:
+
+            menu:
+
+                "Look for Elliot again":
+                    $ remainingtime -= 4
+                    jump F1
+
+                "Time travel":
+                    jump timetravel2
+
+
+label timetravel2:
+    
+    menu:
+
+        "Find Vivienne (-3 hrs)":
+            $ time_travel_jump("V1")
+
+        "Meet Finn (-1 hr)":
+            $ time_travel_jump("F1")
+
+        "Never mind":
+            jump continue9
+
+
 # ELLIOT 1 --------------------------------------
 
 label E1:
@@ -740,41 +1186,29 @@ label E1:
 
     $ hide_menu()
 
-    centered "{font=Marker Felt.ttf} {size=35} 1:05 pm {/size} \n {size=40} A Deserted Hallway {/size} {/font}"
+    centered "{font=Marker Felt.ttf} {size=35} 5:00 pm {/size} \n {size=40} After School {/size} {/font}"
 
     $ show_menu()
-
 
     show mira default at left
     with dissolve
 
-    m "{i}( I’ve been searching for the entirety of lunch break, but he’s nowhere to be found. ){/i}"
+    m "{i}I've spent the entire day looking for Elliot, but he's nowhere to be found.{/i}"
 
-    if findfinn == True:
+    m "{i}Even the few students who did know him couldn’t tell me where he was.{/i}"
 
-        m "{i}( At least five different students gave me conflicting information. ){/i}"
+    show mira sighing
 
-        show mira sighing
+    m "{i}Does this person have no friends…?{/i}"
 
-        m "{i}( Guess that's what happens when you're so sought after. Sounds like a nightmare. ){/i}"
+    show resurrector thought at right
+    with dissolve
 
-    else:
+    r "{i}( It's been a week, if you were wondering. And so far, no one else has noticed you're gone. ){/i}"
 
-        m "{i}( Even the few students who did know Elliot couldn’t tell me where he was. ){/i}"
+    hide resurrector
 
-        show mira sighing
-
-        m "{i}( Does this person have no friends…? ){/i}"
-
-        show resurrector thought at right
-        with dissolve
-
-        r "{i}( It's been a week, if you were wondering. And so far, no one else has noticed you're gone. ){/i}"
-
-        hide resurrector
-        with dissolve
-
-        m "{i}( Shut up. ){/i}"
+    m "{i}Shut up.{/i}"
 
     scene classroom
     with dissolve
@@ -784,9 +1218,9 @@ label E1:
 
     m "...?"
 
-    m "{i}( Is that a dead beetle on the desk? ){/i}"
+    m "{i}Is that a dead beetle on the desk?{/i}"
 
-    m "{i}( Wish that were me. ){/i}"
+    m "{i}Wish that were me.{/i}"
 
     show elliot smile at right, flip
     with dissolve
@@ -1141,18 +1575,26 @@ label continue5:
 
     show elliot default
 
-    e "Waiit, I was kidding. Meet me tomorrow at 9—what’s your name?"
+    e "Waiit, I was kidding. Meet me tomorrow at 8. Oh, what’s your name?"
 
     m "Mira. Fine, sure."
 
-    e "Okay, I’ll get going. I should at least attend the last half hour of my literature class."
+    e "Okay, I should get going before they kick me out for doing magick in the classroom again."
+
+    e "See you tomorrow, Mira!"
 
     play sound "audio/sfx/walk-indoors.mp3"
 
     show elliot at right, flip:
         moveoffright
 
-    m "{i}( It's no longer a secret. Someone else knows I'm dead now. But somehow, the fact of it doesn’t feel like a threat. ){/i}"
+    $ ephoto = True
+    $ eupdate = 1
+    $ newinfoupdate = True
+
+    m "{i}( So it's no longer a secret. Someone else knows I'm dead now. ){/i}"
+
+    m "{i}( But somehow, the fact of it doesn’t feel like a threat. ){/i}"
 
     show mira surprised
 
@@ -1161,10 +1603,6 @@ label continue5:
     show mira default
 
     m "{i}Somewhere during our conversation, the beetle has landed back on the desk. I watch for any further signs of movement, but its body is still.{/i}"
-
-    $ ephoto = True
-    $ eupdate = 1
-    $ newinfoupdate = True
 
     m "{i}It’s dead once more.{/i}"
 
@@ -1175,36 +1613,25 @@ label continue5:
 
 label continue6:
 
-    $ remainingtime -= 4
+    $ remainingtime -=1
 
     hide mira
     with dissolve
 
-    if findfinn == True:
+    menu:
 
-        menu:
+        "Go back to the dorms and sleep":
+            jump sleep1
 
-            "Look for Finn again":
-                jump F1
-
-            "Time travel":
-                jump timetravel2
-    else:
-
-        menu:
-
-            "Look for Finn":
-                jump F1
-
-            "Time travel":
-                jump timetravel2
+        "Time travel":
+            jump timetravel3
 
 
-label timetravel2:
+label timetravel3:
 
     menu:
 
-        "Find Vivienne (-3 hrs)":
+        "Find Vivienne (-2 hrs)":
             $ time_travel_jump("V1")
 
         "Meet Elliot (-1 hr)":
@@ -1214,393 +1641,7 @@ label timetravel2:
             jump continue6
 
 
-# FINN 1 --------------------------------------
-
-label F1:
-
-    $ f1_done += 1
-
-    $ flirtmeter = 0
-
-    scene hallway
-    with fade
-
-    $ hide_menu()
-
-    centered "{font=Marker Felt.ttf} {size=35} 5:00 pm {/size} \n {size=40} After School {/size} {/font}"
-
-    $ show_menu()
-
-    show mira default at left
-    with dissolve
-
-    # SFX: crowd
-
-    m "{i}The moment classes ended, everyone immediately seemed to know where he was. {/i}"
-
-    m "{i} Elbows and backpacks ram into my side as I make my way through the academy."
-
-    m "{i} It’s the end of the day; the hallway is a sea of blue uniforms capped with white collars. {/i}"
-
-    # girl who spends all her time staring at the ocean: 
-    # getting a lot of ocean vibes from this
-
-    scene courtyard 
-    with fade
-
-    show mira surprised at left
-    with dissolve 
-
-    m "{i}There he is—varsity jacket and all. Surrounded by a tide pool of chattering students. {/i}"
-
-    # girl who spends all her time staring at the ocean, again: 
-    # getting a lot of ocean vibes from this
-
-    show mira default
-
-    m "Finn. I need to talk to you. Finn? Finn."
-
-    show mira sighing
-
-    m "Please don’t make me push my way through that crowd. Maybe I resign myself to being an undead servant forever—"
-
-    show mira surprised
-
-    f "Watch out!"
-
-    play sound "audio/sfx/thud.mp3" volume 3
-
-    show mira bonk
-
-    m "—!!" with hpunch
-
-    play sound "audio/sfx/walk-outdoors-short.mp3" volume 1.5
-
-    show finn concerned at right
-    with dissolve
-
-    show mira default
-
-    f "Hey, you okay?"
-
-    show finn default
-
-    play audio [ "<silence 1.5>", "audio/sfx/thud.mp3" ] volume 1.5
-
-    m "{i}He picks up the ball that slammed into the side of my head and tosses it back to a student who winces in apology. {/i}"
-
-    m "Yeah, I can’t feel pain."
-
-    show finn flirt
-
-    f "That’s a relief—wouldn’t wanna damage that pretty face."
-
-    hide mira
-    hide finn
-    with dissolve
-
-    menu:
-
-        "Pretend to flirt back":
-            $ flirtmeter += 1
-            jump flirt
-
-        "Stare at him unimpressed":
-            $ flirtmeter += 1
-            jump unimpressed
-
-        "Reject him outright":
-            jump reject
-
-
-label flirt:
-        
-        show mira smile at left
-
-        show mira at center:
-            movecenter
-
-        show finn flirt at right
-
-        m "What, the one in your mirror?"
-
-        show finn default
-
-        f "Hahaa. Finn, by the way."
-
-        m "I know who you are; I see your face all over the school’s newsletters."
-
-        f "Surely I have more redeeming qualities than my test scores?"
-
-        jump continue7
-
-
-label unimpressed:
-
-    show mira default at left
-
-    show finn flirt at right
-
-    m "..."
-
-    f  "..."
-
-    m "Did you think that was going to work, or..."
-
-    show finn default
-
-    f "Just telling it like it is. Finn, by the way."
-
-    m "I know who you are; I see your face all over the school’s newsletters."
-
-    f "Surely I have more redeeming qualities than my test scores?"
-
-    jump continue7
-
-
-label reject:
-
-    show mira sighing at left
-
-    show finn flirt at right
-
-    m "Should’ve taken one for the team then."
-
-    m "Actually, the school would be heartbroken if they lost you. Who else would they put on the front page of their newsletters?"
-
-    show finn pensive
-
-    f "Surely I have more redeeming qualities than my test scores?"
-
-    jump continue7
-
-
-label continue7:
-
-    hide mira
-    hide finn
-    with dissolve
-
-    menu: 
-
-        "I think so" if flirtmeter >= 1:
-            $ flirtmeter += 1
-            jump think
-
-        "Everyone else thinks so":
-            $ flirtmeter += 1
-            jump everyone
-
-        "That's your most attractive trait":
-            jump attractive
-
-
-label think:
-
-    show mira smile at left
-
-    show finn default at right
-
-    m "Of course. I don’t collect those newsletters to read them, you know."
-
-    show finn default
-
-    f "Do you cut out the pictures of me?"
-
-    m "Yeah. I have a shrine and everything."
-
-    show finn concerned
-
-    f "Oh, wow. I was going to keep flirting back, but that suddenly made it weird."
-
-    show mira default
-
-    show finn default
-
-    m "I wouldn’t be surprised if someone actually had a shrine."
-
-    m "Do you know how many students were devastated when they couldn’t find you at the masquerade?"
-
-    jump flirtcheck
-
-
-label everyone:
-
-    show mira default at left
-
-    show finn default at right
-
-    m "Everyone else definitely seems to think so."
-
-    m "How do you stand being surrounded by so many people all the time?"
-
-    f "I could ask the opposite of you."
-
-    m "Do you know how many students were devastated when they couldn’t find you at the masquerade?"
-
-    jump flirtcheck
-
-
-label attractive:
-
-    $ intelligence = True
-
-    show mira default at left
-
-    show finn default at right
-
-    m "Nope, that’s your most attractive trait."
-
-    if flirtmeter == 1: 
-
-        m "Don’t underestimate the appeal of intelligence."
-
-    show finn pensive
-
-    f "What are you, a university recruiter?"
-
-    if flirtmeter == 1:
-
-        jump flirtcheck
-
-    m "I’d be two years early."
-
-    m "Though if anyone was going to graduate high school in half the amount of time, it would definitely be you."
-
-    f "If that’s all—"
-
-    show mira surprised
-
-    m "No, wait—your redeeming quality is actually your ability to help me catch up on last week’s chemistry lectures. Please? I’m so close to failing the class."
-
-    jump continue8
-
-
-label flirtcheck:
-
-    if intelligence == True:
-
-        show mira default at left
-
-        show finn pensive at right
-
-        m "I can't be the only one who thinks so."
-
-        m "Do you know how many students were devastated when they couldn’t find you at the masquerade?"
-
-    if flirtmeter >= 1:
-
-        jump devastated
-
-
-label devastated:
-
-    show mira default at left
-
-    show finn pensive at right
-
-    f "Ah—I was sick."
-
-    m "..."
-
-    f "..."
-
-    show finn concerned
-
-    f "...What?"
-
-    show mira sighing
-
-    m "Was there an outbreak of the Black Plague last week? You couldn’t think of a better excuse than Vivienne?"
-
-    show finn default
-
-    f "Oh, Vivi might be telling the truth. Have you seen how little that girl sleeps?"
-
-    $ newinfoupdate = True
-
-    f "It’s like she thinks she’s got something to prove because she’s the {color=#56768f}daughter of our Dean.{/color}"
-
-    $ vividaughter = True
-    $ vupdate = 2
-
-    show mira default
-
-    m "So what’s the real reason you were gone?"
-
-    show finn flirt
-
-    f "You’re getting ahead of yourself—I don’t tell my secrets to people who think I have no redeeming qualities."
-
-    show mira sighing
-
-    m "Your redeeming quality is your ability to help me catch up on last week’s chemistry lectures. Please? I’m so close to failing the class."
-
-    jump continue8
-    
-
-label continue8:
-
-    show mira default at left
-
-    show finn pensive at right
-
-    f "..."
-
-    m "{i}There’s a moment of silence as I watch the synapses go off in his head, trying to decide how much he wants to uphold his reputation as the boy who does anything and everything. {/i}"
-
-    show finn default
-
-    f "Tomorrow, physical sciences lecture hall at lunch break. It’s the only time I’m free."
-
-    show mira smile
-
-    m "See you there. Thanks, Finn."
-
-    show finn flirt
-
-    f "Only because you’re pretty."
-
-    play sound "audio/sfx/walk-outdoors.mp3"
-
-    hide finn 
-    with dissolve
-
-    $ fphoto = True
-    
-    if vividaughter == True: 
-        $ fupdate = 2
-
-    else:
-        $ fupdate = 1
-
-    show mira default
-
-    $ newinfoupdate = True
-
-    m "{i}( Oh. I never told him my name. ){/i}"
-
-    jump continue9
-
-
-label continue9:
-
-    $ remainingtime -=1
-
-    hide mira
-    hide finn
-    with dissolve
-
-    menu:
-
-        "Go back to the dorms and sleep":
-            jump sleep
-
-        "Time travel":
-            jump timetravel3
-
-
-label sleep:
+label sleep1:
     
     scene blackscreen
     with fade
@@ -1614,24 +1655,6 @@ label sleep:
     centered "{font=Marker Felt.ttf} {size=40} {color=#fffcf4} End of Day 1 {/size} \n {size=35} {color=#fffcf4} 24 hours remaining {/color} {/size} {/font}"
 
     jump S1
-
-
-label timetravel3:
-    
-    menu:
-
-        "Find Vivienne (-6 hrs)":
-            $ time_travel_jump("V1")
-
-        "Meet Elliot (-5 hrs)":
-            $ time_travel_jump("E1")
-
-        "Meet Finn (-1 hr)":
-            $ time_travel_jump("F1")
-
-        "Never mind":
-            jump continue9
-
 
 
 # $ renpy.pause()

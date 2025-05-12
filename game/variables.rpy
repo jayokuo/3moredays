@@ -41,7 +41,7 @@ transform reflip:
 
 transform kabedon:
     xalign 0.5
-    ease 0.3 xalign 0.35
+    ease 0.3 xalign 0.32
 
 # TRANSITIONS --------------------------------------
 
@@ -76,6 +76,13 @@ default v1_done = 0
 default e1_done = 0
 default f1_done = 0
 default s1_done = 0
+default a1_done = 0
+
+default v2_done = 0
+default e2_done = 0
+default f2_done = 0
+default s2_done = 0
+default a2_done = 0
 
 # VARIABLES --------------------------------------
 
