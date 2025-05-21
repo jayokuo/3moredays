@@ -1,22 +1,66 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script1.rpy", line 723, in script
-    jump sceneskip
-ScriptError: could not find label 'sceneskip'.
+  File "game/script1.rpy", line 257, in script
+    m "I know where Vivienne is right now."
+  File "game/screens.rpy", line 98, in execute
+    screen say(who, what):
+  File "game/screens.rpy", line 98, in execute
+    screen say(who, what):
+  File "game/screens.rpy", line 112, in execute
+    use quick_menu
+  File "game/screens.rpy", line 240, in execute
+    screen quick_menu():
+  File "game/screens.rpy", line 240, in execute
+    screen quick_menu():
+  File "game/screens.rpy", line 264, in execute
+    if notebook:
+  File "game/screens.rpy", line 265, in execute
+    imagebutton auto "icon_%s" action [ShowMenu('book'), SetVariable("newinfoupdate", False)]:
+Exception: Imagebutton does not have a idle image. (auto='icon_%s').
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script1.rpy", line 723, in script
-    jump sceneskip
-  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/ast.py", line 1699, in execute
-    rv = renpy.game.script.lookup(target)
-  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/script.py", line 1103, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'sceneskip'.
+  File "game/script1.rpy", line 257, in script
+    m "I know where Vivienne is right now."
+  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/ast.py", line 2573, in execute
+    Say.execute(self)
+  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/ast.py", line 615, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/exports/sayexports.py", line 132, in say
+    who(what, *args, **kwargs)
+  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/character.py", line 1455, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/character.py", line 1106, in do_display
+    display_say(who,
+  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/character.py", line 749, in display_say
+    what_text = renpy.display.screen.get_widget(what_text[0], what_text[1], what_text[2])
+  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/display/screen.py", line 1540, in get_displayable
+    screen.update()
+  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/display/screen.py", line 697, in update
+    self.screen.function(**self.scope)
+  File "game/screens.rpy", line 98, in execute
+    screen say(who, what):
+  File "game/screens.rpy", line 98, in execute
+    screen say(who, what):
+  File "game/screens.rpy", line 112, in execute
+    use quick_menu
+  File "game/screens.rpy", line 240, in execute
+    screen quick_menu():
+  File "game/screens.rpy", line 240, in execute
+    screen quick_menu():
+  File "game/screens.rpy", line 264, in execute
+    if notebook:
+  File "game/screens.rpy", line 265, in execute
+    imagebutton auto "icon_%s" action [ShowMenu('book'), SetVariable("newinfoupdate", False)]:
+  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/ui.py", line 975, in _imagebutton
+    idle = choice(idle, idle_image, "idle", required=True)
+  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/ui.py", line 969, in choice
+    raise Exception("Imagebutton does not have a %s image. (auto=%r)." % (name, auto))
+Exception: Imagebutton does not have a idle image. (auto='icon_%s').
 
 macOS-14.5-arm64-arm-64bit arm64
 Ren'Py 8.3.3.24111502
 3 More Days 1.1
-Wed May 21 06:39:44 2025
+Wed May 21 09:58:14 2025

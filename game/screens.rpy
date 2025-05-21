@@ -272,8 +272,6 @@ screen quick_menu():
                 xalign 0.99
                 yalign 0.97
 
-    ## adjust the alignment !!! 
-
     if hourglass:
         add "ui/hourglass/hourglass"+ str(day) +".png":
             xalign 0.0
@@ -284,7 +282,6 @@ screen quick_menu():
             xalign 0.045
             yalign 0.861
 
- 
 ## Notebook
 
 screen book():

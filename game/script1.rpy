@@ -238,6 +238,14 @@ label tutorial:
 
     "{i}Check the {color=#56768f}hourglass{/color} in the bottom left to view your remaining hours. {/i}"
 
+    hide mira
+    show timetravel
+
+    "(this is supposed to be a screen, I'm working on it)"
+
+    show mira default at left
+    hide timetravel
+
     m "My mind was so clouded from the revival, I can barely remember the sound of my resurrector’s voice."
 
     m "I found a notebook lying on the gound earlier and created a profile for every student on the list."

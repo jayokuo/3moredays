@@ -2,8 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/script2.rpy", line 1357: invalid syntax
-    fupdate =
+File "game/screens.rpy", line 285: is not terminated with a newline. (Check strings and parenthesis.)
+            imagebutton action [ShowMenu('hourglass')
 
 Ren'Py Version: Ren'Py 8.3.3.24111502
-Wed May 21 07:28:30 2025
+Wed May 21 09:51:06 2025

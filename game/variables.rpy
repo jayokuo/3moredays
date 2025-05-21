@@ -67,6 +67,8 @@ default ephoto = False
 default eupdate = 0
 default sphoto = False
 default supdate = 0
+default aphoto = False
+default aupdate = 0
 
 default newinfoupdate = False
 
