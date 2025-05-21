@@ -339,9 +339,39 @@ screen book():
                     xalign 0.88
                     yalign 0.35
 
+            if (fupdate ==2):
+
                 text "sick???" style "notebook_text":
                     xalign 0.83
                     yalign 0.424
+
+            # this one overlaps w fupdate = 4
+
+            if (fupdate >= 3):
+
+                text "use me" style "notebook_text":
+                    xalign 0.855
+                    yalign 0.56
+
+                text "to help him" style "notebook_text":
+                    xalign 0.84
+                    yalign 0.63
+                
+                text "cheat?" style "notebook_text":
+                    xalign 0.77
+                    yalign 0.7
+
+            # this one won't show up for some reason
+
+            if (fupdate == 4):
+
+                text "socially" style "notebook_text":
+                    xalign 0.835
+                    yalign 0.424
+
+                text "overwhelmed" style "notebook_text":
+                    xalign 0.828
+                    yalign 0.493
 
 
         if (pagenumber == 1):
@@ -362,6 +392,10 @@ screen book():
                     xalign 0.355
                     yalign 0.28
 
+                text "biology" style "notebook_text":
+                    xalign 0.385
+                    yalign 0.351
+
                 text "magick spell" style "notebook_text":
                     xalign 0.395
                     yalign 0.424
@@ -374,14 +408,103 @@ screen book():
                     xalign 0.396
                     yalign 0.56
 
-                text "as an experiment" style "notebook_text":
-                    xalign 0.356
+                text "as an experiment?" style "notebook_text":
+                    xalign 0.36
                     yalign 0.63
 
+
+            if (supdate >= 1):
+
+                text "11" style "notebook_text":
+                    xalign 0.78
+                    yalign 0.28
+
+                text "chemistry" style "notebook_text":
+                    xalign 0.87
+                    yalign 0.35
+
+                text "avoiding" style "notebook_text":
+                    xalign 0.8405
+                    yalign 0.424
+
+                text "Aster" style "notebook_text":
+                    xalign 0.762
+                    yalign 0.493
+
+                text "use me" style "notebook_text":
+                    xalign 0.855
+                    yalign 0.56
+
+                text "to get back at" style "notebook_text":
+                    xalign 0.84
+                    yalign 0.63
+                
+                text "Aster?" style "notebook_text":
+                    xalign 0.77
+                    yalign 0.7
+
+
         if (pagenumber == 2):
-                add "ui/notebook/5-6.png":
+            
+            add "ui/notebook/5-6.png":
                     xalign 0.5
                     yalign 1.0
+
+            if (aupdate == 1):
+
+                text "attacked" style "notebook_text":
+                    xalign 0.38
+                    yalign 0.424
+
+                text "with a knife" style "notebook_text":
+                    xalign 0.334
+                    yalign 0.493
+
+            if (aupdate == 2):
+
+                text "blackmailed" style "notebook_text":
+                    xalign 0.4
+                    yalign 0.424
+
+                text "by Sera" style "notebook_text":
+                    xalign 0.317
+                    yalign 0.493
+
+            if (aupdate == 3):
+
+                text "shirt ripped" style "notebook_text":
+                    xalign 0.395
+                    yalign 0.424
+
+                text "apart by crow" style "notebook_text":
+                    xalign 0.34
+                    yalign 0.493
+
+            if (aupdate >= 4):
+
+                text "11" style "notebook_text":
+                    xalign 0.355
+                    yalign 0.28
+
+                text "chemistry" style "notebook_text":
+                    xalign 0.397
+                    yalign 0.351
+                
+                text "???" style "notebook_text":
+                    xalign 0.36
+                    yalign 0.424
+
+                text "what's" style "notebook_text":
+                    xalign 0.396
+                    yalign 0.56
+
+                text "wrong with this" style "notebook_text":
+                    xalign 0.35
+                    yalign 0.63
+
+                text "person??" style "notebook_text":
+                    xalign 0.32
+                    yalign 0.7
         fixed:
             imagebutton auto "x_%s" focus_mask True action Return()
             if (pagenumber != 2):

@@ -290,7 +290,9 @@ label V1:
     show mira sighing at left
     with dissolve
 
-    m "{i}( I’m starting to remember why I always skip morning classes. ){/i}"
+    if f1_done == 0:
+
+        m "{i}( I’m starting to remember why I always skip morning classes. ){/i}"
 
     p "That’s all for today, class dismissed."
 
@@ -310,24 +312,34 @@ label V1:
 
     m "Me too."
 
-    show vivienne default
+    if f1_done == 0:
 
-    v "And no, everyone’s still too excited from last night. What’d you wear to the masquerade?"
+        show vivienne default
 
-    hide mira 
-    hide vivienne 
-    with dissolve
+        v "And no, everyone’s still too excited from last night. What’d you wear to the masquerade?"
 
-    menu: 
+        hide mira 
+        hide vivienne 
+        with dissolve
 
-        "I skipped":
-            jump skipped
+        menu: 
 
-        "I got resurrected":
-            jump resurrected
+            "I skipped":
+                jump skipped
 
-        "Just a shirt and slacks":
-            jump shirtandslacks
+            "I got resurrected":
+                jump resurrected
+
+            "Just a shirt and slacks":
+                jump shirtandslacks
+
+    else:
+
+        m "{i}I chat with Vivienne about the masquerade, only half-listening to the responses I’ve already heard once before.{/i}"
+
+        v "Can’t wait to be yelled at by the Dean."
+
+        jump continue1
 
 
 label skipped:
@@ -698,35 +710,33 @@ label continue3:
     hide mira
     with dissolve
 
-    menu:
+    if f1_done == 0:
 
-        "Look for Finn":
+        menu:
 
-            $ findfinn = True
-            $ remainingtime -= 1
+            "Look for Finn":
 
-            if sera_day1 == True:
-
-                jump sceneskip
-
-            else:
+                $ findfinn = True
+                $ remainingtime -= 1  
                 jump F1
 
-        "Look for Elliot":
+            "Look for Elliot":
 
-            $ remainingtime -= 1
+                $ remainingtime -= 1
+                jump F1
 
-            if sera_day1 == True:
+            "Time travel":
+                jump timetravel1
 
+    else:
+
+        menu:
+
+            "Look for Finn":
+
+                $ findfinn = True
+                $ remainingtime -= 1
                 jump sceneskip1
-
-            else:
-
-                jump F1
-
-        "Time travel":
-            jump timetravel1
-
 
 label timetravel1:
 
@@ -746,9 +756,11 @@ label sceneskip1:
         "NOTE: this scene remains unchanged. Would you like to skip the scene? (I'LL REPLACE THIS W A POPUP DW)"
 
         "Yes":
+            $ remainingtime -= 3
             jump S1
 
         "No":
+            $ remainingtime -= 1
             jump F1
 
 
@@ -1146,6 +1158,7 @@ label continue9:
                 "Look for Elliot":
 
                     $ remainingtime -= 4
+                    jump E1
 
                 "Time travel":
                     jump timetravel2
@@ -1155,7 +1168,7 @@ label continue9:
 
                 "Look for Elliot again":
                     $ remainingtime -= 4
-                    jump F1
+                    jump E1
 
                 "Time travel":
                     jump timetravel2

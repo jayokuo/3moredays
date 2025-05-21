@@ -2,9 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/script2.rpy", line 1073: expected statement.
-    lable why:
-             ^
+File "game/script2.rpy", line 1357: invalid syntax
+    fupdate =
 
 Ren'Py Version: Ren'Py 8.3.3.24111502
-Fri May  9 20:07:06 2025
+Wed May 21 07:28:30 2025

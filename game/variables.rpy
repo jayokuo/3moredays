@@ -43,6 +43,9 @@ transform kabedon:
     xalign 0.5
     ease 0.3 xalign 0.32
 
+transform bindergrab:
+    ease 0.3 xalign 0.5
+
 # TRANSITIONS --------------------------------------
 
 define fade = Fade(0.5, 0.0, 0.5)
@@ -81,8 +84,7 @@ default a1_done = 0
 default v2_done = 0
 default e2_done = 0
 default f2_done = 0
-default s2_done = 0
-default a2_done = 0
+default sa2_done = 0
 
 # VARIABLES --------------------------------------
 
@@ -115,3 +117,6 @@ default annoysera = False
 
 # suggest another way to get back at Aster
 default aster_revenge = False
+
+# finally learn finn's alibi
+default finn_alibi = False

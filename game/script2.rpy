@@ -23,13 +23,9 @@ label S1:
         show mira default at left
         with dissolve
 
-        m "{i}What now? I can't talk to Elliot until school is over.{/i}"
-
-        m "{i}He's probably hidden away in some obscure corner of the academy, causing immense property damage.{/i}"
+        m "{i}What now? I guess I'll look for one of the others—{/i}"
 
         # SFX: footsteps down a hallway
-
-        m "{i}I’ll go look for one of the others—{/i}"
 
     else:
 
@@ -366,6 +362,8 @@ label revenge:
     m "So, do you want to get back at your ex?"
 
     show serafina fierce
+
+    # show serafina surprised
     
     s "...What are you suggesting?"
 
@@ -815,11 +813,11 @@ label continue14:
 
     $ newinfoupdate = True
 
+    $ aupdate = 1
+
     a "Turns out the boy from earlier wanted revenge. He waited until I was alone in the hallway and pulled out a knife."
 
     $ newinfoupdate = False
-
-    $ aupdate = 1
 
     show mira surprised
 
@@ -926,9 +924,9 @@ label continue15:
         
         menu:
 
-            "Find Elliot":
+            "Look for Elliot":
                 $ remainingtime -=1
-                jump sceneskip2
+                jump E1
 
             "Time travel":
                 jump timetravel5
@@ -943,19 +941,6 @@ label continue15:
 
             "Time travel":
                 jump timetravel5
-
-
-label sceneskip2:
-    
-    menu:
-
-        "NOTE: this scene remains unchanged. Would you like to skip the scene? (I'LL REPLACE THIS W A POPUP DW)"
-
-        "Yes":
-            jump continue6
-
-        "No":
-            jump E1
 
 
 label timetravel5:
@@ -1011,7 +996,7 @@ label F2:
 
     $ hide_menu()
 
-    centered "{font=Marker Felt.ttf} {size=35} 5:00 pm {/size} \n {size=40} Physical Sciences Lecture Hall {/size} {/font}"
+    centered "{font=Marker Felt.ttf} {size=35} 4:55 pm {/size} \n {size=40} Physical Sciences Lecture Hall {/size} {/font}"
 
     $ show_menu()
 
@@ -1026,11 +1011,19 @@ label F2:
 
     f "I’m always early."
 
+    show finn flirt
+
     f "Looking forward to seeing me that much?"
+
+    show mira sighing
 
     m "I’m looking forward to passing this class and not having to graduate a year late."
 
+    show finn default
+
     f "As you should be."
+
+    show mira default
 
     m "{i}He pulls out a chair and gestures for me to sit before taking the adjacent seat. A variety of notebooks and worksheets are spread out across the table.{/i}"
 
@@ -1042,7 +1035,11 @@ label F2:
 
     m "{i}I open my own notebook and flip to last week’s lecture notes.{/i}"
 
+    # show mira sighing
+
     m "Could you explain this to me like you’re not a 50 year old man with a PhD?"
+
+    show mira default
 
     m "{i}To Finn’s credit, he’s a good tutor. He breaks down the concepts easily and guides me through an example problem with precise taps of his pen against the paper.{/i}"
 
@@ -1052,15 +1049,26 @@ label F2:
 
     m "What was the real reason you missed the dance?"
 
+    show finn concerned
+
     f "What?"
 
-    f "Have you been listening to anything I said in the past five minutes?"
+    f "Have you been listening to anything I've said in the past five minutes?"
 
     m "I was listening. I just wondered if I’d redeemed myself yet."
 
+    show finn default
+
     f "Absolutely not. Maybe when you can finish a problem set without my help."
+
+    show mira sighing
     
     m "{i}( Ugh. I don’t have time for this. ){/i}"
+
+    show finn concerned
+
+    show mira default at center:
+        movecenter
 
     f "Hey—what are you doing?"
 
@@ -1068,29 +1076,43 @@ label F2:
 
     f "Don’t just grab my binder like that! I’ll get one for you."
 
+    show mira at left:
+        moveleft
+
     m "{i}He pulls my hand away and digs around in the binder.{/i}"
+
+    show finn frown
 
     m "{i}Something’s wrong. Finn’s voice is tense, the usual charismatic confidence hidden under a layer of panic.{/i}"
 
     m "Oww..."
+    
+    show finn pensive
 
     f "Did I hurt you?"
 
     f "I’m sorry, I didn’t mean to—"
 
+    show finn concerned
+
+    show mira at center:
+        bindergrab
+
     f "!!"
 
-    m "{i}I grab his wrist as he reaches for my hand and toss the binder open. Papers spill out across the desk.{/i}"
+    m "{i}I grab his wrist as he reaches for me and toss the binder open. Papers spill out across the desk.{/i}"
 
     f "Don’t—!"
 
-    m "{i}As Finn scans the desk desperately, I follow his frantic gaze and reach for the page it lands on.{/i}"
+    m "{i}As Finn scans the mess desperately, I follow his frantic gaze and snatch up the page it lands on.{/i}"
 
     m "{i}For a moment I’m disappointed; it’s just exam notes.{/i}"
 
-    m "{i}Then I notice the neat sets of rows, numbers followed by sentences or letters from A to D, all the way down.{/i}"
+    m "{i}Then I notice the neat columns of writing, numbers followed by sentences or letters from A to D, all the way down.{/i}"
 
-    m "Ohh."
+    m "Ohhh."
+
+    show finn pensive
 
     f "…………..."
 
@@ -1102,7 +1124,7 @@ label F2:
 
     menu:
 
-        "Why cheat?":
+        "Why are you cheating?":
             jump why
 
         "How long have you been doing this?":
@@ -1113,9 +1135,250 @@ label F2:
 
 label why:
 
+    show mira default at left
+    show finn pensive at right
+
+    m "Why are you cheating? You’re clearly intelligent."
+
+    m "Isn’t it more effort to constantly lie and maintain your reputation than to just study and get above-average grades?"
+
+    jump continue16
+
+
 label how:
 
+    show mira default at left
+    show finn pensive at right
+
+    m "How long have you been doing this?"
+
+    m "Don’t tell me that every time my professors used your work as an example, it was all copied."
+
+    jump continue16
+
+
 label whoknows:
+
+    show mira default at left
+    show finn pensive at right
+
+    m "Who else knows you’ve been cheating on your exams?"
+
+    m "Am I the only person to find out?"
+
+    jump continue16
+
+
+label continue16:
+
+    f "It’s not what you think. I didn’t cheat my way to the top; that was all my own effort."
+
+    f "But once you become the highest-achieving student at Seacliff, everyone learns to have expectations of you."
+
+    f "Someone asked me to help them review, then another student recruited me for the debate team, then professors were inviting me to attend conferences with them."
+
+    f "And then my classes started getting harder."
+
+    f "By the time I realized, I was already drowning."
+
+    m "You can say no sometimes, you know."
+
+    show finn frown
+
+    f "……"
+
+    m "{i}I pause. He looks so desperate, I can’t help it.{/i}"
+
+    m "Finn, I don’t give a shit if you’re cheating on all your exams."
+
+    show finn concerned
+
+    f "??"
+
+    m "What, you think I bought the whole golden boy act? I don’t care about academics; you’re just another student."
+
+    show finn pensive
+
+    f "You know, I envy you."
+
+    show mira surprised
+
+    m "What?"
+
+    f "What is it like to have so few eyes on you? No one cares whether you succeed or fail."
+
+    show mira default
+
+    m "{i}( …… If you knew the truth, you wouldn't be envious of me at all. ){/i}"
+
+    m "How do you manage to get the test answers every time?"
+
+    f "What?"
+
+    m "You can’t copy assignments off other students, since you’re keeping this a secret. And you haven’t been caught by anyone important enough to create consequences."
+
+    f "….It’s only for exams, and I don’t cheat on every exam. But I’m close with a lot of the professors, and several of them leave their office doors unlocked during breaks."
+
+    f "You’re right, though. Academic dishonesty is much more difficult as a one-man act."
+
+    hide mira
+    hide finn
+    with dissolve
+
+    menu:
+
+        "So I'm the only one who knows?":
+            jump whoknows2
+
+        "Is that why you missed the masquerade?":
+            $ finn_alibi = True
+            jump reason
+
+label whoknows2:
+
+    show mira default at left
+
+    show finn pensive at right
+
+    m "So I’m the only one who knows about this?"
+
+    f "…..No."
+
+    show mira surprised
+
+    f "Vivi found out one day during one of our study sessions."
+
+    jump continue17
+
+
+label reason:
+
+    show mira default at left
+
+    show finn pensive at right
+
+    m "Is that why you missed the masquerade? To break into a professor’s office?"
+
+    f "…… No."
+
+    f "To be honest, I skipped the masquerade because I didn’t want to be there."
+
+    f "I knew I would be surrounded the entire night, and for once in my life, I couldn’t find the energy to meet anyone's expectations of me."
+
+    f "So I didn’t go."
+
+    show mira sighing
+
+    m "…….You were acting so secretive just because of that??"
+
+    show finn concerned
+
+    f "What was I supposed to say? I wasn’t there because the thought of anyone finding out the truth made me feel like the world was ending?"
+
+    show mira default
+
+    m "So no one else knows?"
+
+    show finn pensive
+
+    show mira surprised
+
+    f "Vivi does. She found out one day during one of our study sessions."
+
+    jump continue17
+
+
+label continue17:
+
+    f "She’d known I was struggling to keep up with my classes for a while, so I probably should’ve guessed that she’d figure it out sooner or later."
+    
+    f "I know she doesn’t think she’s smart enough, but she’s way too strategic for her own good."
+
+    f "No one else knows aside from you two."
+    
+    show mira default
+
+    m "I’ll keep your secret, don’t worry. Even if I think you’re making things unnecessarily harder for yourself." 
+
+    f "I don’t know any other way."
+
+    f "Most people have interests they’re passionate about, ways they want to change the world. I only have things I’m good at. "
+
+    f "I don’t know where to go after I leave Seacliff."
+
+    m "I don’t either."
+
+    m "{i}( Once, the Dean tried to encourage me to find something I was interested in. She said, “Passion is what makes you feel alive.” ).{/i}"
+
+    m "{i}( I didn’t tell her that I only felt alive when looking at the ocean. ){/i}"
+
+    m "{i}( What is it like to have no one care whether or not you fail? ){/i}"
+
+    m "{i}( It’s like staring into the endless crash of waves. ){/i}"
+
+    m "Is it because we’re so remote? It feels like Seacliff is the entire world."
+
+    show finn default
+
+    f "It does, doesn’t it?"
+
+    show finn pensive
+
+    m "{i}We sit in silence for a while, both staring out the tall windows.{/i}"
+
+    m "{i}From the second story, the ocean is visible in the distance, glittering against the uncaring sky.{/i}"
+
+    show finn default
+
+    f "The view here has no right to be so romantic."
+
+    m "Definitely not."
+
+    f "Why did they design it this way? I’m trying to focus on the lecture, not fantasize about my 80 year old professor."
+
+    m "For the students that come here after school, obviously."
+
+    m "{i}A beat passes. Neither of us move towards the other.{/i}"
+
+    show finn pensive
+
+    f "If I liked girls, I’d kiss you here."
+
+    m "If I liked kissing anyone, I’d still turn you down."
+
+    $ newinfoupdate = True
+
+    if finn_alibi == True:
+
+        $ fupdate = 4
+
+    else:
+
+        $ fupdate = 3
+
+    show finn default
+
+    m "{i}At that, Finn's face splits into a smile, brighter and more genuine than any I've seen on him before.{/i}"
+
+    show mira smile
+
+    f "Good to know we’re on the same page."
+
+    jump SA2
+
+
+label SA2:
+
+    $ sa2_done += 1
+
+    scene hallway
+    with fade
+
+    $ hide_menu()
+
+    centered "{font=Marker Felt.ttf} {size=35} 10:00 pm {/size} \n {size=40} Aster's Dorm {/size} {/font}"
+
+    $ show_menu()
 
 
 "GAME ENDS HERE. PROGRESSING WILL RETURN YOU TO THE START MENU."
