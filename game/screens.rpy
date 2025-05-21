@@ -345,8 +345,6 @@ screen book():
                     xalign 0.83
                     yalign 0.424
 
-            # this one overlaps w fupdate = 4
-
             if (fupdate >= 3):
 
                 text "use me" style "notebook_text":
@@ -354,14 +352,12 @@ screen book():
                     yalign 0.56
 
                 text "to help him" style "notebook_text":
-                    xalign 0.84
+                    xalign 0.807
                     yalign 0.63
                 
                 text "cheat?" style "notebook_text":
                     xalign 0.77
                     yalign 0.7
-
-            # this one won't show up for some reason
 
             if (fupdate == 4):
 
