@@ -725,12 +725,12 @@ label continue3:
             "Look for Finn":
 
                 $ findfinn = True
-                $ remainingtime -= 1  
+                $ remainingtime -= 2  
                 jump F1
 
             "Look for Elliot":
 
-                $ remainingtime -= 1
+                $ remainingtime -= 2
                 jump F1
 
             "Time travel":
@@ -743,14 +743,13 @@ label continue3:
             "Look for Finn":
 
                 $ findfinn = True
-                $ remainingtime -= 1
                 jump sceneskip1
 
 label timetravel1:
 
     menu:
 
-        "Find Vivienne (-1 hr)":
+        "Meet Vivienne (-1 hr)":
             $ time_travel_jump("V1")
 
         "Never mind":
@@ -768,7 +767,7 @@ label sceneskip1:
             jump S1
 
         "No":
-            $ remainingtime -= 1
+            $ remainingtime -= 2
             jump F1
 
 
@@ -1186,7 +1185,7 @@ label timetravel2:
     
     menu:
 
-        "Find Vivienne (-3 hrs)":
+        "Meet Vivienne (-3 hrs)":
             $ time_travel_jump("V1")
 
         "Meet Finn (-1 hr)":
@@ -1652,7 +1651,7 @@ label timetravel3:
 
     menu:
 
-        "Find Vivienne (-2 hrs)":
+        "Meet Vivienne (-2 hrs)":
             $ time_travel_jump("V1")
 
         "Meet Elliot (-1 hr)":
@@ -1673,9 +1672,17 @@ label sleep1:
 
     centered "{color=#fffcf4}I’ll go wander the hallways wailing like the ghost I’m supposed to be until someone finds a way to put me to rest permanently.{/color}"
 
-    centered "{font=Marker Felt.ttf} {size=40} {color=#fffcf4} End of Day 1 {/size} \n {size=35} {color=#fffcf4} 24 hours remaining {/color} {/size} {/font}"
+    centered "{font=Marker Felt.ttf} {size=40} {color=#fffcf4} End of Day 1 {/size} \n {size=35} {color=#fffcf4} [remainingtime] hours remaining {/color} {/size} {/font}"
 
-    jump S1
+    # FIX WITH A STRING !!!
+
+    if sera_day1 == True:
+        $ remainingtime -= 14
+        jump E2
+
+    else:
+        $ remainingtime -= 14
+        jump S1
 
 
 # $ renpy.pause()

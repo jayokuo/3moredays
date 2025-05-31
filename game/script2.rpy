@@ -302,7 +302,7 @@ label fakedate:
 
     show mira default at farleft
 
-    show serafina at center
+    show serafina default at center
 
     m "So you want to make your ex jealous?"
     
@@ -339,7 +339,7 @@ label revenge:
 
     show mira default at farleft
 
-    show serafina at center
+    show serafina default at center
 
     m "That’s so annoying."
 
@@ -463,7 +463,7 @@ label timetravel4:
 
         menu:
 
-            "Find Vivienne (-4 hrs)":
+            "Meet Vivienne (-4 hrs)":
                 $ time_travel_jump("V1")
 
             "Meet Finn (-2 hrs)":
@@ -479,13 +479,13 @@ label timetravel4:
 
         menu:
 
-            "Find Vivienne (-22 hrs)":
+            "Meet Vivienne (-21 hrs)":
                 $ time_travel_jump("V1")
 
-            "Meet Finn (-20 hrs)":
+            "Meet Finn (-19 hrs)":
                 $ time_travel_jump("F1")
 
-            "Meet Elliot (-15 hrs)":
+            "Meet Elliot (-14 hrs)":
                 $ time_travel_jump("E1")
 
             "Meet Serafina (-1 hr)":
@@ -915,7 +915,7 @@ label continue14:
 
 label continue15:
 
-    $ remainingtime -=2
+    $ remainingtime -=1
 
     hide mira
     with dissolve
@@ -936,7 +936,7 @@ label continue15:
         menu:
 
             "Meet with Finn after school":
-                $ remainingtime -=2
+                $ remainingtime -=3
                 jump F2
 
             "Time travel":
@@ -949,7 +949,7 @@ label timetravel5:
 
         menu:
 
-            "Find Vivienne (-6 hrs)":
+            "Meet Vivienne (-6 hrs)":
                 $ time_travel_jump("V1")
 
             "Meet Finn (-4 hrs)":
@@ -968,19 +968,19 @@ label timetravel5:
 
         menu:
 
-            "Find Vivienne (-22 hrs)":
+            "Meet Vivienne (-27 hrs)":
                 $ time_travel_jump("V1")
 
-            "Meet Finn (-20 hrs)":
+            "Meet Finn (-25 hrs)":
                 $ time_travel_jump("F1")
 
-            "Meet Elliot (-15 hrs)":
+            "Meet Elliot (-20 hrs)":
                 $ time_travel_jump("E1")
 
             "Meet Serafina (-6 hours)":
                 $ time_travel_jump("S1")
 
-            "Meet Aster (-2 hrs)":
+            "Meet Aster (-1 hr)":
                 $ time_travel_jump("A1")
 
             "Never mind":
@@ -1025,7 +1025,7 @@ label F2:
 
     show mira default
 
-    m "{i}He pulls out a chair and gestures for me to sit before taking the adjacent seat. A variety of notebooks and worksheets are spread out across the table.{/i}"
+    m "{i}He pulls out a chair and gestures for me to sit before taking the opposite seat. A variety of notebooks and worksheets are spread out across the table.{/i}"
 
     m "{i}Unlike Vivienne’s post-it-covered notebooks, Finn’s notes are simple and practical, written in dark ink.{/i}"
 
@@ -1035,7 +1035,7 @@ label F2:
 
     m "{i}I open my own notebook and flip to last week’s lecture notes.{/i}"
 
-    # show mira sighing
+    show mira sighing
 
     m "Could you explain this to me like you’re not a 50 year old man with a PhD?"
 
@@ -1045,7 +1045,7 @@ label F2:
 
     m "{i}Even though I didn’t come here to learn, I find myself memorizing the knowledge anyways.{/i}"
 
-    m "{i}But I’m having trouble fully concentrating, given the fact that none of this will matter in about 36 hours.{/i}"
+    m "{i}But I’m having trouble fully concentrating, given the fact that none of this will matter in about [remainingtime] hours.{/i}"
 
     m "What was the real reason you missed the dance?"
 
@@ -1085,20 +1085,20 @@ label F2:
 
     m "{i}Something’s wrong. Finn’s voice is tense, the usual charismatic confidence hidden under a layer of panic.{/i}"
 
+    show mira surprised
+
     m "Oww..."
     
-    show finn pensive
+    show finn concerned
 
     f "Did I hurt you?"
 
     f "I’m sorry, I didn’t mean to—"
 
-    show finn concerned
-
-    show mira at center:
+    show mira default at center:
         bindergrab
 
-    f "!!"
+    f "!!" with hpunch
 
     m "{i}I grab his wrist as he reaches for me and toss the binder open. Papers spill out across the desk.{/i}"
 
@@ -1133,14 +1133,15 @@ label F2:
         "Who else knows?":
             jump whoknows
 
+
 label why:
 
     show mira default at left
     show finn pensive at right
 
-    m "Why are you cheating? You’re clearly intelligent."
+    m "Why are you cheating on your exams? You’re clearly intelligent."
 
-    m "Isn’t it more effort to constantly lie and maintain your reputation than to just study and get above-average grades?"
+    m "Isn’t it more effort to constantly lie than to just study and be content with above-average grades?"
 
     jump continue16
 
@@ -1152,7 +1153,7 @@ label how:
 
     m "How long have you been doing this?"
 
-    m "Don’t tell me that every time my professors used your work as an example, it was all copied."
+    m "Don’t tell me every time my professors used your work as an example, it was all copied."
 
     jump continue16
 
@@ -1164,7 +1165,7 @@ label whoknows:
 
     m "Who else knows you’ve been cheating on your exams?"
 
-    m "Am I the only person to find out?"
+    m "Am I the first person to find out?"
 
     jump continue16
 
@@ -1173,7 +1174,7 @@ label continue16:
 
     f "It’s not what you think. I didn’t cheat my way to the top; that was all my own effort."
 
-    f "But once you become the highest-achieving student at Seacliff, everyone learns to have expectations of you."
+    f "But once you become the top student at Seacliff, everyone learns to have expectations of you."
 
     f "Someone asked me to help them review, then another student recruited me for the debate team, then professors were inviting me to attend conferences with them."
 
@@ -1189,13 +1190,15 @@ label continue16:
 
     m "{i}I pause. He looks so desperate, I can’t help it.{/i}"
 
-    m "Finn, I don’t give a shit if you’re cheating on all your exams."
+    m "Finn, I don’t give a shit whether you're cheating or not."
 
     show finn concerned
 
     f "??"
 
-    m "What, you think I bought the whole golden boy act? I don’t care about academics; you’re just another student."
+    m "What, you think I bought the whole golden boy act? I don’t care about academics."
+
+    m "As far as I'm concerned, you’re just another student here."
 
     show finn pensive
 
@@ -1234,6 +1237,7 @@ label continue16:
             $ finn_alibi = True
             jump reason
 
+
 label whoknows2:
 
     show mira default at left
@@ -1257,13 +1261,13 @@ label reason:
 
     show finn pensive at right
 
-    m "Is that why you missed the masquerade? To break into a professor’s office?"
+    m "Is that why you missed the masquerade? To break into an unsuspecting professor’s office?"
 
     f "…… No."
 
     f "To be honest, I skipped the masquerade because I didn’t want to be there."
 
-    f "I knew I would be surrounded the entire night, and for once in my life, I couldn’t find the energy to meet anyone's expectations of me."
+    f "I knew I would be surrounded the entire night, and for once in my life, I couldn’t find the energy to meet everyone else's expectations of me."
 
     f "So I didn’t go."
 
@@ -1306,7 +1310,7 @@ label continue17:
 
     f "I don’t know where to go after I leave Seacliff."
 
-    m "I don’t either."
+    m "...I don’t either."
 
     m "{i}( Once, the Dean tried to encourage me to find something I was interested in. She said, “Passion is what makes you feel alive.” ).{/i}"
 
@@ -1334,7 +1338,7 @@ label continue17:
 
     m "Definitely not."
 
-    f "Why did they design it this way? I’m trying to focus on the lecture, not fantasize about my 80 year old professor."
+    f "Why did they design it this way? I’m trying to focus on the lecture, not fantasize about my 80-year-old professor."
 
     m "For the students that come here after school, obviously."
 
@@ -1342,9 +1346,9 @@ label continue17:
 
     show finn pensive
 
-    f "If I liked girls, I’d kiss you here."
+    f "If I liked girls, I’d ask you out."
 
-    m "If I liked kissing anyone, I’d still turn you down."
+    m "If you did, I'd turn you down."
 
     $ newinfoupdate = True
 
@@ -1362,9 +1366,87 @@ label continue17:
 
     show mira smile
 
-    f "Good to know we’re on the same page."
+    f "Glad we cleared that up."
 
-    jump SA2
+    jump continue18
+
+
+label continue18:
+    
+    $ remainingtime -= 2
+
+    hide mira
+    hide finn
+    with dissolve
+
+    menu:
+
+        "Meet up with Sera":
+            $ remainingtime -= 3
+            jump SA2
+
+        "Time travel":
+            jump timetravel6
+
+
+
+label timetravel6:
+
+    if sera_day1 == True:    
+
+        menu:
+
+            "Meet Vivienne (-31 hrs)":
+                $ time_travel_jump("V1")
+
+            "Meet Finn (-29 hrs)":
+                $ time_travel_jump("F1")
+
+            "Meet Serafina (-28 hrs)":
+                $ time_travel_jump("S1")
+
+            "Meet Aster (-26 hrs)":
+                $ time_travel_jump("A1")
+
+            "Meet Elliot (-24 hrs)":
+                $ time_travel_jump("E1")
+
+            "Take Elliot's tests (-11 hrs)":
+                $ time_travel_jump("E2")
+
+            "Talk to Vivienne (-7 hrs)":
+                $ time_travel_jump("V2")
+
+            "Study with Finn (-2 hrs)":
+                $ time_travel_jump("F2")
+
+            "Never mind":
+                jump continue18
+
+    else: 
+
+        menu:
+
+            "Meet Vivienne (-31 hrs)":
+                $ time_travel_jump("V1")
+
+            "Meet Finn (-29 hrs)":
+                $ time_travel_jump("F1")
+
+            "Meet Elliot (-24 hrs)":
+                $ time_travel_jump("E1")
+
+            "Meet Serafina (-11 hours)":
+                $ time_travel_jump("S1")
+
+            "Meet Aster (-6 hrs)":
+                $ time_travel_jump("A1")
+
+            "Study with Finn (-2 hours)":
+                $ time_travel_jump("F2")
+
+            "Never mind":
+                jump continue18
 
 
 label SA2:
@@ -1380,8 +1462,110 @@ label SA2:
 
     $ show_menu()
 
+    "scene WIP"
 
-"GAME ENDS HERE. PROGRESSING WILL RETURN YOU TO THE START MENU."
+    jump continue_infinite
+
+
+label continue_infinite:
+
+    $ remainingtime -= 2
+
+    menu:
+
+        "Go to sleep":
+            jump sleep2
+
+        "Time travel":
+            jump timetravel7
+
+
+label timetravel7:
+
+    if sera_day1 == True:    
+
+        menu:
+
+            "Meet Vivienne (-36 hrs)":
+                $ time_travel_jump("V1")
+
+            "Meet Finn (-34 hrs)":
+                $ time_travel_jump("F1")
+
+            "Meet Serafina (-33 hrs)":
+                $ time_travel_jump("S1")
+
+            "Meet Aster (-31 hrs)":
+                $ time_travel_jump("A1")
+
+            "Meet Elliot (-29 hrs)":
+                $ time_travel_jump("E1")
+
+            "Take Elliot's tests (-16 hrs)":
+                $ time_travel_jump("E2")
+
+            "Talk to Vivienne again (-12 hrs)":
+                $ time_travel_jump("V2")
+
+            "Study with Finn (-7 hrs)":
+                $ time_travel_jump("F2")
+
+            "Break into Aster's dorm (-2 hrs)":
+                $ time_travel_jump("SA2")
+
+            "Never mind":
+                jump continue_infinite
+
+    else: 
+
+        menu:
+
+            "Meet Vivienne (-36 hrs)":
+                $ time_travel_jump("V1")
+
+            "Meet Finn (-34 hrs)":
+                $ time_travel_jump("F1")
+
+            "Meet Elliot (-29 hrs)":
+                $ time_travel_jump("E1")
+
+            "Meet Serafina (-16 hours)":
+                $ time_travel_jump("S1")
+
+            "Meet Aster (-11 hrs)":
+                $ time_travel_jump("A1")
+
+            "Study with Finn (-7 hours)":
+                $ time_travel_jump("F2")
+
+            "Break into Aster's dorm (-2 hrs)":
+                $ time_travel_jump("SA2")
+
+            "Never mind":
+                jump continue_infinite
+
+
+label sleep2:
+
+    scene blackscreen
+    with fade
+
+    $ hide_menu1()
+
+    centered "{color=#fffcf4}Dialogue WIP.{/color}"
+
+    centered "{font=Marker Felt.ttf} {size=40} {color=#fffcf4} End of Day 2 {/size} \n {size=35} {color=#fffcf4} [remainingtime] hours remaining {/color} {/size} {/font}"
+
+    if sera_day1 == True:
+        $ remainingtime -= 7
+        jump ENDING1
+
+    else:
+        $ remainingtime -= 7
+        jump V2
+
+
+# "GAME ENDS HERE. PROGRESSING WILL RETURN YOU TO THE START MENU."
 
 
 

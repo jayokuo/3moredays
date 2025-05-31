@@ -1,29 +1,15 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/script1.rpy", line 257, in script
-    m "I know where Vivienne is right now."
-  File "game/screens.rpy", line 98, in execute
-    screen say(who, what):
-  File "game/screens.rpy", line 98, in execute
-    screen say(who, what):
-  File "game/screens.rpy", line 112, in execute
-    use quick_menu
-  File "game/screens.rpy", line 240, in execute
-    screen quick_menu():
-  File "game/screens.rpy", line 240, in execute
-    screen quick_menu():
-  File "game/screens.rpy", line 264, in execute
-    if notebook:
-  File "game/screens.rpy", line 265, in execute
-    imagebutton auto "icon_%s" action [ShowMenu('book'), SetVariable("newinfoupdate", False)]:
-Exception: Imagebutton does not have a idle image. (auto='icon_%s').
+While processing text tag {I} in '{I}In the end, I let myself stand still for a few moments, memorizing the rhythm of his heartbeat before I pull away.{/i}'.:
+  File "game/script3.rpy", line 451, in script
+    m "{I}In the end, I let myself stand still for a few moments, memorizing the rhythm of his heartbeat before I pull away.{/i}"
+Exception: Unknown text tag 'I'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script1.rpy", line 257, in script
-    m "I know where Vivienne is right now."
+  File "game/script3.rpy", line 451, in script
+    m "{I}In the end, I let myself stand still for a few moments, memorizing the rhythm of his heartbeat before I pull away.{/i}"
   File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/ast.py", line 2573, in execute
     Say.execute(self)
   File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/ast.py", line 615, in execute
@@ -34,33 +20,55 @@ Full traceback:
     self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
   File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/character.py", line 1106, in do_display
     display_say(who,
-  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/character.py", line 749, in display_say
-    what_text = renpy.display.screen.get_widget(what_text[0], what_text[1], what_text[2])
-  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/display/screen.py", line 1540, in get_displayable
-    screen.update()
-  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/display/screen.py", line 697, in update
-    self.screen.function(**self.scope)
-  File "game/screens.rpy", line 98, in execute
-    screen say(who, what):
-  File "game/screens.rpy", line 98, in execute
-    screen say(who, what):
-  File "game/screens.rpy", line 112, in execute
-    use quick_menu
-  File "game/screens.rpy", line 240, in execute
-    screen quick_menu():
-  File "game/screens.rpy", line 240, in execute
-    screen quick_menu():
-  File "game/screens.rpy", line 264, in execute
-    if notebook:
-  File "game/screens.rpy", line 265, in execute
-    imagebutton auto "icon_%s" action [ShowMenu('book'), SetVariable("newinfoupdate", False)]:
-  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/ui.py", line 975, in _imagebutton
-    idle = choice(idle, idle_image, "idle", required=True)
-  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/ui.py", line 969, in choice
-    raise Exception("Imagebutton does not have a %s image. (auto=%r)." % (name, auto))
-Exception: Imagebutton does not have a idle image. (auto='icon_%s').
+  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/character.py", line 803, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/display/core.py", line 2215, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/display/core.py", line 2879, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/display/core.py", line 1381, in draw_screen
+    surftree = renpy.display.render.render_screen(
+  File "render.pyx", line 486, in renpy.display.render.render_screen
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/display/layout.py", line 900, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/display/layout.py", line 900, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/display/layout.py", line 900, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/display/screen.py", line 754, in render
+    child = renpy.display.render.render(self.child, w, h, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/display/layout.py", line 900, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/display/layout.py", line 1457, in render
+    surf = render(child,
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/display/layout.py", line 900, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/text/text.py", line 2604, in render
+    virtual_layout = Layout(self, width, height, renders, drawable_res=False, size_only=True)
+  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/text/text.py", line 733, in __init__
+    self.paragraphs = self.segment(text.tokens, style, renders, text)
+  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/text/text.py", line 1530, in segment
+    raise Exception("Unknown text tag %r" % text)
+Exception: Unknown text tag 'I'
 
 macOS-14.5-arm64-arm-64bit arm64
 Ren'Py 8.3.3.24111502
-3 More Days 1.1
-Wed May 21 09:58:14 2025
+3 More Days 1.2
+Fri May 30 04:29:48 2025

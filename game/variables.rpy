@@ -24,6 +24,12 @@ transform movecenter:
 transform movecloseleft:
     ease 0.4 xalign 0.35
 
+transform movecloseleft2:
+    ease 0.2 xalign 0.43
+
+transform movecloseleft3:
+    ease 0.3 xalign 0.45
+
 transform movefarleft:
     ease 0.4 xalign 0.1
 
@@ -122,3 +128,6 @@ default aster_revenge = False
 
 # finally learn finn's alibi
 default finn_alibi = False
+
+# choose a test with elliot
+default test = 0

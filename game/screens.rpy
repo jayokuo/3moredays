@@ -406,6 +406,12 @@ screen book():
                     yalign 0.63
 
 
+            if (sphoto == True):
+
+                add "ui/notebook/updates/sphoto.png":
+                    xalign 0.5 
+                    yalign 1.0
+
             if (supdate >= 1):
 
                 text "11" style "notebook_text":
@@ -487,17 +493,17 @@ screen book():
                     xalign 0.36
                     yalign 0.424
 
-                text "what's" style "notebook_text":
-                    xalign 0.396
+                text "???" style "notebook_text":
+                    xalign 0.38
                     yalign 0.56
 
-                text "wrong with this" style "notebook_text":
-                    xalign 0.35
-                    yalign 0.63
+                text "what's wrong with" style "notebook_text":
+                    xalign 0.3
+                    yalign 0.768
 
-                text "person??" style "notebook_text":
-                    xalign 0.32
-                    yalign 0.7
+                text "this person?" style "notebook_text":
+                    xalign 0.23
+                    yalign 0.835
         fixed:
             imagebutton auto "x_%s" focus_mask True action Return()
             if (pagenumber != 2):
@@ -542,20 +548,26 @@ screen navigation():
         spacing gui.navigation_spacing
 
         if renpy.get_screen("main_menu"):
-            xalign 0.5
-            textbutton _("Start") action Start()
+            xalign 0.1
+            textbutton _("START") action Start()
 
         else:
-            xoffset 60
+            xoffset 120
             textbutton _("History") action ShowMenu("history")
 
             textbutton _("Save") action ShowMenu("save")
 
-        yalign 0.75
+        yalign 0.6
 
-        textbutton _("Load") action ShowMenu("load")
+        if renpy.get_screen("main_menu"):
+            xalign 0.1
+            textbutton _("LOAD") action ShowMenu("load")
+            textbutton _("PREFS") action ShowMenu("preferences")
 
-        textbutton _("Preferences") action ShowMenu("preferences")
+        else:
+            xoffset 120
+            textbutton _("Load") action ShowMenu("load")
+            textbutton _("Prefs") action ShowMenu("preferences")
 
         if _in_replay:
 
@@ -563,19 +575,16 @@ screen navigation():
 
         elif not main_menu:
 
-            textbutton _("Main Menu") action MainMenu()
+            textbutton _("Title") action MainMenu()
 
-        textbutton _("About") action ShowMenu("about")
+        if renpy.get_screen("main_menu"):
+            textbutton _("ABOUT") action ShowMenu("about")
+            textbutton _("HELP") action ShowMenu("help")
+            textbutton _("QUIT") action Quit(confirm=not main_menu)
 
-        if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
-
-            ## Help isn't necessary or relevant to mobile devices.
+        else: 
+            textbutton _("About") action ShowMenu("about")
             textbutton _("Help") action ShowMenu("help")
-
-        if renpy.variant("pc"):
-
-            ## The quit button is banned on iOS and unnecessary on Android and
-            ## Web.
             textbutton _("Quit") action Quit(confirm=not main_menu)
 
 
