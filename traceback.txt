@@ -1,66 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script1.rpy", line 359, in script
-    m "Oh, I skipped. Got yelled at by the Dean earlier."
-  File "game/screens.rpy", line 98, in execute
-    screen say(who, what):
-  File "game/screens.rpy", line 98, in execute
-    screen say(who, what):
-  File "game/screens.rpy", line 112, in execute
-    use quick_menu
-  File "game/screens.rpy", line 240, in execute
-    screen quick_menu():
-  File "game/screens.rpy", line 240, in execute
-    screen quick_menu():
-  File "game/screens.rpy", line 275, in execute
-    if hourglass:
-  File "game/screens.rpy", line 291, in execute
-    imagebutton auto "hourglass_day"+"_%s" action ShowMenu('time_travel_tutorial'):
-Exception: Imagebutton does not have a idle image. (auto='hourglass_day_%s').
+  File "game/screens.rpy", line 12, in script
+    style default:
+  File "game/screens.rpy", line 14, in <module>
+    language gui.language
+AttributeError: 'StoreModule' object has no attribute 'language'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script1.rpy", line 359, in script
-    m "Oh, I skipped. Got yelled at by the Dean earlier."
-  File "C:\Users\bluea\Desktop\renpy-8.3.1-sdk\renpy\ast.py", line 2573, in execute
-    Say.execute(self)
-  File "C:\Users\bluea\Desktop\renpy-8.3.1-sdk\renpy\ast.py", line 615, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\bluea\Desktop\renpy-8.3.1-sdk\renpy\exports\sayexports.py", line 132, in say
-    who(what, *args, **kwargs)
-  File "C:\Users\bluea\Desktop\renpy-8.3.1-sdk\renpy\character.py", line 1455, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "C:\Users\bluea\Desktop\renpy-8.3.1-sdk\renpy\character.py", line 1106, in do_display
-    display_say(who,
-  File "C:\Users\bluea\Desktop\renpy-8.3.1-sdk\renpy\character.py", line 749, in display_say
-    what_text = renpy.display.screen.get_widget(what_text[0], what_text[1], what_text[2])
-  File "C:\Users\bluea\Desktop\renpy-8.3.1-sdk\renpy\display\screen.py", line 1540, in get_displayable
-    screen.update()
-  File "C:\Users\bluea\Desktop\renpy-8.3.1-sdk\renpy\display\screen.py", line 697, in update
-    self.screen.function(**self.scope)
-  File "game/screens.rpy", line 98, in execute
-    screen say(who, what):
-  File "game/screens.rpy", line 98, in execute
-    screen say(who, what):
-  File "game/screens.rpy", line 112, in execute
-    use quick_menu
-  File "game/screens.rpy", line 240, in execute
-    screen quick_menu():
-  File "game/screens.rpy", line 240, in execute
-    screen quick_menu():
-  File "game/screens.rpy", line 275, in execute
-    if hourglass:
-  File "game/screens.rpy", line 291, in execute
-    imagebutton auto "hourglass_day"+"_%s" action ShowMenu('time_travel_tutorial'):
-  File "C:\Users\bluea\Desktop\renpy-8.3.1-sdk\renpy\ui.py", line 975, in _imagebutton
-    idle = choice(idle, idle_image, "idle", required=True)
-  File "C:\Users\bluea\Desktop\renpy-8.3.1-sdk\renpy\ui.py", line 969, in choice
-    raise Exception("Imagebutton does not have a %s image. (auto=%r)." % (name, auto))
-Exception: Imagebutton does not have a idle image. (auto='hourglass_day_%s').
+  File "game/screens.rpy", line 12, in script
+    style default:
+  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/ast.py", line 2817, in execute
+    self.apply()
+  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/ast.py", line 2800, in apply
+    value = renpy.python.py_eval(expr)
+  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/python.py", line 1209, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/python.py", line 1202, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/screens.rpy", line 14, in <module>
+    language gui.language
+AttributeError: 'StoreModule' object has no attribute 'language'
 
-Windows-10-10.0.26100 AMD64
-Ren'Py 8.3.1.24090601
+macOS-14.5-arm64-arm-64bit arm64
+Ren'Py 8.3.3.24111502
 3 More Days 1.2
-Sat May 31 23:09:29 2025
+Sun Jun  1 01:03:12 2025
