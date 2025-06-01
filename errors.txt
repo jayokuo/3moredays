@@ -1,4 +1,4 @@
-﻿I'm sorry, but errors were detected in your script. Please correct the
+I'm sorry, but errors were detected in your script. Please correct the
 errors listed below, and try again.
 
 
@@ -8,3 +8,4 @@ File "game/script2.rpy", line 1101: end of line expected.
 
 Ren'Py Version: Ren'Py 8.3.3.24111502
 Fri May 30 03:42:03 2025
+Test
