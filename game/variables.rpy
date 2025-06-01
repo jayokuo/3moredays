@@ -81,7 +81,7 @@ default newinfoupdate = False
 # COUNTERS --------------------------------------
 
 default remainingtime = 72
-default day = 1
+default day = 2
 
 default v1_done = 0
 default e1_done = 0
@@ -94,6 +94,7 @@ default e2_done = 0
 default f2_done = 0
 default sa2_done = 0
 
+default hourglass_string = ""
 # VARIABLES --------------------------------------
 
 # look for finn instead of elliot
