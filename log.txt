@@ -1,9 +1,9 @@
-2025-05-30 15:23:40 UTC
-macOS-14.5-arm64-arm-64bit
-Ren'Py 8.3.3.24111502
+2025-06-01 05:53:01 UTC
+Windows-10-10.0.26100
+Ren'Py 8.3.1.24090601
 
-Early init took 0.03s
-Loading error handling took 0.03s
+Early init took 0.04s
+Loading error handling took 0.02s
 Loading script took 0.12s
 Loading save slot metadata took 0.03s
 Loading persistent took 0.00s
@@ -15,11 +15,13 @@ Index archives took 0.00s
 Dump and make backups took 0.03s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc took 0.02s
+Initial gc took 0.03s
 DPI scale factor: 1.000000
-Creating interface object took 0.00s
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.16s
 Cleaning stores took 0.00s
-Init translation took 0.02s
+Init translation took 0.03s
 Build styles took 0.00s
 Load screen analysis took 0.02s
 Analyze screens took 0.00s
@@ -28,23 +30,694 @@ Prepare screens took 0.03s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.02s
 Running _start took 0.00s
-Interface start took 2.04s
+Interface start took 0.04s
 
 Initializing gl2 renderer:
-primary display bounds: (0, 0, 1440, 900)
+primary display bounds: (0, 0, 1920, 1080)
 swap interval: 1 frames
 Windowed mode.
-Vendor: "b'Apple'"
-Renderer: b'Apple M1'
-Version: b'2.1 Metal - 88.1'
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
 Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1440, 757) drawable=(2880, 1514)
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
 Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1440, 757) drawable=(2880, 1514)
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
 Maximum texture size: 4096x4096
 Resetting cache.
-Early init took 835.47s
+Early init took 816.15s
 Loading error handling took 0.02s
+Loading script took 0.16s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+Running init code took 0.02s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\bluea\\AppData\\Roaming/RenPy/backups\\3moredays':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.17s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 822.33s
+Loading error handling took 0.01s
+Loading script took 0.08s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+Running init code took 0.02s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\bluea\\AppData\\Roaming/RenPy/backups\\3moredays':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.17s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.03s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 825.75s
+Loading error handling took 0.01s
+Loading script took 0.07s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+Running init code took 0.02s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.16s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.02s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.03s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Interface start took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 830.84s
+Loading error handling took 0.01s
+Loading script took 0.07s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+Running init code took 0.02s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Dump and make backups took 0.02s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.16s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.02s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.03s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Interface start took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
+Resetting cache.
+Early init took 861.21s
+Loading error handling took 0.01s
+Loading script took 0.09s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+Running init code took 0.02s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\bluea\\AppData\\Roaming/RenPy/backups\\3moredays':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.05s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.18s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 862.88s
+Loading error handling took 0.01s
+Loading script took 0.07s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+Running init code took 0.02s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.16s
+Cleaning stores took 0.00s
+Init translation took 0.02s
+Build styles took 0.00s
+Load screen analysis took 0.02s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.03s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Interface start took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
+Resetting cache.
+Early init took 890.30s
+Loading error handling took 0.01s
+Loading script took 0.16s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+Running init code took 0.02s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\bluea\\AppData\\Roaming/RenPy/backups\\3moredays':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.05s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.16s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 904.08s
+Loading error handling took 0.01s
+Loading script took 0.17s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+Running init code took 0.02s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\bluea\\AppData\\Roaming/RenPy/backups\\3moredays':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.17s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 905.76s
+Loading error handling took 0.01s
+Loading script took 0.15s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+Running init code took 0.02s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\bluea\\AppData\\Roaming/RenPy/backups\\3moredays':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.05s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.17s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.03s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 909.00s
+Loading error handling took 0.01s
+Loading script took 0.17s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+Running init code took 0.02s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\bluea\\AppData\\Roaming/RenPy/backups\\3moredays':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.16s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 964.99s
+Loading error handling took 0.01s
+Loading script took 0.18s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+Running init code took 0.02s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\bluea\\AppData\\Roaming/RenPy/backups\\3moredays':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.05s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.17s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 966.70s
+Loading error handling took 0.01s
+Loading script took 0.15s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+Running init code took 0.02s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\bluea\\AppData\\Roaming/RenPy/backups\\3moredays':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.16s
+Cleaning stores took 0.00s
+Init translation took 0.02s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.03s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 971.46s
+Loading error handling took 0.01s
+Loading script took 0.15s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+Running init code took 0.02s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\bluea\\AppData\\Roaming/RenPy/backups\\3moredays':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.16s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.00s
+Save screen analysis took 0.01s
+Prepare screens took 0.03s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 974.67s
+Loading error handling took 0.01s
+Loading script took 0.15s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+Running init code took 0.02s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\bluea\\AppData\\Roaming/RenPy/backups\\3moredays':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.05s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.17s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.03s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 977.90s
+Loading error handling took 0.01s
+Loading script took 0.16s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+Running init code took 0.02s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\bluea\\AppData\\Roaming/RenPy/backups\\3moredays':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.16s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 979.59s
+Loading error handling took 0.01s
 Loading script took 0.15s
 Loading save slot metadata took 0.03s
 Loading persistent took 0.00s
@@ -53,57 +726,61 @@ Loading analysis data took 0.01s
 Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.02s
 Index archives took 0.00s
-Backing up script files to '/Users/jayokuo/Library/RenPy/backups/3moredays':
+Backing up script files to 'C:\\Users\\bluea\\AppData\\Roaming/RenPy/backups\\3moredays':
 Dump and make backups took 0.03s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc took 0.03s
+Initial gc took 0.04s
 DPI scale factor: 1.000000
-Creating interface object took 0.00s
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.16s
 Cleaning stores took 0.00s
-Init translation took 0.02s
+Init translation took 0.04s
 Build styles took 0.00s
 Load screen analysis took 0.00s
 Analyze screens took 0.01s
 Save screen analysis took 0.01s
-Prepare screens took 0.03s
+Prepare screens took 0.04s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.01s
 Running _start took 0.00s
-Interface start took 0.05s
+Interface start took 0.04s
 
 Initializing gl2 renderer:
-primary display bounds: (0, 0, 1440, 900)
+primary display bounds: (0, 0, 1920, 1080)
 swap interval: 1 frames
 Windowed mode.
-Vendor: "b'Apple'"
-Renderer: b'Apple M1'
-Version: b'2.1 Metal - 88.1'
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
 Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1440, 757) drawable=(2880, 1514)
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
 Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1440, 757) drawable=(2880, 1514)
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
 Maximum texture size: 4096x4096
 Resetting cache.
-Early init took 861.49s
+Early init took 982.81s
 Loading error handling took 0.01s
-Loading script took 0.13s
-Loading save slot metadata took 0.03s
+Loading script took 0.15s
+Loading save slot metadata took 0.02s
 Loading persistent took 0.00s
 Running init code took 0.02s
 Loading analysis data took 0.01s
 Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.02s
 Index archives took 0.00s
-Backing up script files to '/Users/jayokuo/Library/RenPy/backups/3moredays':
+Backing up script files to 'C:\\Users\\bluea\\AppData\\Roaming/RenPy/backups\\3moredays':
 Dump and make backups took 0.03s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc took 0.03s
+Initial gc took 0.04s
 DPI scale factor: 1.000000
-Creating interface object took 0.00s
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.16s
 Cleaning stores took 0.00s
-Init translation took 0.02s
+Init translation took 0.03s
 Build styles took 0.00s
 Load screen analysis took 0.00s
 Analyze screens took 0.01s
@@ -112,19 +789,408 @@ Prepare screens took 0.03s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.01s
 Running _start took 0.00s
-Interface start took 0.05s
+Interface start took 0.03s
 
 Initializing gl2 renderer:
-primary display bounds: (0, 0, 1440, 900)
+primary display bounds: (0, 0, 1920, 1080)
 swap interval: 1 frames
 Windowed mode.
-Vendor: "b'Apple'"
-Renderer: b'Apple M1'
-Version: b'2.1 Metal - 88.1'
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
 Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1440, 757) drawable=(2880, 1514)
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
 Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1440, 757) drawable=(2880, 1514)
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 986.00s
+Loading error handling took 0.01s
+Loading script took 0.12s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+
+File "game/screens.rpy", line 291: expected a keyword argument, colon, or end of line.
+    imagebutton auto "hourglass_day""_%s" action ShowMenu('time_travel_tutorial'):
+                                    ^
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Interface start took 0.21s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 987.62s
+Loading error handling took 0.01s
+Loading script took 0.15s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+Running init code took 0.03s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\bluea\\AppData\\Roaming/RenPy/backups\\3moredays':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.03s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.15s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.03s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/script1.rpy", line 359, in script
+    m "Oh, I skipped. Got yelled at by the Dean earlier."
+  File "C:\Users\bluea\Desktop\renpy-8.3.1-sdk\renpy\ast.py", line 2573, in execute
+    Say.execute(self)
+  File "C:\Users\bluea\Desktop\renpy-8.3.1-sdk\renpy\ast.py", line 615, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "C:\Users\bluea\Desktop\renpy-8.3.1-sdk\renpy\exports\sayexports.py", line 132, in say
+    who(what, *args, **kwargs)
+  File "C:\Users\bluea\Desktop\renpy-8.3.1-sdk\renpy\character.py", line 1455, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "C:\Users\bluea\Desktop\renpy-8.3.1-sdk\renpy\character.py", line 1106, in do_display
+    display_say(who,
+  File "C:\Users\bluea\Desktop\renpy-8.3.1-sdk\renpy\character.py", line 749, in display_say
+    what_text = renpy.display.screen.get_widget(what_text[0], what_text[1], what_text[2])
+  File "C:\Users\bluea\Desktop\renpy-8.3.1-sdk\renpy\display\screen.py", line 1540, in get_displayable
+    screen.update()
+  File "C:\Users\bluea\Desktop\renpy-8.3.1-sdk\renpy\display\screen.py", line 697, in update
+    self.screen.function(**self.scope)
+  File "game/screens.rpy", line 98, in execute
+    screen say(who, what):
+  File "game/screens.rpy", line 98, in execute
+    screen say(who, what):
+  File "game/screens.rpy", line 112, in execute
+    use quick_menu
+  File "game/screens.rpy", line 240, in execute
+    screen quick_menu():
+  File "game/screens.rpy", line 240, in execute
+    screen quick_menu():
+  File "game/screens.rpy", line 275, in execute
+    if hourglass:
+  File "game/screens.rpy", line 291, in execute
+    imagebutton auto "hourglass_day"+"_%s" action ShowMenu('time_travel_tutorial'):
+  File "C:\Users\bluea\Desktop\renpy-8.3.1-sdk\renpy\ui.py", line 975, in _imagebutton
+    idle = choice(idle, idle_image, "idle", required=True)
+  File "C:\Users\bluea\Desktop\renpy-8.3.1-sdk\renpy\ui.py", line 969, in choice
+    raise Exception("Imagebutton does not have a %s image. (auto=%r)." % (name, auto))
+Exception: Imagebutton does not have a idle image. (auto='hourglass_day_%s').
+
+While running game code:
+  File "game/script1.rpy", line 359, in script
+    m "Oh, I skipped. Got yelled at by the Dean earlier."
+  File "game/screens.rpy", line 98, in execute
+    screen say(who, what):
+  File "game/screens.rpy", line 98, in execute
+    screen say(who, what):
+  File "game/screens.rpy", line 112, in execute
+    use quick_menu
+  File "game/screens.rpy", line 240, in execute
+    screen quick_menu():
+  File "game/screens.rpy", line 240, in execute
+    screen quick_menu():
+  File "game/screens.rpy", line 275, in execute
+    if hourglass:
+  File "game/screens.rpy", line 291, in execute
+    imagebutton auto "hourglass_day"+"_%s" action ShowMenu('time_travel_tutorial'):
+Exception: Imagebutton does not have a idle image. (auto='hourglass_day_%s').
+Resetting cache.
+Early init took 990.81s
+Loading error handling took 0.01s
+Loading script took 0.12s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+
+File "game/screens.rpy", line 291: expected a keyword argument, colon, or end of line.
+    imagebutton auto "hourglass_day"+str(day)"_%s" action ShowMenu('time_travel_tutorial'):
+                                             ^
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Interface start took 0.21s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 992.44s
+Loading error handling took 0.01s
+Loading script took 0.14s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+Running init code took 0.02s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\bluea\\AppData\\Roaming/RenPy/backups\\3moredays':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.16s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.03s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 997.20s
+Loading error handling took 0.01s
+Loading script took 0.15s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+Running init code took 0.02s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\bluea\\AppData\\Roaming/RenPy/backups\\3moredays':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.05s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.16s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.03s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 1017.01s
+Loading error handling took 0.01s
+Loading script took 0.15s
+Loading save slot metadata took 0.03s
+Loading persistent took 0.00s
+Running init code took 0.03s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\bluea\\AppData\\Roaming/RenPy/backups\\3moredays':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.16s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.03s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 1401.78s
+Loading error handling took 0.01s
+Loading script took 0.08s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+Running init code took 0.02s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\bluea\\AppData\\Roaming/RenPy/backups\\3moredays':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.04s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.17s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.03s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.02s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
+Resetting cache.
+Early init took 1645.08s
+Loading error handling took 0.01s
+Loading script took 0.33s
+Loading save slot metadata took 0.02s
+Loading persistent took 0.00s
+Running init code took 0.02s
+Loading analysis data took 0.01s
+Analyze and compile ATL took 0.00s
+Reloading save slot metadata took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\bluea\\AppData\\Roaming/RenPy/backups\\3moredays':
+Dump and make backups took 0.03s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc took 0.06s
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 0.16s
+Cleaning stores took 0.00s
+Init translation took 0.03s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.01s
+Prepare screens took 0.04s
+Save pyanalysis. took 0.01s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Interface start took 0.03s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 4070/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 560.94'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1009) drawable=(1920, 1009)
 Maximum texture size: 4096x4096
 Cleaning stores took 0.00s
 Init translation took 0.00s
