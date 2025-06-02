@@ -207,7 +207,10 @@ style input:
 ## https://www.renpy.org/doc/html/screen_special.html#choice
 
 screen choice(items):
-    style_prefix "choice"
+    if choiceLeftToggle:
+        style_prefix "choiceLeft"
+    else:
+        style_prefix "choice"
 
     vbox:
         for i in items:
@@ -231,6 +234,32 @@ style choice_button is default:
 style choice_button_text is default:
     properties gui.button_text_properties("choice_button")
 
+style choiceLeft_vbox is choice_vbox:
+    xalign 0.0595
+    yalign 0.5
+    yanchor 0.5
+
+    spacing gui.choice_spacing
+
+style choiceLeft_button is default:
+    properties gui.button_properties("choice_button")
+    xsize 500
+
+style choiceLeft_button_text is default:
+    properties gui.button_text_properties("choice_button")
+    layout "nobreak"
+
+screen experiment_screen(items):
+    style_prefix "experimentChoice"
+    text "Choose an experiment to run:"
+
+    hbox:
+        for i in items:
+            textbutton i.caption action i.action
+
+style experimentChoice_vbox is choice_vbox
+style experimentChoice_button is button
+style experimentChoice_button_text is button_text
 
 ## Quick Menu screen ###########################################################
 ##
