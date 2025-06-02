@@ -1558,7 +1558,7 @@ label sleep2:
 
     if sera_day1 == True:
         $ remainingtime -= 7
-        jump ENDING1
+        jump E1
 
     else:
         $ remainingtime -= 7

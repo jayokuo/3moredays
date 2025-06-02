@@ -273,9 +273,25 @@ screen quick_menu():
                 yalign 0.97
 
     if hourglass:
-        add "ui/hourglass/hourglass"+ str(day) +".png":
-            xalign 0.0
-            yalign 0.97
+        # safe method
+        if day == 1:
+            imagebutton auto "hourglass_day1_%s" action ShowMenu('time_travel_tutorial'):
+                xalign 0.0
+                yalign 0.97
+        if day == 2:
+            imagebutton auto "hourglass_day2_%s" action ShowMenu('time_travel_tutorial'):
+                xalign 0.0
+                yalign 0.97
+        if day == 3:
+            imagebutton auto "hourglass_day3_%s" action ShowMenu('time_travel_tutorial'):
+                xalign 0.0
+                yalign 0.97
+
+        # cleaner method
+        # imagebutton auto "hourglass_day" + str(day) + "_%s" action ShowMenu('time_travel_tutorial'):
+        #     xalign 0.0
+        #     yalign 0.97
+
         text "[remainingtime]":
             color "fffcf4"
             size 26
@@ -512,6 +528,19 @@ screen book():
             if (pagenumber != 0):
                 imagebutton auto "arrow left_%s" action (SetVariable("pagenumber", pagenumber -1)):
                     focus_mask True
+
+screen time_travel_tutorial():
+    add "ui/general/blackscreen.png":
+        alpha 0.55
+    
+    fixed:
+        imagebutton auto "x_%s" focus_mask True action Return():
+            xalign 0.5
+            yalign 0.5
+
+        add "ui/hourglass/timetravellaws.png"
+
+
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever

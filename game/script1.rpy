@@ -23,8 +23,6 @@ define a = Character ("Aster")
 
 label start:
 
-    $ day = 1
-
     scene beach
     with fade
 
