@@ -4,7 +4,7 @@ While running game code:
   File "game/screens.rpy", line 12, in script
     style default:
   File "game/screens.rpy", line 14, in <module>
-    language gui.language
+    language gui.language()
 AttributeError: 'StoreModule' object has no attribute 'language'
 
 -- Full Traceback ------------------------------------------------------------
@@ -21,10 +21,10 @@ Full traceback:
   File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/python.py", line 1202, in py_eval_bytecode
     return eval(bytecode, globals, locals)
   File "game/screens.rpy", line 14, in <module>
-    language gui.language
+    language gui.language()
 AttributeError: 'StoreModule' object has no attribute 'language'
 
 macOS-14.5-arm64-arm-64bit arm64
 Ren'Py 8.3.3.24111502
 3 More Days 1.2
-Sun Jun  1 18:04:34 2025
+Sun Jun  1 18:10:38 2025

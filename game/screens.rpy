@@ -11,7 +11,7 @@ init offset = -1
 
 style default:
     properties gui.text_properties()
-    language gui.language
+    language gui.language()
 
 style input:
     properties gui.text_properties("input", accent=True)
