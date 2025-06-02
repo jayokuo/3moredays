@@ -1462,9 +1462,99 @@ label SA2:
 
     $ show_menu()
 
-    "scene WIP"
+    show serafina default at closeleft:
+        flip
 
-    jump continue_infinite
+    show mira default at farleft
+    with dissolve
+
+    m "Are you sure they’re gone?"
+
+    s "Yeah, Aster has film club meetings every Tuesday."
+
+    s "They’re all going to a late-night screening downtown, so Aster won’t be back until around midnight."
+
+    if annoysera == True:
+
+        m "{i}( …..So much for not knowing their schedule. ){/i}"
+
+    s "And I have the key right here."
+
+    m "{i}She holds up a small bronze key that presumably unlocks the door a few feet down the hall.{/i}"
+
+    m "{i}The nameplate next to it has been taped over with a sheet of paper, which reads ASTER in a heavy scrawl. There's a doodle of a cat in the corner.{/i}"
+
+    s "Aster made me a copy of their dorm key a few weeks ago and I never returned it when we broke up."
+
+    s "Should’ve known it’d be useful later."
+
+    s "Okay, do you remember our revenge plan?"
+
+    m "Yeah. We go inside, do what we need, and get out."
+
+    s "Quick and easy."
+
+    s "No one will know we were—"
+
+    # sfx: door opening
+
+    show aster at right
+    with dissolve
+
+    a "What the hell."
+
+    m "?!"
+
+    s "What are you doing here??"
+
+    a "Going…to the bathroom…?"
+
+    a "What are {i}you{/i} doing here?"
+
+    s "Nothing. We were just passing through."
+
+    s "I live in this building too, you know."
+
+    a "Why would you be passing through the fifth floor? And what’s in your bag that’s making those clinking sounds?"
+
+    a "….Were you going to spray lemon juice on all my clothes again?"
+
+    s "What are you—"
+
+    a "Or maybe you planned to dump it in my shampoo bottle, or—oh—"
+
+    a "You were going to replace my cologne with it, weren’t you."
+
+    m "{i}( Welp. ){/i}"
+
+    s "How did you know that?"
+
+    a "Because you use the same strategy every time."
+
+    a "Last time you were mad at me, you took the soap in my bathroom and replaced it with a lemon-scented bar."
+
+    a "The time before that, you hid multiple lemons around my dorm in the most inconvenient places."
+
+    a "That cologne is expensive, you know."
+
+    s "I wasn’t going to throw it out. And why aren’t you at the downtown screening?"
+
+    a "Because I didn’t want to go. Do I need a reason for everything?"
+
+    s "I thought you’d try to keep up some semblance of a social life now that none of my friends talk to you anymore—"
+
+    m "{i}( This is going nowhere. ){/i}"
+
+    menu:
+
+        "Can we come in?":
+            jump comein
+
+        "Guys, stop arguing.":
+            jump aruging
+
+        "Why lemons?":
+            jump lemons
 
 
 label continue_infinite:
