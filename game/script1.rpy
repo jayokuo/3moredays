@@ -19,11 +19,11 @@ define a = Character ("Aster")
 
 # DAY 1 --------------------------------------
 
-$ day = 1
-
 # OPENING --------------------------------------
 
 label start:
+
+    $ day = 1
 
     scene beach
     with fade

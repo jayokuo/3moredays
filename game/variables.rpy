@@ -81,7 +81,7 @@ default newinfoupdate = False
 # COUNTERS --------------------------------------
 
 default remainingtime = 72
-default day = 2
+default day = 1
 
 default v1_done = 0
 default e1_done = 0
