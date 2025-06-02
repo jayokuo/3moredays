@@ -1,26 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-FileNotFoundError: [Errno 2] No such file or directory: '/Users/jayokuo/Desktop/3moredays/game/saves/persistent.1748766399.tmp'
+  File "game/screens.rpy", line 12, in script
+    style default:
+  File "game/screens.rpy", line 14, in <module>
+    language gui.language
+AttributeError: 'StoreModule' object has no attribute 'language'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/bootstrap.py", line 359, in bootstrap
-    renpy.main.main()
-  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/main.py", line 666, in main
-    renpy.persistent.update(True)
-  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/persistent.py", line 434, in update
-    save()
-  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/persistent.py", line 456, in save
-    renpy.loadsave.location.save_persistent(compressed)
-  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/savelocation.py", line 622, in save_persistent
-    l.save_persistent(data)
-  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/savelocation.py", line 426, in save_persistent
-    with open(fn_tmp, "wb") as f:
-FileNotFoundError: [Errno 2] No such file or directory: '/Users/jayokuo/Desktop/3moredays/game/saves/persistent.1748766399.tmp'
+  File "game/screens.rpy", line 12, in script
+    style default:
+  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/ast.py", line 2817, in execute
+    self.apply()
+  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/ast.py", line 2800, in apply
+    value = renpy.python.py_eval(expr)
+  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/python.py", line 1209, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "/Users/jayokuo/Desktop/renpy-8.3.3-sdk/renpy/python.py", line 1202, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/screens.rpy", line 14, in <module>
+    language gui.language
+AttributeError: 'StoreModule' object has no attribute 'language'
 
 macOS-14.5-arm64-arm-64bit arm64
 Ren'Py 8.3.3.24111502
 3 More Days 1.2
-Sun Jun  1 01:27:19 2025
+Sun Jun  1 18:04:34 2025
