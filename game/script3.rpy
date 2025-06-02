@@ -162,23 +162,34 @@ label E2:
     jump experiment
 
 label experiment:
+    $ choiceLeftToggle = True
 
     hide mira
     hide elliot
     with dissolve
 
+    show experiment_screen
+
     menu:
 
             "Choose the wand":
+                hide experiment_screen
+                $ choiceLeftToggle = False
                 jump wand
 
             "Choose the camera":
+                hide experiment_screen
+                $ choiceLeftToggle = False
                 jump camera
 
             "Choose the switchblade":
+                hide experiment_screen
+                $ choiceLeftToggle = False
                 jump knife
 
             "Choose the book":
+                hide experiment_screen
+                $ choiceLeftToggle = False
                 jump book
 
 label wand:
@@ -686,7 +697,7 @@ label timetravel9:
                 $ time_travel_jump("SA2")
 
             "Talk to Vivienne again (-2 hrs)":
-                 $ time_travel_jump("V2")
+                $ time_travel_jump("V2")
 
             "Do Elliot's tests (-1 hr)":
                 $ time_travel_jump("E2")
