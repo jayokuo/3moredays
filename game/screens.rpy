@@ -298,7 +298,7 @@ screen quick_menu():
             xalign 0.045
             yalign 0.861
 
-## Notebook
+## Notebook ###########################################################
 
 screen book():
     tag menu
@@ -539,9 +539,6 @@ screen time_travel_tutorial():
             yalign 0.5
 
         add "ui/hourglass/timetravellaws.png"
-
-
-
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
 ## the player has not explicitly hidden the interface.
@@ -1416,45 +1413,43 @@ screen confirm(message, yes_action, no_action):
 
     style_prefix "confirm"
 
-    add "gui/overlay/confirm.png"
+    add "images/ui/general/blackscreen.png":
+            alpha 0.55
 
-    frame:
+    add "gui/confirm.png"
+    
+    if message == layout.DELETE_SAVE:
+        textbutton "Abandon this save?" xalign 0.5 yalign 0.445
+        textbutton "Yes" xalign 0.42 yalign 0.536 action yes_action
+        textbutton "No" xalign 0.58 yalign 0.536 action no_action
+        
+    elif message == layout.OVERWRITE_SAVE:
+        textbutton "Overwrite this save?" xalign 0.5 yalign 0.445
+        textbutton "Yes" xalign 0.42 yalign 0.536 action yes_action
+        textbutton "No" xalign 0.58 yalign 0.536 action no_action
+        
+    elif message == layout.LOADING:
+        textbutton "Lose your unsaved progress?" xalign 0.5 yalign 0.445
+        textbutton "Yes" xalign 0.42 yalign 0.536 action yes_action
+        textbutton "No" xalign 0.58 yalign 0.536 action no_action
 
-        vbox:
-            xalign .5
-            yalign .5
-            spacing 45
+    elif message == layout.QUIT:
+        textbutton "Do I finally get a break?" xalign 0.5 yalign 0.445
+        textbutton "Yes" xalign 0.42 yalign 0.536 action yes_action
+        textbutton "No" xalign 0.58 yalign 0.536 action no_action
+        
+    elif message == layout.MAIN_MENU:
+        textbutton "Admire my drowning visage?" xalign 0.5 yalign 0.445
+        textbutton "Yes" xalign 0.42 yalign 0.536 action yes_action
+        textbutton "No" xalign 0.58 yalign 0.536 action no_action
 
-            label _(message):
-                style "confirm_prompt"
-                xalign 0.5
-
-            hbox:
-                xalign 0.5
-                spacing 150
-
-                textbutton _("Yes") action yes_action
-                textbutton _("No") action no_action
+    else:
+        textbutton "Are you sure?" xalign 0.5 yalign 0.445
+        textbutton "Yes" xalign 0.42 yalign 0.536 action yes_action
+        textbutton "No" xalign 0.58 yalign 0.536 action no_action
 
     ## Right-click and escape answer "no".
     key "game_menu" action no_action
-
-
-style confirm_frame is gui_frame
-style confirm_prompt is gui_prompt
-style confirm_prompt_text is gui_prompt_text
-style confirm_button is gui_medium_button
-style confirm_button_text is gui_medium_button_text
-
-style confirm_frame:
-    background Frame([ "gui/confirm_frame.png", "gui/frame.png"], gui.confirm_frame_borders, tile=gui.frame_tile)
-    padding gui.confirm_frame_borders.padding
-    xalign .5
-    yalign .5
-
-style confirm_prompt_text:
-    text_align 0.5
-    layout "subtitle"
 
 style confirm_button:
     properties gui.button_properties("confirm_button")

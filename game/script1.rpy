@@ -32,11 +32,9 @@ label start:
 
     pause 3.0
 
-    x "Are you surprised to be alive again?"
-
-    scene beach 
-
     show resurrector
+
+    x "Are you surprised to be alive again?"
 
     m "{i}( ...? ) {/i}"
     
@@ -103,6 +101,9 @@ label deansoffice:
 
     $show_menu1()
 
+    $ hourglass = True
+    $ remainingtime = 64
+
     play music "audio/ost/bgm1.mp3" volume 0.25
 
     d "—and can I remind you, this school has one of the most competitive acceptance rates in the region." 
@@ -132,8 +133,6 @@ label deansoffice:
         moveoffright
 
     m "{i}My footsteps echo as I dodge the piles of paperwork and dirty mugs blocking the way to the exit.{/i}"
-
-    scene blackscreen
 
     scene hallway
     with fade
@@ -210,6 +209,8 @@ label deansoffice:
    
     m "{i}The list lies crumpled against my skirt. {/i}"
 
+    $ remainingtime -= 1
+
     jump tutorial
 
 # TUTORIAL --------------------------------------
@@ -231,18 +232,7 @@ label tutorial:
 
     m "Even when I travel back in time, the countdown keeps moving forward towards the third day." 
 
-    $ hourglass = True
-    $ remainingtime = 64
-
-    "{i}Check the {color=#56768f}hourglass{/color} in the bottom left to view your remaining hours. {/i}"
-
-    hide mira
-    show timetravel
-
-    "(this is supposed to be a screen, I'm working on it)"
-
-    show mira default at left
-    hide timetravel
+    "{i}Click the {color=#56768f}hourglass{/color} in the bottom left to view your remaining hours.{/i}"
 
     m "My mind was so clouded from the revival, I can barely remember the sound of my resurrector’s voice."
 
@@ -270,8 +260,6 @@ label tutorial:
 
     hide mira
     with dissolve
-
-    $ remainingtime -=1
 
     jump V1
 

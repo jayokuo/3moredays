@@ -2,17 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 586: expected statement.
-    m: "I know who you are, Mr. Top Student at Seacliff."
-     ^
-
-File "game/script.rpy", line 590: expected statement.
-    f: "Ugh, surely I have more redeeming qualities?"
-     ^
-
-File "game/script.rpy", line 610: expected statement.
-    m “Everyone else seems to think so. Do you know how many students were devastated when they couldn’t find you at the masquerade?”
-                                      ^
+File "game/screens.rpy", line 564: Line is indented, but the preceding screen statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    if sceneskip == True:
+    ^
 
 Ren'Py Version: Ren'Py 8.3.3.24111502
-Wed Jan 29 12:50:07 2025
+Sun Jun  1 23:02:01 2025

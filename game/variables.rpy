@@ -95,6 +95,7 @@ default f2_done = 0
 default sa2_done = 0
 
 default hourglass_string = ""
+
 # VARIABLES --------------------------------------
 
 # look for finn instead of elliot

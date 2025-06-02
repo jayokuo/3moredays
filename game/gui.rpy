@@ -193,6 +193,8 @@ define gui.check_button_borders = Borders(27, 6, 6, 6)
 
 define gui.confirm_button_text_xalign = 0.5
 
+define gui.confirm_button_text_size = 32
+
 define gui.page_button_borders = Borders(15, 6, 15, 6)
 
 define gui.quick_button_borders = Borders(35, 6, 35, 0)

@@ -38,4 +38,17 @@ python early:
         renpy.scene()
         renpy.jump(location)
         renpy.with_statement(fade)
+
+
+    def skip_scene():
+        renpy.show("blackscreen")
+        renpy.show("confirm")
+        renpy.text("test")
+
+
         
+        # textbutton "I've seen this all before." xalign 0.5 yalign 0.445
+        # textbutton "Continue" xalign 0.42 yalign 0.536
+        # textbutton "Skip" xalign 0.58 yalign 0.536
+
+
