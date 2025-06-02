@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script2.rpy", line 1468: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
-    transform flip
-                  ^
+File "game/script2.rpy", line 1749: expected ':' not found.
+    label continue20
+                    ^
 
 Ren'Py Version: Ren'Py 8.3.3.24111502
-Mon Jun  2 01:28:18 2025
+Mon Jun  2 07:30:16 2025

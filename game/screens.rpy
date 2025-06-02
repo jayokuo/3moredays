@@ -155,8 +155,8 @@ style say_label:
     yalign 0.5
 
 style say_dialogue:
+    line_spacing 1
     properties gui.text_properties("dialogue")
-
     xpos gui.dialogue_xpos
     xsize gui.dialogue_width
     ypos gui.dialogue_ypos

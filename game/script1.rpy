@@ -10,9 +10,10 @@ define d = Character("Dean")
 define v = Character("Vivienne")
 define p = Character("Professor")
 define f = Character("Finn")
-define e = Character ("Elliot")
-define s = Character ("Serafina")
-define a = Character ("Aster")
+define e = Character("Elliot")
+define s = Character("Serafina")
+define a = Character("Aster")
+define b = Character("Both")
 
 
 # The game starts here.

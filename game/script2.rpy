@@ -412,6 +412,8 @@ label continue11:
 
         s "Tell me more about your idea."
 
+        $ remainingtime -=1
+
         jump continue12
 
     else:
@@ -434,12 +436,11 @@ label continue11:
     
         s "Revenge."
 
+        $ remainingtime -=1
+
         jump continue12
 
-
 label continue12:
-
-    $ remainingtime -=1
 
     menu:
 
@@ -910,12 +911,12 @@ label continue14:
 
     m "{i}I’m never coming to this lab again.{/i}"
 
+    $ remainingtime -=1
+
     jump continue15
 
 
 label continue15:
-
-    $ remainingtime -=1
 
     hide mira
     with dissolve
@@ -1368,12 +1369,12 @@ label continue17:
 
     f "Glad we cleared that up."
 
+    $ remainingtime -= 2
+
     jump continue18
 
 
 label continue18:
-    
-    $ remainingtime -= 2
 
     hide mira
     hide finn
@@ -1482,7 +1483,9 @@ label SA2:
 
     m "{i}She holds up a small bronze key that presumably unlocks the door a few feet down the hall.{/i}"
 
-    m "{i}The nameplate next to it has been taped over with a sheet of paper, which reads ASTER in a heavy scrawl. There's a doodle of a cat in the corner.{/i}"
+    m "{i}The nameplate next to it has been taped over with a sheet of paper, which reads ASTER in a heavy scrawl.{/i}"
+
+    m "{i}There's a doodle of a cat in the corner.{/i}"
 
     s "Aster made me a copy of their dorm key a few weeks ago and I never returned it when we broke up."
 
@@ -1503,9 +1506,9 @@ label SA2:
 
     a "What the hell."
 
-    m "?!"
+    m "?!" with vpunch
 
-    s "What are you doing here??"
+    s "What are you doing here??" 
 
     a "Going…to the bathroom…?"
 
@@ -1517,7 +1520,9 @@ label SA2:
 
     a "Why would you be passing through the fifth floor? And what’s in your bag that’s making those clinking sounds?"
 
-    a "….Were you going to spray lemon juice on all my clothes again?"
+    s ".............."
+
+    a "Were you going to spray lemon juice on all my clothes again?"
 
     s "What are you—"
 
@@ -1529,11 +1534,11 @@ label SA2:
 
     s "How did you know that?"
 
-    a "Because you use the same strategy every time."
+    a "Because you always use the same strategy every time."
 
     a "Last time you were mad at me, you took the soap in my bathroom and replaced it with a lemon-scented bar."
 
-    a "The time before that, you hid multiple lemons around my dorm in the most inconvenient places."
+    a "The time before that, you hid multiple lemons around my dorm in inconvenient places."
 
     a "That cologne is expensive, you know."
 
@@ -1541,9 +1546,14 @@ label SA2:
 
     a "Because I didn’t want to go. Do I need a reason for everything?"
 
-    s "I thought you’d try to keep up some semblance of a social life now that none of my friends talk to you anymore—"
+    s "I thought you'd try to keep up some pretense of a social life—"
 
     m "{i}( This is going nowhere. ){/i}"
+
+    hide mira
+    hide serafina
+    hide aster
+    with dissolve
 
     menu:
 
@@ -1551,15 +1561,220 @@ label SA2:
             jump comein
 
         "Guys, stop arguing.":
-            jump aruging
+            jump arguing
 
         "Why lemons?":
             jump lemons
 
 
-label continue_infinite:
+label comein:
+    
+    show mira default at farleft
+    show serafina fierce at closeleft:
+        flip
+    show aster at right
+    with dissolve
 
-    $ remainingtime -= 2
+    m "Aster, can we come in?"
+
+    jump continue19
+
+label arguing:
+
+    show mira default at farleft
+    show serafina fierce at closeleft:
+        flip
+    show aster at right
+    with dissolve
+
+    m "Guys, stop arguing"
+
+    b "We’re not arguing."
+
+    m "Sure. And I’m not dead."
+
+    s "What?"
+
+    a "You aren’t dead."
+
+    m "Never mind. Aster, can we come in?"
+
+    jump continue19
+
+
+label lemons:
+
+    show mira default at farleft
+    show serafina fierce at closeleft:
+        flip
+    show aster at right
+    with dissolve
+
+    m "Why lemons in particular?"
+
+    a "Because I hate the scent of lemons. It was one of the first things Sera learned about me."
+
+    a "I never asked, by the way. Where do you get them from each time?"
+
+    s "The dining hall. They’re perpetually stocked."
+
+    a "Of course. You didn't even have to pay to annoy me."
+
+    s "What can I say? I'm resourceful."
+
+    m "Aster, can we come in?"
+
+    jump continue19
+
+
+label continue19:
+
+    s" What? We’re not—"
+
+    a "Sure."
+
+    a "As long as you don’t touch the cologne."
+
+    s "We’re not coming in. We only came here because I thought you’d be gone."
+
+    s "Come on, Mira."
+
+    m "{i}She reaches over and grabs my hand.{/i}"
+
+    m "{i}Out of the corner of my eye, I see Aster raise an eyebrow but say nothing.{/i}"
+
+    s "See you around, then."
+
+    m "Wait."
+
+    s "What?"
+
+    m "{i}I try desperately to think of some way to stall.{/i}"
+
+    m "The key."
+
+    s "Oh, right."
+
+    m "{i}She turns back around and crosses over to Aster, dropping the spare key into their hand.{/i}"
+
+    a "Sera."
+
+    s "What?"
+
+    a "Why did you skip the masquerade?"
+
+    m "{i}In my mind, I silently thank Aster for their inability to ever shut up.{/i}"
+
+    s "Why do you think? I was trying to avoid you."
+
+    s "Why did {i}you{/i} skip the masquerade?"
+
+    a "Eh, I just didn’t feel like going."
+
+    s "You—"
+
+    m "That’s it???"
+
+    a "The actual reason is so boring, right? Can you blame me for elaborating a little?"
+
+    s "What do you mean, you didn’t feel like going? We planned our outfits for weeks."
+
+    a "I believe a minor setback called the breakup interfered with that."
+
+    s "We weren’t even matching. You could’ve gone on your own."
+
+    a "Sure, if I’d felt like it."
+
+    s "Do you put any actual thought into your decisions? You didn’t feel like going to the masquerade, you don’t feel like going downtown."
+    
+    s "I have an actual reason to avoid things when I think you’ll be there. What’s your excuse?"
+
+    a "What makes you think I don’t have an excuse?"
+
+    s "Because you take every chance you can get to greet me like nothing’s wrong. If you do have an excuse, it's clearly not the same one."
+
+    a "That’s not very solid reasoning, is it?"
+
+    m "{i}( Sera approached me in the hallway to pretend she wasn’t avoiding Aster, but she said she skipped the masquerade to avoid them. ){/i}"
+
+    m "{i}( Was she lying…? ){/i}"
+
+    m "{i}( And Aster’s alibi isn’t convincing at all. They didn’t even say where they were that night. ){/i}"
+
+    a "My excuse is that I was too busy thinking of stupid ways to get back at my ex-girlfriend."
+
+    a "Did you send Finn to get revenge on me too?"
+
+    s "Finn?"
+
+    m "{i}( Finn? ){/i}"
+
+    a "I saw him hanging around the floor a week ago when Elliot and I were studying in the lounge."
+
+    a "He kept glancing over his shoulder, like he was afraid someone would see him."
+
+    s "I have no idea what you’re talking about. I’ve never talked to Finn before."
+
+    s "He’s probably just seeing someone on this floor in secret."
+
+    scene courtyard
+
+    show mira default at left
+
+    show elliot default at center
+
+    show image "ui/general/blackscreen.png":
+        alpha 0.55
+
+    e "I take the current book I’m reading everywhere I go. It could’ve been left on a desk while I went to the bathroom, or forgotten in a classroom for a few hours."
+
+    scene hallway
+
+    show mira surprised at farleft
+
+    show serafina fierce at closeleft:
+        flip
+
+    show aster at right
+
+    m "{i}( ……..I need to see Finn again. ){/i}"
+
+    m "{i}I glance hurriedly at the clock in the hallway. Sera and I have already been here for an hour.{i}"
+
+    m "{i}I want to interrogate Aster for more information, but the longer I stay here, the more time I’ll lose.{/i}"
+
+    jump continue20
+
+
+label continue20:
+
+    hide mira
+    hide serafina
+    hide aster
+    with dissolve
+
+    menu:
+
+        "Time travel":
+            $ ttearly = True
+            jump timetravel7
+
+        "Ask Aster for more details":
+            jump interrogate
+
+
+label interrogate:
+
+    show mira default at farleft
+    show serafina surprised at closeleft:
+        flip
+    show aster at right
+
+    jump tempstop
+
+label continue21:
+
+    $ remainingtime -= 1
 
     menu:
 
@@ -1604,7 +1819,12 @@ label timetravel7:
                 $ time_travel_jump("SA2")
 
             "Never mind":
-                jump continue_infinite
+
+                if ttearly == True:
+                    jump continue20
+
+                else:
+                    jump continue21
 
     else: 
 
@@ -1632,7 +1852,7 @@ label timetravel7:
                 $ time_travel_jump("SA2")
 
             "Never mind":
-                jump continue_infinite
+                jump continue21
 
 
 label sleep2:
@@ -1654,8 +1874,9 @@ label sleep2:
         $ remainingtime -= 7
         jump V2
 
+label tempstop:
 
-# "GAME ENDS HERE. PROGRESSING WILL RETURN YOU TO THE START MENU."
+    "GAME ENDS HERE. PROGRESSING WILL RETURN YOU TO THE START MENU."
 
 
 

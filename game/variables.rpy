@@ -134,3 +134,6 @@ default finn_alibi = False
 
 # choose a test with elliot
 default test = 0
+
+# time travel back early to confront Finn about the missing page
+default ttearly = False
