@@ -302,17 +302,20 @@ screen quick_menu():
                 yalign 0.97
 
     if hourglass:
+
+        $ update_hourglass()
+
         # safe method
-        if day == 1:
-            imagebutton auto "hourglass_day1_%s" action ShowMenu('time_travel_tutorial'):
+        if day == 3:
+            imagebutton auto "hourglass_day3_%s" action ShowMenu('time_travel_tutorial'):
                 xalign 0.0
                 yalign 0.97
-        if day == 2:
+        elif day == 2:
             imagebutton auto "hourglass_day2_%s" action ShowMenu('time_travel_tutorial'):
                 xalign 0.0
                 yalign 0.97
-        if day == 3:
-            imagebutton auto "hourglass_day3_%s" action ShowMenu('time_travel_tutorial'):
+        elif day == 1:
+            imagebutton auto "hourglass_day1_%s" action ShowMenu('time_travel_tutorial'):
                 xalign 0.0
                 yalign 0.97
 
@@ -327,7 +330,7 @@ screen quick_menu():
             xalign 0.045
             yalign 0.861
 
-## Notebook ###########################################################
+## Notebook Text ###########################################################
 
 screen book():
     tag menu
@@ -494,6 +497,12 @@ screen book():
                     xalign 0.5
                     yalign 1.0
 
+            if (aphoto == True):
+
+                add "ui/notebook/updates/aphoto.png":
+                    xalign 0.5 
+                    yalign 1.0
+
             if (aupdate == 1):
 
                 text "attacked" style "notebook_text":
@@ -524,16 +533,8 @@ screen book():
                     xalign 0.34
                     yalign 0.493
 
-            if (aupdate >= 4):
+            if (aupdate == 4):
 
-                text "11" style "notebook_text":
-                    xalign 0.355
-                    yalign 0.28
-
-                text "chemistry" style "notebook_text":
-                    xalign 0.397
-                    yalign 0.351
-                
                 text "???" style "notebook_text":
                     xalign 0.36
                     yalign 0.424
@@ -542,6 +543,16 @@ screen book():
                     xalign 0.38
                     yalign 0.56
 
+            if (aupdate >= 4):
+
+                text "11" style "notebook_text":
+                    xalign 0.355
+                    yalign 0.28
+
+                text "chemistry" style "notebook_text":
+                    xalign 0.4
+                    yalign 0.351
+
                 text "what's wrong with" style "notebook_text":
                     xalign 0.3
                     yalign 0.768
@@ -549,6 +560,29 @@ screen book():
                 text "this person?" style "notebook_text":
                     xalign 0.23
                     yalign 0.835
+
+            if (aupdate == 5):
+
+                text "didn't feel" style "notebook_text":
+                    xalign 0.387
+                    yalign 0.424
+
+                text "like going" style "notebook_text":
+                    xalign 0.323
+                    yalign 0.493
+
+                text "acts" style "notebook_text":
+                    xalign 0.39
+                    yalign 0.56
+
+                text "too suspicious" style "notebook_text":
+                    xalign 0.341
+                    yalign 0.628
+
+                text "to not have one" style "notebook_text":
+                    xalign 0.349
+                    yalign 0.7
+
         fixed:
             imagebutton auto "x_%s" focus_mask True action Return()
             if (pagenumber != 2):

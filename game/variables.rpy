@@ -12,6 +12,9 @@ transform closeleft:
 transform farleft:
     xalign 0.1 yalign 0.0
 
+transform closeright:
+    xalign 0.45 yalign 0.0
+
 transform moveleft:
     ease 0.5 xalign 0.25
 
@@ -32,6 +35,9 @@ transform movecloseleft3:
 
 transform movefarleft:
     ease 0.4 xalign 0.1
+
+transform movecloseright:
+    ease 0.5 xalign 0.45
 
 transform moveoffleft:
     ease 1.0 xalign -0.55
@@ -82,7 +88,7 @@ default newinfoupdate = False
 # COUNTERS --------------------------------------
 
 default remainingtime = 72
-default day = 1
+default day = 2
 
 default v1_done = 0
 default e1_done = 0
@@ -135,5 +141,11 @@ default finn_alibi = False
 # choose a test with elliot
 default test = 0
 
+# learn that finn was seen around aster's floor
+default susfinn = False
+
 # time travel back early to confront Finn about the missing page
 default ttearly = False
+
+# discover a missing page in Elliot's book
+default missing_page = False

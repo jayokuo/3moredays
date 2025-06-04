@@ -20,6 +20,14 @@ define b = Character("Both")
 
 # DAY 1 --------------------------------------
 
+# if remainingtime <= 24:
+
+#     $ day = 3
+
+# elif remainingtime <= 48:
+
+#     $ day = 2
+
 # OPENING --------------------------------------
 
 label start:
@@ -695,12 +703,12 @@ label continue2:
         # is it gay to notice the way your classmate smells 
         # when you're in the middle of a death or life situation
 
+        $ remainingtime -=1
+
         jump continue3
 
 
 label continue3:
-
-    $ remainingtime -=1
 
     hide mira
     with dissolve
@@ -1130,12 +1138,12 @@ label continue8:
 
     m "{i}I watch as he's swallowed up by the crowd again.{/i}"
 
+    $ remainingtime -=1
+
     jump continue9
 
 
 label continue9:
-
-    $ remainingtime -=1
 
     hide mira
     with dissolve
@@ -1229,7 +1237,7 @@ label E1:
 
     m "{i}Wish that were me.{/i}"
 
-    show elliot smile at right, flip
+    show elliot flip smile at right
     with dissolve
 
     # figure out how to fade in without disappearing dialogue box
@@ -1244,7 +1252,7 @@ label E1:
 
     m "{i}( Necromancy. ) {/i}"
 
-    show elliot default
+    show elliot flip default
 
     x "You shouldn’t spy on people, you know. It’s rude."
 
@@ -1254,13 +1262,13 @@ label E1:
 
     m "...I didn’t want to interrupt what you were doing."
 
-    show elliot smile
+    show elliot flip smile
 
     x "Come on, little one."
 
     m "{i}He scoops the beetle into his hands. It flaps its wings again in irritation and sets off flying around the classroom. {/i}"
 
-    show elliot default at right, reflip
+    show elliot default at right
 
     e "Elliot. Nice to meet you."
 
@@ -1615,19 +1623,19 @@ label continue5:
 
     # haha what if the bug foreshadowed her fate that'd be crazy
 
+    $ remainingtime -=1
+
     jump continue6
 
 
 label continue6:
-
-    $ remainingtime -=1
 
     hide mira
     with dissolve
 
     menu:
 
-        "Go back to the dorms and sleep":
+        "Go back to your dorm and sleep":
             jump sleep1
 
         "Time travel":
@@ -1638,8 +1646,17 @@ label timetravel3:
 
     menu:
 
-        "Meet Vivienne (-2 hrs)":
+        "Meet Vivienne (-8 hrs)":
             $ time_travel_jump("V1")
+
+        "Meet Finn (-6 hrs)":
+            $ time_travel_jump("F1")
+
+        "Meet Serafina (-5 hrs)" if sera_day1 == True:
+            $ time_travel_jump("S1")
+
+        "Meet Aster (-3 hrs)" if sera_day1 == True:
+            $ time_travel_jump("A1")
 
         "Meet Elliot (-1 hr)":
             $ time_travel_jump("E1")
@@ -1660,8 +1677,6 @@ label sleep1:
     centered "{color=#fffcf4}I’ll go wander the hallways wailing like the ghost I’m supposed to be until someone finds a way to put me to rest permanently.{/color}"
 
     centered "{font=Marker Felt.ttf} {size=40} {color=#fffcf4} End of Day 1 {/size} \n {size=35} {color=#fffcf4} [remainingtime] hours remaining {/color} {/size} {/font}"
-
-    # FIX WITH A STRING !!!
 
     if sera_day1 == True:
         $ remainingtime -= 14

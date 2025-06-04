@@ -1,5 +1,16 @@
 python early:
 
+    def update_hourglass():
+        
+        if store.remainingtime <= 24:
+            store.day = 3
+
+        elif store.remainingtime <= 48:
+            store.day = 2
+
+        elif store.remainingtime <= 72:
+            store.day = 1
+
     def hide_menu():
         store.notebook = False
         store.quick_menu = False

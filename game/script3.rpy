@@ -2,80 +2,78 @@
 
 # VIVIENNE 2 --------------------------------------
     
-label V2:
+# label V2:
 
-    $ day = 3
+#     $ v2_done += 1
 
-    $ v2_done += 1
+#     scene courtyard
+#     with fade
 
-    scene courtyard
-    with fade
+#     $ hide_menu()
 
-    $ hide_menu()
+#     centered "{font=Marker Felt.ttf} {size=35} 7:00 am {/size} \n {size=40} Before School {/size} {/font}"
 
-    centered "{font=Marker Felt.ttf} {size=35} 7:00 am {/size} \n {size=40} Before School {/size} {/font}"
+#     $ show_menu()
 
-    $ show_menu()
+#     "Scene WIP"
 
-    "Scene WIP"
-
-    jump continue_three
+#     jump continue_three
 
 
-label continue_three:
+# label continue_three:
 
-    $ remainingtime -= 1
+#     $ remainingtime -= 1
 
-    if sera_day1 == True:
+#     if sera_day1 == True:
 
-        menu:
+#         menu:
 
-            "Meet with Finn after school":
-                $ remainingtime -=3
-                jump F2
+#             "Meet with Finn after school":
+#                 $ remainingtime -=3
+#                 jump F2
 
-            "Time travel":
-                jump timetravel8
+#             "Time travel":
+#                 jump timetravel8
 
-    else:
+#     else:
 
-        menu:
+#         menu:
 
-            "Go talk to Elliot":
-                $ remainingtime -= 0
-                jump E2
+#             "Go talk to Elliot":
+#                 $ remainingtime -= 0
+# #                 jump E2
 
-            "Time travel":
-                jump timetravel8
+# #             "Time travel":
+# #                 jump timetravel8
 
 
-label timetravel8:
+# label timetravel8:
 
-    menu:
+#     menu:
 
-        "Meet Vivienne (-26 hrs)":
-            $ time_travel_jump("V1")
+#         "Meet Vivienne (-26 hrs)":
+#             $ time_travel_jump("V1")
 
-        "Meet Finn (-24 hrs)":
-            $ time_travel_jump("F1")
+#         "Meet Finn (-24 hrs)":
+#             $ time_travel_jump("F1")
 
-        "Meet Serafina (-23 hrs)":
-            $ time_travel_jump("S1")
+#         "Meet Serafina (-23 hrs)":
+#             $ time_travel_jump("S1")
 
-        "Meet Aster (-21 hrs)":
-            $ time_travel_jump("A1")
+#         "Meet Aster (-21 hrs)":
+#             $ time_travel_jump("A1")
 
-        "Meet Elliot (-19 hrs)":
-            $ time_travel_jump("E1")
+#         "Meet Elliot (-19 hrs)":
+#             $ time_travel_jump("E1")
 
-        "Do Elliot's tests (-5 hours)":
-            $ time_travel_jump("E2")
+#         "Do Elliot's tests (-5 hours)":
+#             $ time_travel_jump("E2")
 
-        "Talk to Vivienne again (-1 hr)":
-            $ time_travel_jump("V2")
+#         "Talk to Vivienne again (-1 hr)":
+#             $ time_travel_jump("V2")
 
-        "Never mind":
-            jump continue_three
+#         "Never mind":
+#             jump continue_three
 
 
 # ELLIOT 2 --------------------------------------
@@ -270,7 +268,7 @@ label wand:
 
     if test == 3:
 
-        jump continue18
+        jump continue_one
 
     else:
 
@@ -293,16 +291,18 @@ label camera:
 
     e "So I think I turn this knob here, then press the button…"
 
-    e "Smile!"
-
     show elliot grin at center:
         movecenter
+
+    e "Smile!"
 
     show mira surprised
 
     m "Wait, what—"
 
-    # sfx: flash
+    play audio "audio/sfx/camera.mp3" volume 0.3
+
+    # vfx: flash
 
     m "!!"
 
@@ -362,7 +362,7 @@ label camera:
 
     if test == 3:
 
-        jump continue18
+        jump continue_one
 
     else:
 
@@ -480,6 +480,8 @@ label book:
 
     $ test += 1
 
+    $ missing_page = True
+
     show mira default at left
 
     show elliot default at right
@@ -578,6 +580,8 @@ label continue_one:
 
     # sfx: bell
 
+    play audio "audio/sfx/schoolbell.mp3" volume 0.5
+
     show elliot default
 
     e "Oh—that's the 15-minute bell. I guess we’re out of time."
@@ -617,6 +621,8 @@ label continue_one:
 
     m "{i}…….In the end, I just wanted someone to talk to.{/i}"
 
+    $ remainingtime -=1
+
     hide mira
     with dissolve
 
@@ -624,23 +630,26 @@ label continue_one:
 
 
 label continue_two:
-    
-    $ remainingtime -=1
 
     if sera_day1 == True:
         
         menu:
 
-            "Look for Vivienne at lunch":
-                $ remainingtime -=3
-                jump V2
+            # "Look for Vivienne at lunch":
+            #     $ remainingtime -=3
+            #     jump V2
+
+
+            "Meet up with Finn after school":
+                $ remainingtime -=8
+                jump F2
 
             "Time travel":
                 jump timetravel9
 
     else:
 
-        jump notastorm
+        jump end
 
 
 label timetravel9:
@@ -706,6 +715,11 @@ label timetravel9:
                 jump continue_two
 
 
-label notastorm:
+label end:
+    
+    scene demo_end
 
-    "GAME ENDS HERE. PROGRESSING WILL RETURN YOU TO THE START MENU."
+    $ renpy.pause()
+
+    # This ends the game.
+

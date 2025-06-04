@@ -5,8 +5,6 @@
 
 label S1:
 
-    $ day = 2
-
     $ s1_done += 1
 
     scene hallway
@@ -531,7 +529,7 @@ label A1:
 
     m "{i}( In my defense, I forgot I had class in this area, or else I would’ve avoided it. ){/i}"
 
-    show aster at right
+    show aster default at right
     with dissolve
 
     x "Can I sit here? My lab partner’s gone for the day."
@@ -548,11 +546,15 @@ label A1:
 
     m "{i}I watch as their hands move confidently across the table, measuring out fluids and powders.{/i}"
 
+    show aster sideeye
+
     x "So, are you Sera’s new girlfriend?"
 
     m ".....What?"
 
     m "I'm trying to focus on an experiment here."
+
+    show aster default
 
     x "No you're not, I’m doing all the work."
 
@@ -565,6 +567,8 @@ label A1:
     a "I’m Aster, by the way."
 
     m "Mira."
+
+    show aster sideeye
 
     a "So Mira, what’s your relationship with Sera?"
 
@@ -591,7 +595,7 @@ label friends:
 
     show mira default at left
 
-    show aster at right
+    show aster sideeye at right
 
     m "We’re just friends. She’s not my type."
 
@@ -601,9 +605,13 @@ label friends:
 
         m "I’m not sure she even likes me, to be honest."
 
+        show aster surprised
+
         a "Why, what’d you do?"
 
         m "Just said the wrong thing at first and made her annoyed."
+
+        show aster serious
 
         a "Yeah, it’s easy to do that."
 
@@ -615,6 +623,8 @@ label friends:
 
         m "Why are you asking in the first place? It’s none of your business who she dates now."
 
+    show aster sideeye
+
     a "So she did mention our relationship."
 
     jump continue13
@@ -624,7 +634,7 @@ label dating:
 
     show mira default at left
 
-    show aster at right
+    show aster sideeye at right
 
     m "We’ve been dating for a few days now."
 
@@ -641,9 +651,11 @@ label loml:
 
     show mira default at left
 
-    show aster at right
+    show aster sideeye at right
 
     m "She’s the love of my life."
+
+    show aster serious
 
     a "......You don’t sound very convinced about that."
 
@@ -652,6 +664,8 @@ label loml:
     a "Right."
 
     m "Why are you asking in the first place? It’s none of your business who she dates now."
+
+    show aster sideeye
 
     a "So she did mention our relationship."
 
@@ -662,7 +676,7 @@ label care:
 
     show mira default at left
 
-    show aster at right
+    show aster sideeye at right
     
     m "Why do you care? It's none of your business."
 
@@ -671,15 +685,21 @@ label care:
 
 label continue13:
 
+    show aster default
+
     a "I'm just looking out for a friend."
 
     m "She didn’t make it sound like you two were friends."
 
     a "...No, but I’d like to be. "
 
+    show aster sideeye
+
     a "Did Sera tell you how we broke up?"
 
     m "No."
+
+    show aster default
 
     a "In the beginning, things were amazing."
 
@@ -689,21 +709,33 @@ label continue13:
 
     m "The beaker’s about to overflow."
 
+    show aster surprised
+
     a "What—? Oh whoops, help me pour some back."
+
+    show aster serious
 
     a "The thing about Sera is, she looks out for so many people."
 
     a "She might come off as assertive, but it doesn’t take a lot for her to see you as a friend." 
 
+    show aster default
+
     a "There were times she’d get annoyed at me for acting inconsiderate, but for me, no one else in the room was worth talking to except her."
 
     m "..."
+
+    show aster serious
 
     a "The fight that ended it all was a few days before the masquerade."
 
     a "Some poor boy had tried to invite Sera as his date by declaring he would tailor his suit to match the color of her eyes."
 
+    show aster default
+
     a "She turned him down of course, said she had a partner and also wasn’t interested in men. I laughed and told him he would have to show up naked."
+
+    show aster serious
     
     a "Immediately after he left, she dragged me under an archway and asked if I ever knew how to shut up."
 
@@ -747,7 +779,7 @@ label prioritize:
 
     show mira default at farleft
 
-    show aster at right
+    show aster serious at right
 
     m "Plus, the other guy probably said the same thing to a blue-eyed girl three hours later."
 
@@ -768,9 +800,11 @@ label difficult:
 
     show mira default at farleft
 
-    show aster at right
+    show aster serious at right
     
     m "Would it kill you to be more polite?"
+
+    show aster default
 
     a "I’m severely allergic to it, actually."
 
@@ -789,7 +823,7 @@ label compatible:
 
     show mira default at farleft
 
-    show aster at right
+    show aster serious at right
     
     a "I don’t believe in compatibility."
 
@@ -816,6 +850,8 @@ label continue14:
 
     $ aupdate = 1
 
+    show aster default
+
     a "Turns out the boy from earlier wanted revenge. He waited until I was alone in the hallway and pulled out a knife."
 
     $ newinfoupdate = False
@@ -824,7 +860,7 @@ label continue14:
 
     m "?!"
 
-    m "And you didn’t use your injuries to get out of class as well?"
+    m "And you didn’t use your injuries to get out of class as well??"
 
     a "Alright, caught. I never saw him again after that, actually."
 
@@ -846,6 +882,8 @@ label continue14:
 
     m "Sera didn’t go to the masquerade either."
 
+    show aster surprised
+
     a "Oh, she didn’t?"
 
     a "But she was looking forward so much to dressing up."
@@ -856,21 +894,23 @@ label continue14:
 
     $ aupdate = 3
 
+    show aster default
+
     a "It’s not like I planned on it—I didn’t know an aggressive crow was going to fly through my window and tear my dress shirt to pieces."
 
     $ newinfoupdate = False
-
-    show mira sighing
 
     m "………"
 
     a "Or maybe it was a raven."
 
+    show mira sighing
+
     m "Could you—"
 
-    show mira default
-
     p "Everyone, you should now be on the final steps of the experiment. Please remember to wash all the beakers once you’re done and place them on the drying rack next to the sink."
+
+    show aster surprised
 
     a "Shoot, you’ve been distracting me."
 
@@ -878,23 +918,25 @@ label continue14:
 
     m "Me???"
 
-    show mira default
+    show aster default
 
     a "Yes, you. We’re done with the beakers; could you wash them while I calculate the final results of the experiment?"
+
+    show mira sighing
 
     m "Could you give me a straight answer first?"
 
     a "Ah, ah—we only have five minutes left. This is a team effort, remember?"
 
-    show mira sighing
-
     m "......."
 
     m "{i}I scowl at the back of their head as they start writing on the worksheet and move to pick up the beakers.{/i}"
 
+    show mira default
+
     a "Thanks, Mira. You know how to wash beakers, right?"
 
-    m "You were more likeable when you were just doing our work and not saying anything."
+    m "You were a lot more likeable when you were just doing our work and not saying anything."
 
     a "Eh, I’m sure you’ll figure it out. Don’t die~"
 
@@ -963,7 +1005,7 @@ label timetravel5:
                 $ time_travel_jump("A1")
 
             "Never mind":
-                jump continue12
+                jump continue15
 
     else: 
 
@@ -985,10 +1027,18 @@ label timetravel5:
                 $ time_travel_jump("A1")
 
             "Never mind":
-                jump continue12
+                jump continue15
 
+
+# FINN 2 --------------------------------------
 
 label F2:
+    
+    if susfinn == True and missing_page == True:
+
+        jump end
+
+        return
 
     $ f2_done += 1
 
@@ -1382,9 +1432,13 @@ label continue18:
 
     menu:
 
-        "Meet up with Sera":
+        "Meet up with Sera" if annoysera == False or annoysera == True and s1_done > 1:
             $ remainingtime -= 3
             jump SA2
+
+        "Go back to your dorm and sleep":
+            $ remainingtime -= 5
+            jump sleep2
 
         "Time travel":
             jump timetravel6
@@ -1450,6 +1504,8 @@ label timetravel6:
                 jump continue18
 
 
+# SERAFINA / ASTER 2 --------------------------------------
+
 label SA2:
 
     $ sa2_done += 1
@@ -1463,7 +1519,7 @@ label SA2:
 
     $ show_menu()
 
-    show serafina default at closeleft:
+    show serafina fierce at closeleft:
         flip
 
     show mira default at farleft
@@ -1478,6 +1534,8 @@ label SA2:
     if annoysera == True:
 
         m "{i}( …..So much for not knowing their schedule. ){/i}"
+
+    show serafina default
 
     s "And I have the key right here."
 
@@ -1501,18 +1559,27 @@ label SA2:
 
     # sfx: door opening
 
-    show aster at right
+    show aster default at right
     with dissolve
 
     a "What the hell."
 
-    m "?!" with vpunch
+    show mira surprised
+    show serafina fierce
+    # show serafina surprised
+
+    b "?!" with vpunch
 
     s "What are you doing here??" 
+
+    show aster surprised
 
     a "Going…to the bathroom…?"
 
     a "What are {i}you{/i} doing here?"
+
+    show serafina fierce
+    show mira default
 
     s "Nothing. We were just passing through."
 
@@ -1522,15 +1589,23 @@ label SA2:
 
     s ".............."
 
+    show aster serious
+
     a "Were you going to spray lemon juice on all my clothes again?"
 
     s "What are you—"
 
     a "Or maybe you planned to dump it in my shampoo bottle, or—oh—"
 
+    show aster default
+
     a "You were going to replace my cologne with it, weren’t you."
 
+    # show serafina surprised
+
     m "{i}( Welp. ){/i}"
+
+    # show serafina mad
 
     s "How did you know that?"
 
@@ -1540,7 +1615,11 @@ label SA2:
 
     a "The time before that, you hid multiple lemons around my dorm in inconvenient places."
 
+    show aster serious
+
     a "That cologne is expensive, you know."
+
+    # show serafina surprised
 
     s "I wasn’t going to throw it out. And why aren’t you at the downtown screening?"
 
@@ -1570,9 +1649,8 @@ label SA2:
 label comein:
     
     show mira default at farleft
-    show serafina fierce at closeleft:
-        flip
-    show aster at right
+    show serafina fierce at closeleft, flip
+    show aster serious at right
     with dissolve
 
     m "Aster, can we come in?"
@@ -1582,9 +1660,8 @@ label comein:
 label arguing:
 
     show mira default at farleft
-    show serafina fierce at closeleft:
-        flip
-    show aster at right
+    show serafina fierce at closeleft, flip
+    show aster serious at right
     with dissolve
 
     m "Guys, stop arguing"
@@ -1593,9 +1670,15 @@ label arguing:
 
     m "Sure. And I’m not dead."
 
+    # show serafina surprised
+
     s "What?"
 
+    show aster surprised
+
     a "You aren’t dead."
+
+    show mira default
 
     m "Never mind. Aster, can we come in?"
 
@@ -1605,20 +1688,23 @@ label arguing:
 label lemons:
 
     show mira default at farleft
-    show serafina fierce at closeleft:
-        flip
-    show aster at right
+    show serafina fierce at closeleft, flip
+    show aster serious at right
     with dissolve
 
     m "Why lemons in particular?"
 
-    a "Because I hate the scent of lemons. It was one of the first things Sera learned about me."
+    a "Because I hate the scent of lemons."
 
-    a "I never asked, by the way. Where do you get them from each time?"
+    a "I always wondered, by the way. Where do you get them from each time?"
 
     s "The dining hall. They’re perpetually stocked."
 
+    show aster default
+
     a "Of course. You didn't even have to pay to annoy me."
+
+    show serafina default
 
     s "What can I say? I'm resourceful."
 
@@ -1629,7 +1715,11 @@ label lemons:
 
 label continue19:
 
+    show serafina fierce
+
     s" What? We’re not—"
+
+    show aster default
 
     a "Sure."
 
@@ -1639,11 +1729,18 @@ label continue19:
 
     s "Come on, Mira."
 
+    show serafina:
+        reflip
+
     m "{i}She reaches over and grabs my hand.{/i}"
+
+    show aster sideeye
 
     m "{i}Out of the corner of my eye, I see Aster raise an eyebrow but say nothing.{/i}"
 
     s "See you around, then."
+
+    show mira surprised
 
     m "Wait."
 
@@ -1651,11 +1748,18 @@ label continue19:
 
     m "{i}I try desperately to think of some way to stall.{/i}"
 
+    show mira default
+
     m "The key."
 
     s "Oh, right."
 
+    show serafina zorder 1:
+        flip, movecloseright
+
     m "{i}She turns back around and crosses over to Aster, dropping the spare key into their hand.{/i}"
+
+    show aster serious
 
     a "Sera."
 
@@ -1663,19 +1767,33 @@ label continue19:
 
     a "Why did you skip the masquerade?"
 
-    m "{i}In my mind, I silently thank Aster for their inability to ever shut up.{/i}"
+    m "{i}In my mind, I silently thank Aster for their inability to shut up.{/i}"
 
     s "Why do you think? I was trying to avoid you."
 
     s "Why did {i}you{/i} skip the masquerade?"
 
+    $ newinfoupdate = True
+
+    $ aupdate = 5
+
     a "Eh, I just didn’t feel like going."
+
+    show serafina mad
 
     s "You—"
 
+    show mira sighing
+
     m "That’s it???"
 
+    show aster default
+
     a "The actual reason is so boring, right? Can you blame me for elaborating a little?"
+
+    show mira default
+
+    show serafina fierce
 
     s "What do you mean, you didn’t feel like going? We planned our outfits for weeks."
 
@@ -1689,6 +1807,8 @@ label continue19:
     
     s "I have an actual reason to avoid things when I think you’ll be there. What’s your excuse?"
 
+    show aster serious
+
     a "What makes you think I don’t have an excuse?"
 
     s "Because you take every chance you can get to greet me like nothing’s wrong. If you do have an excuse, it's clearly not the same one."
@@ -1699,51 +1819,74 @@ label continue19:
 
     m "{i}( Was she lying…? ){/i}"
 
-    m "{i}( And Aster’s alibi isn’t convincing at all. They didn’t even say where they were that night. ){/i}"
+    m "{i}( And Aster’s alibi isn’t convincing at all. They didn’t even mention where they were that night. ){/i}"
 
     a "My excuse is that I was too busy thinking of stupid ways to get back at my ex-girlfriend."
 
     a "Did you send Finn to get revenge on me too?"
 
+    $ remainingtime -= 1
+
     s "Finn?"
+
+    show mira surprised
 
     m "{i}( Finn? ){/i}"
 
-    a "I saw him hanging around the floor a week ago when Elliot and I were studying in the lounge."
+    $ susfinn = True
+
+    show aster default
+
+    a "Yeah, I saw him hanging around the floor a week ago when Elliot and I were studying in the lounge."
 
     a "He kept glancing over his shoulder, like he was afraid someone would see him."
 
+    show mira default
+
+    show serafina fierce
+
     s "I have no idea what you’re talking about. I’ve never talked to Finn before."
 
-    s "He’s probably just seeing someone on this floor in secret."
+    s "He’s probably just seeing someone on the floor in secret."
 
-    scene courtyard
+    if sera_day1 == True:
 
-    show mira default at left
+        scene courtyard
 
-    show elliot default at center
+        show mira default at left
 
-    show image "ui/general/blackscreen.png":
-        alpha 0.55
+        show elliot default at center
 
-    e "I take the current book I’m reading everywhere I go. It could’ve been left on a desk while I went to the bathroom, or forgotten in a classroom for a few hours."
+        show image "ui/general/blackscreen.png":
+            alpha 0.55
 
-    scene hallway
+        e "I take the current book I’m reading everywhere I go. It could’ve been left on a desk while I went to the bathroom, or forgotten in a classroom for a few hours."
 
-    show mira surprised at farleft
+        scene hallway
 
-    show serafina fierce at closeleft:
-        flip
+        show mira surprised at farleft
 
-    show aster at right
+        show serafina fierce at closeright, flip, zorder 1
 
-    m "{i}( ……..I need to see Finn again. ){/i}"
+        show aster default at right
 
-    m "{i}I glance hurriedly at the clock in the hallway. Sera and I have already been here for an hour.{i}"
+        m "{i}( ……..I need to see Finn again. ){/i}"
 
-    m "{i}I want to interrogate Aster for more information, but the longer I stay here, the more time I’ll lose.{/i}"
+        m "{i}I glance hurriedly at the clock in the hallway. Sera and I have already been here for an hour.{i}"
 
-    jump continue20
+        m "{i}I want to interrogate Aster for more information, but the longer I stay here, the more time I’ll lose.{/i}"
+
+        jump continue20
+
+    else:
+
+        m "{i}( If Finn was seeing another boy, it could explain the secrecy. ){/i}"
+
+        m "{i}( But what if he wasn’t? Only students live in this building, so he can’t have been here to get test answers. )"
+
+        m "{i}( What else was he looking for? )"
+
+        jump continue21
 
 
 label continue20:
@@ -1755,30 +1898,198 @@ label continue20:
 
     menu:
 
+        "Ask Aster for more details":
+            jump interrogate
+
         "Time travel":
             $ ttearly = True
             jump timetravel7
 
-        "Ask Aster for more details":
-            jump interrogate
+
+label continue21:
+
+    hide mira
+    hide serafina
+    hide aster
+    with dissolve
+
+    menu:
+
+        "Ask what he looked like":
+            jump looklike
+
+        "Ask what time he was here":
+            jump whattime
+
+        "Ask to what direction he went in":
+            jump direction
 
 
 label interrogate:
 
     show mira default at farleft
-    show serafina surprised at closeleft:
-        flip
+    show serafina fierce at closeright, flip, zorder 1
+    show aster default at right
+
+    m "Do you remember anything else? Specific details?"
+
+    a "What kind of details?"
+
+    jump continue21
+
+
+label looklike:
+
+    show mira default at farleft
+    show serafina fierce at closeright, flip, zorder 1
+    show aster default at right
+
+    m "Are you sure it was Finn? What did he look like?"
+
+    show aster surprised
+
+    a "What do you mean, am I sure was it Finn? I see this guy’s picture everywhere."
+
+    show aster default
+
+    a "Dark skin and bleached hair, varsity jacket, overly-prominent eyebrow slit."
+
+    s "Don’t say that so judgmentally. You considered getting an eyebrow slit too."
+
+    a "That was a period of my life we don’t talk about."
+
+    s "That was two weeks ago."
+
+    jump continue22
+
+
+label whattime:
+
+    show mira default at farleft
+    show serafina fierce at closeright, flip, zorder 1
+    show aster default at right
+    
+    m "What time was he here?"
+
+    a "Late evening, maybe 8 or 9? Elliot and I came back after dinner and I saw him about an hour later."
+
+    show serafina default
+
+    s "He’s definitely seeing someone here."
+
+    jump continue22
+
+
+label direction:
+
+    show mira default at farleft
+    show serafina fierce at closeright, flip, zorder 1
     show aster at right
 
-    jump tempstop
+    m "Did you see where he went?"
 
-label continue21:
+    a "Nope, I only saw him walk past the lounge a couple times."
 
-    $ remainingtime -= 1
+    a "Then I went back to my dorm to grab a pencil sharpener and when I came back, he was gone."
+
+    jump continue22
+
+
+label continue22:
+
+    show aster surprised
+
+    a "Oh, but I remember. He had a piece of paper with some notes on it."
+
+    show serafina fierce
+
+    show mira surprised
+
+    m "!!"
+
+    m "Did you see what it said?"
+
+    show aster serious
+
+    a "No, he was too far away. I only remember the notes being written in blue ink."
+
+    show mira default
+
+    m "{i}( ….…. ){/i}"
+
+    show serafina fierce
+
+    s "Whatever he was here for, it had nothing to do with us. I wouldn’t force another student to interact with you."
+
+    show aster default
+
+    a "You brought Mira along."
+
+    s "She came here of her own volition."
+
+    m "Plus, our plan didn’t even work."
+
+    a "My bad."
+
+    s "Ugh."
+
+    a "I’ll wash my hands with only lemon soap for a week, if you’d like."
+
+    show serafina mad
+
+    s "That’s not the point…! Never mind."
+
+    m "It’s late. We should get going."
+
+    show serafina fierce
+
+    s "You’re right."
+
+    show serafina zorder 1:
+        reflip, movecloseleft
+
+    show mira zorder 2
+
+    m "{i}She reaches out and takes my hand again.{/i}"
+
+    show aster sideeye
+
+    a "Also, you two clearly aren’t dating."
+
+    show serafina:
+        flip
+
+    s "What makes you say that?"
+
+    a "Because I’ve seen what you look like when you’re in love."
+
+    # show serafina surprised
+
+    s "..."
+
+    show aster serious
+
+    a "Goodnight, don't forget to take the bag with you. Bye, Mira."
+
+    m "See you."
+
+    hide aster
+    with dissolve
+
+    m "{i}The door creaks shut behind them.{/i}"
+
+    jump continue23
+
+
+label continue23:
+
+    hide mira
+    hide serafina
+    with dissolve
 
     menu:
 
-        "Go to sleep":
+        "Go back to your dorm and sleep":
             jump sleep2
 
         "Time travel":
@@ -1824,7 +2135,7 @@ label timetravel7:
                     jump continue20
 
                 else:
-                    jump continue21
+                    jump continue23
 
     else: 
 
@@ -1852,7 +2163,7 @@ label timetravel7:
                 $ time_travel_jump("SA2")
 
             "Never mind":
-                jump continue21
+                jump continue23
 
 
 label sleep2:
@@ -1868,15 +2179,10 @@ label sleep2:
 
     if sera_day1 == True:
         $ remainingtime -= 7
-        jump E1
+        jump end
 
     else:
         $ remainingtime -= 7
-        jump V2
-
-label tempstop:
-
-    "GAME ENDS HERE. PROGRESSING WILL RETURN YOU TO THE START MENU."
-
+        jump E2
 
 

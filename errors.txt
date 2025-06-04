@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script2.rpy", line 1749: expected ':' not found.
-    label continue20
-                    ^
+File "game/script2.rpy", line 1825: show statement expects a non-empty block.
+    show serafina fierce at closeright, flip, zorder 1:
+                                                       ^
 
 Ren'Py Version: Ren'Py 8.3.3.24111502
-Mon Jun  2 07:30:16 2025
+Tue Jun  3 16:49:25 2025
