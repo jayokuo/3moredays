@@ -228,6 +228,8 @@ style choice_vbox:
 
     spacing gui.choice_spacing
 
+# adjust choicebox width here !!!
+
 style choice_button is default:
     properties gui.button_properties("choice_button")
 
@@ -276,7 +278,7 @@ screen quick_menu():
         hbox:
             style_prefix "quick"
 
-            xalign 0.742
+            xalign 0.75
             yalign 0.781
 
             ## textbutton _("Back") action Rollback()
@@ -286,7 +288,7 @@ screen quick_menu():
             textbutton _("Save") action ShowMenu('save')
             ## textbutton _("Q.Save") action QuickSave()
             ## textbutton _("Q.Load") action QuickLoad()
-            textbutton _("Prefs") action ShowMenu('preferences')
+            textbutton _("Options") action ShowMenu('preferences')
 
 
 
@@ -308,15 +310,15 @@ screen quick_menu():
         # safe method
         if day == 3:
             imagebutton auto "hourglass_day3_%s" action ShowMenu('time_travel_tutorial'):
-                xalign 0.0
+                xalign 0.01
                 yalign 0.97
         elif day == 2:
             imagebutton auto "hourglass_day2_%s" action ShowMenu('time_travel_tutorial'):
-                xalign 0.0
+                xalign 0.01
                 yalign 0.97
         elif day == 1:
             imagebutton auto "hourglass_day1_%s" action ShowMenu('time_travel_tutorial'):
-                xalign 0.0
+                xalign 0.01
                 yalign 0.97
 
         # cleaner method
@@ -327,7 +329,7 @@ screen quick_menu():
         text "[remainingtime]":
             color "fffcf4"
             size 26
-            xalign 0.045
+            xalign 0.054
             yalign 0.861
 
 ## Notebook Text ###########################################################
@@ -336,7 +338,7 @@ screen book():
     tag menu
 
     if notebook:
-        add "ui/general/blackscreen.png":
+        add "blackscreen.png":
             alpha 0.55
 
         if (pagenumber == 0):
@@ -593,7 +595,7 @@ screen book():
                     focus_mask True
 
 screen time_travel_tutorial():
-    add "ui/general/blackscreen.png":
+    add "blackscreen.png":
         alpha 0.55
     
     fixed:
@@ -618,6 +620,7 @@ style quick_button:
 
 style quick_button_text:
     properties gui.button_text_properties("quick_button")
+    hover_color "#2b3f4f"
 
 
 ################################################################################
@@ -651,12 +654,12 @@ screen navigation():
         if renpy.get_screen("main_menu"):
             xalign 0.1
             textbutton _("LOAD") action ShowMenu("load")
-            textbutton _("PREFS") action ShowMenu("preferences")
+            textbutton _("OPTIONS") action ShowMenu("preferences")
 
         else:
             xoffset 120
             textbutton _("Load") action ShowMenu("load")
-            textbutton _("Prefs") action ShowMenu("preferences")
+            textbutton _("Options") action ShowMenu("preferences")
 
         if _in_replay:
 
@@ -678,7 +681,7 @@ screen navigation():
 
 
 style navigation_button is gui_button
-style navigation_button_text is gui_button_text
+style navigation_button_text is menu_button_text
 
 style navigation_button:
     size_group "navigation"
@@ -901,8 +904,6 @@ screen about():
             ## gui.about is usually set in options.rpy.
             if gui.about:
                 text "[gui.about!t]\n"
-
-            text _("This game was made as a capstone project for the Arts, Games, and Playable Media degree at UC Santa Cruz.\n\n\nDirector - Jayo\nWriting - Jayo, Katya, Eric\nProgramming - Joey, Jayo, Scott, Halei\nCharacter Art - Jayo, Maddy\nConcept Art - Katya, Halei\nBackground Art - Ela, Katya, Jayo\nUI - Jayo, Katya\nMusic - Adrian\n\nSound Effects from productioncrate.com & pixabay.com")
             text _("")
             text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
 
@@ -912,7 +913,7 @@ style about_label_text is gui_label_text
 style about_text is gui_text
 
 style about_label_text:
-    size gui.label_text_size
+    size 50
 
 
 ## Load and Save screens #######################################################
@@ -1054,7 +1055,7 @@ screen preferences():
 
     tag menu
 
-    use game_menu(_("Preferences"), scroll="viewport"):
+    use game_menu(_("Options"), scroll="viewport"):
 
         vbox:
 
@@ -1245,7 +1246,7 @@ screen history():
                     substitute False
 
         if not _history_list:
-            label _("The dialogue history is empty.")
+            text _("The dialogue history is empty.")
 
 
 ## This determines what tags are allowed to be displayed on the history screen.
@@ -1257,7 +1258,7 @@ style history_window is empty
 
 style history_name is gui_label
 style history_name_text is gui_label_text
-style history_text is gui_text
+style history_text is about_text
 
 style history_label is gui_label
 style history_label_text is gui_label_text
@@ -1313,11 +1314,11 @@ screen help():
 
             hbox:
 
-                textbutton _("Keyboard") action SetScreenVariable("device", "keyboard")
-                textbutton _("Mouse") action SetScreenVariable("device", "mouse")
+                textbutton _(" KEYBOARD") action SetScreenVariable("device", "keyboard")
+                textbutton _("MOUSE") action SetScreenVariable("device", "mouse")
 
                 if GamepadExists():
-                    textbutton _("Gamepad") action SetScreenVariable("device", "gamepad")
+                    textbutton _("GAMEPAD") action SetScreenVariable("device", "gamepad")
 
             if device == "keyboard":
                 use keyboard_help
@@ -1435,7 +1436,7 @@ style help_button is gui_button
 style help_button_text is gui_button_text
 style help_label is gui_label
 style help_label_text is gui_label_text
-style help_text is gui_text
+style help_text is about_text
 
 style help_button:
     properties gui.button_properties("help_button")
@@ -1445,12 +1446,12 @@ style help_button_text:
     properties gui.button_text_properties("help_button")
 
 style help_label:
-    xsize 375
+    xsize 300
     right_padding 30
 
 style help_label_text:
-    size gui.text_size
     xalign 1.0
+    yalign 0
     text_align 1.0
 
 
@@ -1458,7 +1459,6 @@ style help_label_text:
 ################################################################################
 ## Additional screens
 ################################################################################
-
 
 ## Confirm screen ##############################################################
 ##
@@ -1476,38 +1476,39 @@ screen confirm(message, yes_action, no_action):
 
     style_prefix "confirm"
 
-    add "images/ui/general/blackscreen.png":
+    add "blackscreen.png":
             alpha 0.55
 
     add "gui/confirm.png"
     
     if message == layout.DELETE_SAVE:
-        textbutton "Abandon this save?" xalign 0.5 yalign 0.445
+        text "Abandon this save?" xalign 0.5 yalign 0.447
         textbutton "Yes" xalign 0.42 yalign 0.536 action yes_action
         textbutton "No" xalign 0.58 yalign 0.536 action no_action
         
     elif message == layout.OVERWRITE_SAVE:
-        textbutton "Overwrite this save?" xalign 0.5 yalign 0.445
+        text "Overwrite this save?" xalign 0.5 yalign 0.447
         textbutton "Yes" xalign 0.42 yalign 0.536 action yes_action
         textbutton "No" xalign 0.58 yalign 0.536 action no_action
         
     elif message == layout.LOADING:
-        textbutton "Lose your unsaved progress?" xalign 0.5 yalign 0.445
-        textbutton "Yes" xalign 0.42 yalign 0.536 action yes_action
-        textbutton "No" xalign 0.58 yalign 0.536 action no_action
+        text "You'll lose your unsaved progress." xalign 0.5 yalign 0.446
+        textbutton "{size=31}I know{/size}" xalign 0.42 yalign 0.539 action yes_action
+        textbutton "{size=31}Never mind{/size}" xalign 0.58 yalign 0.539 action no_action
 
     elif message == layout.QUIT:
-        textbutton "Do I finally get a break?" xalign 0.5 yalign 0.445
+        text "Do I finally get a break?" xalign 0.5 yalign 0.447
         textbutton "Yes" xalign 0.42 yalign 0.536 action yes_action
         textbutton "No" xalign 0.58 yalign 0.536 action no_action
         
     elif message == layout.MAIN_MENU:
-        textbutton "Admire my drowning visage?" xalign 0.5 yalign 0.445
-        textbutton "Yes" xalign 0.42 yalign 0.536 action yes_action
-        textbutton "No" xalign 0.58 yalign 0.536 action no_action
+        text "Admire my drowning visage?" xalign 0.5 yalign 0.447
+        text "This will lose your unsaved progress." xalign 0.5 yalign 0.492
+        textbutton "Yes" xalign 0.42 yalign 0.585 action yes_action
+        textbutton "No" xalign 0.58 yalign 0.585 action no_action
 
     else:
-        textbutton "Are you sure?" xalign 0.5 yalign 0.445
+        text "Are you sure?" xalign 0.5 yalign 0.447
         textbutton "Yes" xalign 0.42 yalign 0.536 action yes_action
         textbutton "No" xalign 0.58 yalign 0.536 action no_action
 

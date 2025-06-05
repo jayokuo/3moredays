@@ -50,16 +50,18 @@ python early:
         renpy.jump(location)
         renpy.with_statement(fade)
 
-
-    def skip_scene():
-        renpy.show("blackscreen")
+    def skip_scene(location):
+        renpy.show("blackscreen2") 
         renpy.show("confirm")
-        renpy.text("test")
+        ui.text("I've seen this all before.", xalign=0.5, yalign=0.447)
+        ui.textbutton("Continue", clicked=xcontinue, xalign=0.42, yalign=0.538)
+        ui.textbutton("Skip", clicked=Jump(location), xalign=0.58, yalign=0.538)
+        ui.interact()
 
-
-        
-        # textbutton "I've seen this all before." xalign 0.5 yalign 0.445
-        # textbutton "Continue" xalign 0.42 yalign 0.536
-        # textbutton "Skip" xalign 0.58 yalign 0.536
-
+    def xcontinue():
+        renpy.restart_interaction()
+        renpy.hide("blackscreen2")
+        renpy.hide("confirm")
+        ui.clear()
+        renpy.end_interaction("cleared")
 

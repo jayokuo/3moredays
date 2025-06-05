@@ -7,6 +7,20 @@ label S1:
 
     $ s1_done += 1
 
+    if sera_day1 == True:
+
+        if s1_done > 1 and f1_done > 1:
+
+            $ remainingtime -= 2
+            $ skip_scene("A1")
+
+    else:
+
+        if s1_done > 1 and e1_done > 1:
+
+            $ remainingtime -= 5
+            $ skip_scene("A1")
+
     scene hallway
     with fade
 
@@ -499,6 +513,18 @@ label timetravel4:
 label A1:
 
     $ a1_done += 1
+
+    if a1_done > 1 and s1_done > 1:
+
+        if sera_day1 == True:
+
+            $ remainingtime -= 3
+            $ skip_scene("E1")
+
+        else:
+
+            $ remainingtime -= 4
+            $ skip_scene("F2")
 
     scene classroom
     with fade
@@ -1042,6 +1068,20 @@ label F2:
 
     $ f2_done += 1
 
+    if sera_day1 == True:
+
+        if f2_done > 1 and e2_done > 1:
+
+            $ remainingtime -= 5
+            $ skip_scene("SA2")
+
+    else:
+
+        if f2_done > 1 and a1_done > 1:
+            $ remainingtime -= 5
+            $ skip_scene("SA2")
+
+
     scene classroom
     with fade
 
@@ -1510,6 +1550,11 @@ label SA2:
 
     $ sa2_done += 1
 
+    if sa2_done > 1 and f2_done > 1:
+
+        $ remainingtime -= 2
+        $ skip_scene("continue23")
+
     scene hallway
     with fade
 
@@ -1857,7 +1902,7 @@ label continue19:
 
         show elliot default at center
 
-        show image "ui/general/blackscreen.png":
+        show image "images/blackscreen.png":
             alpha 0.55
 
         e "I take the current book I’m reading everywhere I go. It could’ve been left on a desk while I went to the bathroom, or forgotten in a classroom for a few hours."
@@ -2120,8 +2165,8 @@ label timetravel7:
             "Take Elliot's tests (-16 hrs)":
                 $ time_travel_jump("E2")
 
-            "Talk to Vivienne again (-12 hrs)":
-                $ time_travel_jump("V2")
+            # "Talk to Vivienne again (-12 hrs)":
+            #     $ time_travel_jump("V2")
 
             "Study with Finn (-7 hrs)":
                 $ time_travel_jump("F2")

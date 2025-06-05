@@ -23,9 +23,9 @@ init python:
 ## The colors of text in the interface.
 
 ## An accent color used throughout the interface to label and highlight text.
-define gui.accent_color = '#99ccff'
+define gui.accent_color = '#7ea6b2'
 
-define gui.name_color = '#113f6e'
+define gui.name_color = '#2e4f69'
 
 ## The color used for a text button when it is neither selected nor hovered.
 define gui.idle_color = '#2b3f4f'
@@ -39,19 +39,19 @@ define gui.hover_color = '#7ea6b2'
 
 ## The color used for a text button when it is selected but not focused. A
 ## button is selected if it is the current screen or preference value.
-define gui.selected_color = '#fffcf4'
+define gui.selected_color = '#7ea6b2'
 
 ## The color used for a text button when it cannot be selected.
-define gui.insensitive_color = '#49535b'
+define gui.insensitive_color = '#909090'
 
 ## Colors used for the portions of bars that are not filled in. These are not
 ## used directly, but are used when re-generating bar image files.
-define gui.muted_color = '#3d5166'
-define gui.hover_muted_color = '#5b7a99'
+define gui.muted_color = '#56768f'
+# define gui.hover_muted_color = '#5b7a99'
 
 ## The colors used for dialogue and menu choice text.
 define gui.text_color = '#2b3f4f'
-define gui.interface_text_color = '#fffcf4'
+define gui.interface_text_color = '#2b3f4f'
 
 
 ## Fonts and Font Sizes ########################################################
@@ -75,21 +75,52 @@ define gui.name_text_size = 37
 define gui.interface_text_size = 35
 
 ## The size of labels in the game's user interface.
-define gui.label_text_size = 36
+define gui.label_text_size = 50
+define gui.label_text_color = '#7ea6b2'
+define gui.label_text_font = "fonts/Marker Felt.ttf"
+
 
 ## The size of text on the notify screen.
-define gui.notify_text_size = 22
+define gui.notify_text_size = 25
 
 ## The size of the game's title.
 define gui.title_text_size = 75
 
 ## Defining different text styles
+
+style plain_text:
+    color "2b3f4f"
+
+style menu_button_text:
+    size 35
+
+style history_name_text:
+    size 34
+
+style history_text:
+    line_spacing 18
+    size 28
+
+style pref_label_text:
+    size 40
+
+style radio_button_text:
+    size 30
+
+style check_button_text:
+    size 30
+
+style help_label_text:
+    font "fonts/short-stack.regular.ttf"
+    size 29
+    color "#769fac"
+
+style about_text:
+    size 29
+
 style notebook_text:
     size 34
     color "#4c7791"
-
-style plain_text:
-    color "fffcf4"
 
 ## Main and Game Menus #########################################################
 
@@ -168,7 +199,7 @@ define gui.button_tile = False
 define gui.button_text_font = gui.interface_text_font
 
 ## The size of the text used by the button.
-define gui.button_text_size = gui.interface_text_size
+define gui.button_text_size = 32
 
 ## The color of button text in various states.
 define gui.button_text_idle_color = gui.idle_color
@@ -197,10 +228,10 @@ define gui.confirm_button_text_size = 32
 
 define gui.page_button_borders = Borders(15, 6, 15, 6)
 
-define gui.quick_button_borders = Borders(35, 6, 35, 0)
+define gui.quick_button_borders = Borders(35, 10, 35, 0)
 define gui.quick_button_text_size = 21
 define gui.quick_button_text_idle_color = "#ffffff"
-define gui.quick_button_text_selected_color = gui.accent_color
+define gui.quick_button_text_selected_color = "#2b3f4f"
 
 ## You can also add your own customizations, by adding properly-named variables.
 ## For example, you can uncomment the following line to set the width of a
@@ -269,7 +300,7 @@ define gui.notify_ypos = 68
 define gui.choice_spacing = 33
 
 ## Buttons in the navigation section of the main and game menus.
-define gui.navigation_spacing = 20
+define gui.navigation_spacing = 20.5
 
 ## Controls the amount of spacing between preferences.
 define gui.pref_spacing = 15
@@ -351,18 +382,18 @@ define config.history_length = 250
 
 ## The height of a history screen entry, or None to make the height variable at
 ## the cost of performance.
-define gui.history_height = 210
+define gui.history_height = None
 
 ## The position, width, and alignment of the label giving the name of the
 ## speaking character.
-define gui.history_name_xpos = 233
+define gui.history_name_xpos = 70
 define gui.history_name_ypos = 0
-define gui.history_name_width = 100
+define gui.history_name_width = 40
 define gui.history_name_xalign = 1.0
 
 ## The position, width, and alignment of the dialogue text.
-define gui.history_text_xpos = 255
-define gui.history_text_ypos = 3
+define gui.history_text_xpos = 200
+define gui.history_text_ypos = 10
 define gui.history_text_width = 1110
 define gui.history_text_xalign = 0.0
 
@@ -460,7 +491,7 @@ init python:
         gui.navigation_spacing = 30
         gui.pref_button_spacing = 15
 
-        gui.history_height = 285
+        gui.history_height = 200
         gui.history_text_width = 1035
 
         gui.quick_button_text_size = 30

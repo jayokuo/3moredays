@@ -1,3 +1,4 @@
+
 # DAY 3 --------------------------------------
 
 # VIVIENNE 2 --------------------------------------
@@ -80,7 +81,26 @@
 
 label E2:
 
+    $ test = 0
+
     $ e2_done += 1
+
+    if sera_day1 == True:
+
+        if e2_done > 1 and a1_done > 1:
+
+            $ remainingtime -= 1
+            $ skip_scene("f2")
+
+    else:
+
+        if e2_done > 1 and a1_done > 1:
+
+            $ remainingtime -= 1
+            $ skip_scene("end")
+
+
+ ## change post open studios !!
 
     scene courtyard
     with fade
@@ -705,8 +725,8 @@ label timetravel9:
             "Break into Aster's dorm (-9 hrs)":
                 $ time_travel_jump("SA2")
 
-            "Talk to Vivienne again (-2 hrs)":
-                $ time_travel_jump("V2")
+            # "Talk to Vivienne again (-2 hrs)":
+            #     $ time_travel_jump("V2")
 
             "Do Elliot's tests (-1 hr)":
                 $ time_travel_jump("E2")

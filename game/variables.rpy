@@ -68,7 +68,7 @@ define fadehold = Fade(0.5, 1.0, 0.5)
 default pagenumber = 0
 default notebook = False
 default hourglass = False
-default choiceLeftToggle = False
+default choiceLeftToggle = False 
 
 # NOTEBOOK --------------------------------------
 

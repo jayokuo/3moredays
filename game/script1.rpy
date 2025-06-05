@@ -15,6 +15,10 @@ define s = Character("Serafina")
 define a = Character("Aster")
 define b = Character("Both")
 
+image confirm = "gui/confirm.png"
+
+image blackscreen2 = "gui/blackscreen2.png"
+
 
 # The game starts here.
 
@@ -738,7 +742,7 @@ label continue3:
             "Look for Finn":
 
                 $ findfinn = True
-                jump sceneskip1
+                jump F1
 
 label timetravel1:
 
@@ -751,21 +755,6 @@ label timetravel1:
             jump continue3
 
 
-label sceneskip1:
-    
-    menu:
-
-        "NOTE: this scene remains unchanged. Would you like to skip the scene? (I'LL REPLACE THIS W A POPUP DW)"
-
-        "Yes":
-            $ remainingtime -= 3
-            jump S1
-
-        "No":
-            $ remainingtime -= 2
-            jump F1
-
-
 # FINN 1 --------------------------------------
 
 label F1:
@@ -773,6 +762,19 @@ label F1:
     $ f1_done += 1
 
     $ flirtmeter = 0
+
+    if f1_done > 1 and v1_done > 1:
+
+        if sera_day1 == True:
+
+            $ remainingtime -= 1
+            $ skip_scene("S1")
+
+        else:
+
+            $ remainingtime -= 5
+            $ skip_scene("E1")
+
 
     scene hallway
     with fade
@@ -1195,6 +1197,20 @@ label timetravel2:
 label E1:
 
     $ e1_done += 1
+
+    if sera_day1 == True:
+
+        if e1_done > 1 and a1_done >= 1:
+
+            $ remainingtime -= 1
+            $ skip_scene("continue6")
+
+    else:
+
+        if e1_done > 1 and f1_done > 1:
+
+            $ remainingtime -= 1
+            $ skip_scene("continue6")
 
     scene hallway
     with fade
@@ -1632,6 +1648,8 @@ label continue6:
 
     hide mira
     with dissolve
+
+    scene classroom
 
     menu:
 
