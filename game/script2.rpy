@@ -2029,7 +2029,7 @@ label direction:
 
     show mira default at farleft
     show serafina fierce at closeright, flip, zorder 1
-    show aster at right
+    show aster default at right
 
     m "Did you see where he went?"
 

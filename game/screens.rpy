@@ -253,7 +253,6 @@ style choiceLeft_button_text is default:
 
 screen experiment_screen(items):
     style_prefix "experimentChoice"
-    text "Choose an experiment to run:"
 
     hbox:
         for i in items:
@@ -941,7 +940,7 @@ screen load():
 
 screen file_slots(title):
 
-    default page_name_value = FilePageNameInputValue(pattern=_("Page {}"), auto=_("Automatic saves"), quick=_("Quick saves"))
+    default page_name_value = FilePageNameInputValue(pattern=_("Page {}"), auto=_("Automatic Saves"), quick=_("Quick saves"))
 
     use game_menu(title):
 
@@ -1000,14 +999,8 @@ screen file_slots(title):
 
                 spacing gui.page_spacing
 
-                if config.has_autosave:
-                    textbutton _("{#auto_page}A") action FilePage("auto")
-
-                if config.has_quicksave:
-                    textbutton _("{#quick_page}Q") action FilePage("quick")
-
                 ## range(1, 10) gives the numbers from 1 to 9.
-                for page in range(1, 3):
+                for page in range(1, 4):
                     textbutton "[page]" action FilePage(page)
 
 
@@ -1479,7 +1472,10 @@ screen confirm(message, yes_action, no_action):
     add "blackscreen.png":
             alpha 0.55
 
-    add "gui/confirm.png"
+    if message == layout.MAIN_MENU:
+        add "gui/confirm2.png"
+    else:
+        add "gui/confirm.png"
     
     if message == layout.DELETE_SAVE:
         text "Abandon this save?" xalign 0.5 yalign 0.447
@@ -1502,10 +1498,10 @@ screen confirm(message, yes_action, no_action):
         textbutton "No" xalign 0.58 yalign 0.536 action no_action
         
     elif message == layout.MAIN_MENU:
-        text "Admire my drowning visage?" xalign 0.5 yalign 0.447
-        text "This will lose your unsaved progress." xalign 0.5 yalign 0.492
-        textbutton "Yes" xalign 0.42 yalign 0.585 action yes_action
-        textbutton "No" xalign 0.58 yalign 0.585 action no_action
+        text "Admire my drowning visage?" xalign 0.5 yalign 0.443
+        text "This will lose your unsaved progress." xalign 0.5 yalign 0.49
+        textbutton "Yes" xalign 0.42 yalign 0.583 action yes_action
+        textbutton "No" xalign 0.58 yalign 0.583 action no_action
 
     else:
         text "Are you sure?" xalign 0.5 yalign 0.447

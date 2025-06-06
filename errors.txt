@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/gui.rpy", line 116: style property COLOR is not known.
-    COLOR "#769fac"
-         ^
+File "game/screens.rpy", line 928: expected statement.
+    config.has_autosave = False
+                        ^
+
+File "game/screens.rpy", line 929: expected statement.
+    config.has_quicksave = False
+                         ^
 
 Ren'Py Version: Ren'Py 8.3.3.24111502
-Thu Jun  5 05:12:12 2025
+Thu Jun  5 22:00:16 2025

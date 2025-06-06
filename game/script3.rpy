@@ -186,6 +186,8 @@ label experiment:
     hide elliot
     with dissolve
 
+    show image "images/blackscreen.png":
+        alpha 0.3
     show experiment_screen
 
     menu:
